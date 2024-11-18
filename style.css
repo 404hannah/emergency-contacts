@@ -278,16 +278,58 @@ header{
     }
 }
 
-@media only screen and (max-width: 800px){
-    .header-left h1{
-        font-size: larger;
+@media only screen and (min-width: 501px) and (max-width: 800px){
+    .header-left{
+        width: 100vw;
+        height: 6.5vh;
+        border-radius: 0px;
     }
 
-    .search-bar input{
-        width: 60px;
+    .header-right{
+        width: 100vw;
+        height: 6.5vh;
+        top: 6.5%;
+        border-radius: 0px;
     }
     
     .menu-wrapper{
         width: 80vw;
+    }
+
+    .search-bar input{
+        width: 220px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .header-left{
+        width: 100vw;
+        height: 6vh;
+        border-radius: 0px;
+    }
+
+    .header-left h1{
+        font-size: larger;
+    }
+
+    .header-right{
+        width: 100vw;
+        height: 8vh;
+        top: 6%;
+        border-radius: 0px;
+    }
+    
+    .menu-wrapper{
+        top: 14%;
+        width: 80vw;
+    }
+
+    .search-bar h1{
+        font-size: large;
+    }
+
+    .search-bar input{
+        width: 90px;
+        margin-left: 45px;
     }
 }
