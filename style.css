@@ -116,7 +116,7 @@ header{
 
 .menu{
     height: 87vh;
-    width: 90%;
+    width: 95%;
 
     color: #0B0B0B;
     font-family: Dosis;
@@ -160,8 +160,45 @@ header{
 
 .menu::-webkit-scrollbar-thumb{
     width: 20px;
-    background-color: rgb(77, 77, 77);
+    background-color: black;
     border-radius: 10px;
+}
+
+.menu-button{
+    position: absolute;
+    top: 46%;
+    left: 28%;
+
+    width: 35px;
+    height: 10vh;
+
+    background-color: #4A777E;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu-button div{
+    width: 6px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.menu-button .div1{
+    height: 7vh;
+    margin-left: 5px;
+    margin-right: 2.5px;
+}
+
+.menu-button .div2{
+    height: 6vh;
+    margin-left: 2.5px;
+    margin-right: 5px;
 }
 
 .print-hover, .user-report-hover{
