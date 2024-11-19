@@ -383,3 +383,90 @@ header{
         margin-left: 45px;
     }
 }
+
+/** 
+    CSS of login.html
+*/
+
+.login-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-titles h2{
+    font-size: 200%;
+    color: #0B0B0B;
+    text-align: center;
+    font-family: Dosis;
+
+    margin-top: 20vh;
+    margin-bottom: 10px;
+}
+
+.login-titles h1{
+    font-size: 300%;
+    color: #0B0B0B;
+    text-align: center;
+    font-family: Dosis;
+
+    margin: 10px;
+}
+
+.login-section a{
+    text-decoration: underline;
+    color: #253EE2;
+}
+
+.login-section form{
+    background-color: #728F90;
+    border-radius: 30px;
+
+    width: 20vw;
+    height: 30vh;
+    padding: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-section form p{
+    font-family: Dosis;
+    font-size: large;
+    text-align: left;
+    margin-bottom: 4px;   
+}
+
+.username-p{
+    margin-top: 0px;
+}
+
+
+.username, .password{
+    font-family: Dosis;
+    font-size: large;
+    padding: 3px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section .submit{
+    margin-top: 40px;
+    width: 110px;
+
+    padding: 8px;
+    border-radius: 10px;
+    border-style: none;
+
+    font-family: Dosis;
+    font-weight: 700;
+    font-size: x-large;
+}
