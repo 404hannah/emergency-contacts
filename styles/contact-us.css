@@ -26,6 +26,8 @@ section p{
 }
 
 form{
+    position: relative;
+    
     background-color: #728F90;
     border-radius: 30px;
 

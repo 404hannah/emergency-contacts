@@ -27,9 +27,9 @@ header{
 
 .header-left{
    width: 35%;
-    left: 0px;
-    border-bottom-right-radius: 30px;
-    justify-content: center;
+   left: 0px;
+   border-bottom-right-radius: 30px;
+   justify-content: center;
 }
 
 .header-left h1{
@@ -65,8 +65,9 @@ header{
     margin-right: 30px;
 
     padding-left: 15px;
+    padding-right: 65px;
     font-family: Dosis;
-    font-size: large;
+    font-size: medium;
 
     position: relative;
 }
