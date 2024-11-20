@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>About</title>
+        <title>Contact Us</title>
         
+        <link rel="stylesheet" href="contact-us.css">
         <link rel="stylesheet" href="header.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -27,6 +28,23 @@
                 <i class='bx bxs-moon bx-lg'></i>
             </div>
         </header>
+
+        <section>
+            <div class="text-above">
+                <h1>CONTACT US</h1>
+                <p>Thank you for reaching out! Please provide details about the issue you're experiencing so we can assist you promptly.</p>
+            </div>
+
+            <form>
+                <p class="email-text">Email Address:</p>
+                <input type="text" class="email">
+                <p>Subject:</p>
+                <input type="text" class="subject">
+                <p>Description of the Problem:</p>
+                <textarea class="description" name="description" rows="6" cols="80"></textarea>
+                <div><input type="button" class="submit" value="Submit"></div>
+            </form>
+        </section>
 
         <script src="script.js"></script>
     </body>
