@@ -1,0 +1,135 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    margin-left: 12.5vw;
+    margin-top: 22vh;
+}
+
+section h2{
+    color: #0B0B0B;
+    text-align: left;
+    font-family: Dosis;
+    font-size: 175%;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+section h1{
+    color: #0B0B0B;
+    text-align: left;
+    font-family: Dosis;
+    font-size: 250%;
+    margin-bottom: 2px;
+}
+
+.results{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    background-color: #728F90;
+    border-radius: 30px;
+
+    width: 70vw;
+    height: 50vh;
+
+    padding-top: 1.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 1.5%;
+}
+
+.main-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+}
+
+.back{
+    margin-top: 15px;
+    width: 325px;
+
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    padding-right: 20px;
+
+    border-style: solid;
+    border-width: 8px;
+    border-color: #5D6769;
+    border-radius: 15px;
+
+    background-color: #DAE9E9;
+
+    font-family: Dosis;
+    color: black;
+    font-weight: 700;
+    font-size: 175%;
+}
+
+.user-report-hover{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    width: 360px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 10px;
+    
+
+    height: 50px;
+    background-color: rgba(204, 199, 199, 0.90);
+    color: black;
+
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+    visibility: hidden;
+}
+
+.pop-up{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.user-report-hover img{
+    margin-right: 5px;
+}
+
+.user-report{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+    border-color: #2F3030;
+    border-width: 5px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    visibility: visible;
+}
+
+.user-report img{
+    margin-right: 0px;
+}
+
+.user-report{
+    bottom: 25px;
+    background-color: orange;
+}

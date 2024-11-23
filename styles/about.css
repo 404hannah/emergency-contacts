@@ -4,7 +4,7 @@ section{
     align-items: start;
 
     margin-left: 12.5vw;
-    margin-top: 22vh;
+    margin-top: 20vh;
 }
 
 section h2{
@@ -13,10 +13,10 @@ section h2{
     font-family: Dosis;
     font-size: 175%;
     margin-top: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
-.results{
+.about-box{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -37,62 +37,63 @@ section h2{
 .main-contents{
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     width: 70vw;
 }
 
-.main-contents p{
-    color: #313131;
+.main-contents h4{
+    color: #0B0B0B;
     font-family: Dosis;
-    font-size: medium;
-    font-style: normal;
-    font-weight: 700;
+    font-size: large;
+    font-weight: bold;
 
-    margin-top: 0px;
-    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-.user-report-hover{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-
-    width: 360px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-left: 10px;
+.main-contents p{
+    color: #0B0B0B;
+    font-family: Dosis;
+    font-size: large;
+    font-weight: 400;
     
-    height: 50px;
-    background-color: rgba(204, 199, 199, 0.90);
-    color: black;
-
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-
-    visibility: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.pop-up{
+.main-contents .p2{
+    width: 600px;
+}
+
+.main-contents ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.main-contents li{
+    color: #0B0B0B;
+    font-family: Dosis;
+    font-size: large;
+    font-weight: 500;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.report-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: start;
-}
+    justify-content: end;
 
-.user-report-hover img{
-    margin-right: 5px;
+    width: 70vw;
+    margin-bottom: 0px;
 }
 
 .user-report{
-    width: 40px;
+    width: 150px;
     height: 40px;
 
-    border-radius: 10px;
+    border-radius: 15px;
     border-color: #2F3030;
     border-width: 5px;
     border-style: solid;
@@ -103,13 +104,21 @@ section h2{
     justify-content: center;
 
     visibility: visible;
+
+    bottom: 25px;
+    background-color: #D76B1E;
 }
 
 .user-report img{
     margin-right: 0px;
 }
 
-.user-report{
-    bottom: 25px;
-    background-color: orange;
+.user-report p{
+    color: #0B0B0B;
+    text-align: center;
+    font-family: Dosis;
+    font-size: larger;
+    font-weight: 700;
+
+    margin-left: 5px;
 }
