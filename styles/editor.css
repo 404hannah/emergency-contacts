@@ -1,0 +1,64 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    margin-left: 12.5vw;
+    margin-top: 28vh;
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #728F90;
+    border-radius: 30px;
+
+    width: 70vw;
+    height: 55vh;
+
+    padding-top: 1.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 1.5%;
+}
+
+form p{
+    font-family: Dosis;
+    font-size: x-large;
+    font-weight: 500;
+
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+form input{
+    margin-right: 40px;
+    margin-bottom: 10px;
+
+    font-family: Dosis;
+    font-size: medium;
+
+    padding: 5px;
+    width: 400px;
+}
+
+.first-row, .middle-row, .last-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 70vw;
+}   
+
+.middle-row input{
+    margin-right: 40px;
+    width: 850px;
+}

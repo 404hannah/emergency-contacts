@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Editor Page</title>
+        
+        <link rel="stylesheet" href="../styles/header-editor.css">
+        <link rel="stylesheet" href="../styles/editor.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header class="header-left">
+            <h2>TARLAC EMERGENCY CONTACTS</h2>
+            <h1>CM</h1>
+        </header>
+        <header class="header-right">
+            <div class="log-out">
+                <p>LOG OUT</p>
+            </div>
+            <div class="switch-mode"  onclick="switchMode()">
+                <i class='bx bxs-moon bx-lg'></i>
+            </div>
+        </header>
+
+        <section>
+            <form>
+                <div class="first-row">
+                    <div clas="column">
+                        <p class="municipality-text">Municipality:</p>
+                        <input type="text" class="municipality">
+                    </div>
+
+                    <div clas="column">
+                        <p>Category:</p>
+                        <input type="text" class="category">
+                    </div>
+                </div>
+
+                <div class="middle-row">
+                    <div clas="column">
+                        <p>Institution:</p>
+                        <input type="text" class="institution">
+                    </div>
+                </div>
+
+                <div class="last-row">
+                    <div clas="column">
+                        <p>Contact Information:</p>
+                        <input type="text" class="contact-info">
+                    </div>
+                    <div clas="column">
+                        <p>URL from Google Maps:</p>
+                        <input type="text" class="google-maps">
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #C7E5F4;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: fixed;
+    top: 0px;
+
+    background-color: #4A777E;
+    height: 13vh;
+}
+
+.header-left{
+   width: 45%;
+   left: 0px;
+   border-bottom-right-radius: 30px;
+   justify-content: center;
+}
+
+.header-left h1{
+    color: #1AE8FF;
+    font-family: Domine;
+    font-size: 350%;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+}
+
+.header-left h2{
+    color: #0B0B0B;
+    font-family: Dosis;
+    font-size: xx-large;
+    font-weight: 700;
+    text-align: center;
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.header-right{
+    width: 25%;
+    right: 0px;
+    border-bottom-left-radius: 30px;
+    justify-content: center;
+}
+
+.log-out{
+    width: 150px;
+    height: 40px;
+
+    border-radius: 15px;
+    border-color: #2F3030;
+    border-width: 5px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    visibility: visible;
+
+    bottom: 25px;
+    background-color: red;
+
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.log-out p{
+    color: #EEE0E0;
+    text-align: center;
+    font-family: Dosis;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.switch-mode{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+
+    margin-left: 20px;
+    margin-right: 30px;
+    border-radius: 30px;
+}
+
+.switch-mode i{
+    margin-top: 1px;
+    margin-left: 2px;
+}
+
+
+@media only screen and (min-width: 1281px){
+
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1200px){
+    .header-left h2{
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px){
+    .header-left h2{
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px){
+    .header-left{
+        width: 100vw;
+        height: 6.5vh;
+        border-radius: 0px;
+    }
+
+    .header-right{
+        width: 100vw;
+        height: 6.5vh;
+        top: 6.5%;
+        border-radius: 0px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .header-left{
+        width: 100vw;
+        height: 6vh;
+        border-radius: 0px;
+    }
+
+    .header-left h2{
+        font-size: larger;
+    }
+
+    .header-right{
+        width: 100vw;
+        height: 8vh;
+        top: 6%;
+        border-radius: 0px;
+    }
+}
