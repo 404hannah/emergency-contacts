@@ -44,7 +44,7 @@ section h2{
 .main-contents h4{
     color: #0B0B0B;
     font-family: Dosis;
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
 
     margin-top: 20px;
@@ -54,7 +54,7 @@ section h2{
 .main-contents p{
     color: #0B0B0B;
     font-family: Dosis;
-    font-size: large;
+    font-size: medium;
     font-weight: 400;
     
     margin-top: 5px;
@@ -65,22 +65,19 @@ section h2{
     width: 600px;
 }
 
-.main-contents ul{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 .main-contents li{
     color: #0B0B0B;
     font-family: Dosis;
-    font-size: large;
+    font-size: medium;
     font-weight: 500;
-
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
-.buttons{
+.log-in a{
+   color: blue;
+   text-decoration: underline;
+}
+
+.report-container{
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -119,33 +116,4 @@ section h2{
     font-weight: 700;
 
     margin-left: 5px;
-}
-
-.log-in{
-    width: 150px;
-    height: 40px;
-
-    border-radius: 15px;
-    border-color: #2F3030;
-    border-width: 5px;
-    border-style: solid;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    bottom: 25px;
-    background-color: red;
-
-    margin-left: 30px;
-    margin-right: 20px;
-}
-
-.log-in p{
-    color: #0B0B0B;
-    text-align: center;
-    font-family: Dosis;
-    font-size: larger;
-    font-weight: 700;
 }
