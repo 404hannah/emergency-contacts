@@ -60,5 +60,54 @@ form input{
 
 .middle-row input{
     margin-right: 40px;
+
     width: 850px;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 30px;
+    width: 70vw;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    width: 900px;
+}
+
+.add, .edit{
+    margin-right: 40px;
+    width: 150px;
+
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    border-style: none;
+
+    font-family: Dosis;
+    font-weight: 700;
+    font-size: x-large;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px){
+    form input{
+        width: 142px;
+    }
+
+    .middle-row input{
+        width: 300px;
+    }
+
+    form p{
+        font-size: larger;
+        margin-left: 5px;
+    }
 }
