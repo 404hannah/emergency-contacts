@@ -24,6 +24,8 @@ section{
     font-family: Dosis;
     font-size: xx-large;
     font-weight: 700;
+
+    cursor: pointer;
 }
 
 .tabs .view{
@@ -99,7 +101,7 @@ form select{
     width: 400px;
 }
 
-.container{
+.container-manage{
     width: 60vw;
     height: 45vh;
 
@@ -148,6 +150,34 @@ form select{
     color: black;
     font-size: x-large;
     text-align: center;
+}
+
+.container-view{
+    width: 60vw;
+    height: 45vh;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    width: 60vw;
+    height: 45vh;
+}
+
+table, th, td{
+    border-style: solid;
+    border-width: 3px;  
+    border-color: black;
+    border-collapse: collapse; 
+
+    font-family: Dosis;
+    color: black;
+    font-size: large;
+    text-align: center;
+    padding: 5px;
 }
 
 @media only screen and (max-width: 800px){

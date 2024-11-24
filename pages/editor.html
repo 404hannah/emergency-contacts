@@ -31,10 +31,35 @@
         <section>
             <form>
                 <div class="tabs">
-                    <div class="view">VIEW MODE</div>
-                    <div class="manage">MANAGE MODE</div>
+                    <div class="view" onclick="viewMode()">VIEW MODE</div>
+                    <div class="manage" onclick="manageMode()">MANAGE MODE</div>
                 </div>
-                <div class="container">
+                <div class="container-view">
+                    <table>
+                        <tr>
+                            <th>Municipality</th>
+                            <th>Category</th>
+                            <th>Institution</th>
+                            <th>Contact Information</th>
+                            <th>Url from Google Maps</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="container-manage">
                     <div class="first-row">
                         <div clas="column">
                             <p class="municipality-text">Municipality:</p>
@@ -72,5 +97,7 @@
                 </div>
             </form>
         </section>
+
+        <script src="../scripts/tabs.js"></script>
     </body>
 </html>
