@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Editor Page</title>
+        <title>Edit Content</title>
         
         <link rel="stylesheet" href="../styles/header-editor.css">
-        <link rel="stylesheet" href="../styles/editor.css">
+        <link rel="stylesheet" href="../styles/edit.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,36 +38,37 @@
                     <div class="first-row">
                         <div clas="column">
                             <p class="municipality-text">Municipality:</p>
-                            <select class="municipality"></select>
+                            <input type="text" class="municipality">
                         </div>
     
                         <div clas="column">
                             <p>Category:</p>
-                            <select class="category"></select>
+                            <input type="text" class="category">
                         </div>
                     </div>
     
                     <div class="middle-row">
                         <div clas="column">
                             <p>Institution:</p>
-                            <select class="institution"></select>
+                            <input type="text" class="institution">
                         </div>
                     </div>
     
                     <div class="last-row">
                         <div clas="column">
                             <p>Contact Information:</p>
-                            <select class="contact-info"></select>
+                            <input type="text" class="contact-info">
                         </div>
                         <div clas="column">
                             <p>URL from Google Maps:</p>
-                            <select class="google-maps"></select>
+                            <input type="text" class="google-maps">
                         </div>
                     </div>
     
                     <div class="buttons">
-                        <a class="edit" href="edit.html">EDIT CONTENT</a>
-                        <a class="add" href="add.html">ADD CONTENT</a>
+                        <a class="cancel" href="editor.html">CANCEL</a>
+                        <a class="save">SAVE EDIT</a>
+                        <a class="delete">DELETE CONTENT</a>
                     </div>
                 </div>
             </form>

@@ -88,7 +88,7 @@ form p{
     margin-left: 10px;
 }
 
-form select{
+form input{
     margin-right: 40px;
     margin-bottom: 10px;
 
@@ -118,10 +118,10 @@ form select{
     width: 60vw;
 }   
 
-.middle-row select{
+.middle-row input{
     margin-right: 40px;
 
-    width: 840px;
+    width: 850px;
 }
 
 .buttons{
@@ -134,9 +134,25 @@ form select{
     width: 60vw;
 }
 
-.add, .edit{
+.save, .cancel{
     margin-right: 40px;
     width: 175px;
+
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    border-style: none;
+
+    font-family: Dosis;
+    font-weight: 700;
+    color: black;
+    font-size: x-large;
+    text-align: center;
+}
+
+.cancel{
+    margin-right: 40px;
+    width: 125px;
 
     background-color: white;
     padding: 8px;
