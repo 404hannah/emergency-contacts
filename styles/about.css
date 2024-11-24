@@ -80,7 +80,7 @@ section h2{
     margin-bottom: 5px;
 }
 
-.report-container{
+.buttons{
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -103,8 +103,6 @@ section h2{
     align-items: center;
     justify-content: center;
 
-    visibility: visible;
-
     bottom: 25px;
     background-color: #D76B1E;
 }
@@ -121,4 +119,33 @@ section h2{
     font-weight: 700;
 
     margin-left: 5px;
+}
+
+.log-in{
+    width: 150px;
+    height: 40px;
+
+    border-radius: 15px;
+    border-color: #2F3030;
+    border-width: 5px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    bottom: 25px;
+    background-color: red;
+
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.log-in p{
+    color: #0B0B0B;
+    text-align: center;
+    font-family: Dosis;
+    font-size: larger;
+    font-weight: 700;
 }

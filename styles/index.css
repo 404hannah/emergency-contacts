@@ -1,6 +1,6 @@
 .menu-wrapper{
     position: absolute;
-    visibility: visible;
+    display: block;
     top: 13%;
 
     background-color: #4A777E;

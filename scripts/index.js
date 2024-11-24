@@ -66,10 +66,10 @@ function menu(){
     const menuBtn = document.querySelector('.menu-button');
 
     if(menuBtn.style.left == '0%'){
-        menuElem.style.visibility = 'visible';
+        menuElem.style.display = 'block';
         menuBtn.style.left = '28%';
     } else {
-        menuElem.style.visibility = 'hidden';
+        menuElem.style.display = 'none';
         menuBtn.style.left = '0%';
     }
 }

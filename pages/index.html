@@ -16,14 +16,14 @@
 
     <body>
         <header class="header-left">
-            <h1>TARLAC EMERGENCY CONTACTS</h1>
+            <a href="index.html">TARLAC EMERGENCY CONTACTS</a>
         </header>
         <header class="header-right">
             <div class="search-bar">
                 <input type="text">
                 <i class='bx bx-search bx-md'></i>
             </div>
-            <a href="html/about.html">ABOUT</a>
+            <a href="about.html">ABOUT</a>
             <div class="switch-mode" onclick="switchMode()">
                 <i class='bx bxs-moon bx-lg' id="bx-mode"></i>
             </div>
@@ -69,9 +69,9 @@
         <div class="user-report-hover">
             <img src="../icons/info.png" alt="Information icon" width="30" height="30">
             Report an Issue about the Website
-            <div class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()">
+            <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="contact-us.html">
                 <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
-            </div>
+            </a>
         </div>
 
         <script src="../scripts/index.js"></script>
