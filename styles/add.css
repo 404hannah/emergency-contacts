@@ -173,7 +173,7 @@ form input{
     height: 45vh;
 
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -195,6 +195,15 @@ table, th, td{
     text-align: center;
     padding: 5px;
 }
+
+th, td{
+    flex: 1;
+}
+
+.institution{
+    flex: 2;
+}
+
 
 @media only screen and (max-width: 800px){
     form input{
