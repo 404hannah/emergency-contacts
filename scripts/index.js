@@ -21,8 +21,14 @@ function reportHoverOut(){
 function switchMode(){
     const bxModeId = document.getElementById('bx-mode');
     const bodyElem = document.querySelector('body');
-    const headerLeftH1 = document.querySelector('.header-left h1');
+    const headerLeft = document.querySelector('.header-left');
+    const headerRight = document.querySelector('.header-right');
+    const headerLeftA = document.querySelector('.header-left a');
     const headerRightA = document.querySelector('.header-right a');
+    const menuWrapper = document.querySelector('.menu-wrapper');
+    const menuButton = document.querySelector('.menu-button');
+    const menuButtonDiv1 = document.querySelector('.menu-button .div1');
+    const menuButtonDiv2 = document.querySelector('.menu-button .div2');
     const printElem = document.querySelector('.print');
     const reportElem = document.querySelector('.user-report');
 
@@ -34,8 +40,16 @@ function switchMode(){
 
         bodyElem.style.background = '#1B1919'; // rgba(217, 217, 217, 0.25) does not have the same effect
 
-        headerLeftH1.style.color = 'white';
+        headerLeft.style.backgroundColor = '#1D5C67';
+        headerRight.style.backgroundColor = '#1D5C67';
+
+        headerLeftA.style.color = 'white';
         headerRightA.style.color = 'white';
+
+        menuWrapper.style.backgroundColor = '#1D5C67';
+        menuButton.style.backgroundColor = '#1D5C67';
+        menuButtonDiv1.style.backgroundColor = 'white';
+        menuButtonDiv2.style.backgroundColor = 'white';
 
         menuAElems.forEach(menuAElem => {
             menuAElem.style.color = 'white';
@@ -49,8 +63,16 @@ function switchMode(){
 
         bodyElem.style.background = '#C7E5F4';
 
-        headerLeftH1.style.color = '#0B0B0B';
+        headerLeft.style.backgroundColor = '#4A777E';
+        headerRight.style.backgroundColor = '#4A777E';
+
+        headerLeftA.style.color = '#0B0B0B';
         headerRightA.style.color = '#0B0B0B';
+
+        menuWrapper.style.backgroundColor = '#4A777E';
+        menuButton.style.backgroundColor = '#4A777E';
+        menuButtonDiv1.style.backgroundColor = 'black';
+        menuButtonDiv2.style.backgroundColor = 'black';
 
         menuAElems.forEach(menuAElem => {
             menuAElem.style.color = '#0B0B0B';

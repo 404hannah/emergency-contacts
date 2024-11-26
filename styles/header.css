@@ -29,7 +29,14 @@ header{
    width: 35%;
    left: 0px;
    border-bottom-right-radius: 30px;
+
+   display: flex;
+   flex-direction: row;
+   align-items: center;
    justify-content: center;
+
+   padding-left: 5px;
+   padding-right: 5px;
 }
 
 .header-left a{
@@ -48,12 +55,21 @@ header{
     width: 45%;
     right: 0px;
     border-bottom-left-radius: 30px;
-    justify-content: space-between;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .search-bar {
     position: relative; 
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 350px;
 
     margin-left: 50px;
     margin-right: 20px;
@@ -63,7 +79,9 @@ header{
 }
 
 .search-bar input{
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+
     height: 45px;
     border-radius: 30px;
     border: none;
@@ -112,15 +130,9 @@ header{
     margin-left: 2px;
 }
 
-@media only screen and (min-width: 1001px) and (max-width: 1200px){
-    .header-left a{
-        font-size: x-large;
-    }
-}
-
 @media only screen and (min-width: 801px) and (max-width: 1000px){
     .search-bar{
-        margin-left: 20px;
+        margin-left: 30px;
         margin-right: 10px;
     }
 
@@ -132,26 +144,26 @@ header{
 
     .switch-mode{
         margin-left: 10px;
-        margin-right: 20px;
+        margin-right: 30px;
     }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 800px){
     .header-left{
         width: 100vw;
-        height: 6.5vh;
+        height: 6vh;
         border-radius: 0px;
     }
 
     .header-right{
         width: 100vw;
-        height: 6.5vh;
-        top: 6.5%;
+        height: 8vh;
+        top: 6%;
         border-radius: 0px;
     }
 
     .search-bar{
-        margin-left: 20px;
+        margin-left: 30px;
         margin-right: 10px;
     }
 
@@ -163,7 +175,7 @@ header{
 
     .switch-mode{
         margin-left: 10px;
-        margin-right: 20px;
+        margin-right: 30px;
     }
 }
 
@@ -176,6 +188,8 @@ header{
 
     .header-left a{
         font-size: larger;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
     .header-right{
@@ -186,18 +200,12 @@ header{
     }
 
     .search-bar{
-        margin-left: 20px;
-        margin-right: 5px;
-    }
-
-    .header-left a{
-        font-size: x-large;
-        margin-left: 5px;
+        margin-left: 30px;
         margin-right: 5px;
     }
 
     .switch-mode{
         margin-left: 5px;
-        margin-right: 20px;
+        margin-right: 30px;
     }
 }
