@@ -119,7 +119,7 @@ CREATE TABLE `hospitals` (
 --
 
 INSERT INTO `hospitals` (`Hospital_ID`, `Municipality`, `Category`, `Institution`, `Contact Information`, `URL from Google Maps`) VALUES
-(1, 'Tarlac City', 'Hospital', 'Central Luzon Doctor\'s Hospital', '+63(045) 925 2534', 'https://maps.app.goo.gl/qQLfiStWko9Wuqkm7'),
+(1, 'Tarlac City', 'Hospital', 'Central Luzon Doctors Hospital', '+63(045) 925 2534', 'https://maps.app.goo.gl/qQLfiStWko9Wuqkm7'),
 (2, 'Tarlac City', 'Hospital', 'Tarlac Medical Center', '+63 (045) 809 0050', 'https://maps.app.goo.gl/RWjyHxWXFTLC9Mgh9'),
 (3, 'Tarlac City', 'Hospital', 'Jecsons Medical Center', '+63 (45) 982 5501', 'https://maps.app.goo.gl/Ef8gkJxCgzCoYbmWA'),
 (4, 'Tarlac City', 'Hospital', 'Ramos General Hospital', '+63 (45) 982 5415', 'https://maps.app.goo.gl/7kLy6a1moVN19vrj8'),
