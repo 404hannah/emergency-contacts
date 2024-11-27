@@ -163,11 +163,11 @@
                                 <p>Category:</p>
                                 <select class="category" onchange="Category()">
                                     <option value="" disabled selected>Select category</option>
-                                    <option value="Fire Department">Fire Department</option>
-                                    <option value="Government Organization">Government Organization</option>
-                                    <option value="Hospital">Hospital</option>
-                                    <option value="Non-Governmental Organization">Non-Governmental Organization</option>
-                                    <option value="Police Station">Police Station</option>
+                                    <option value="fire_departments">Fire Department</option>
+                                    <option value="government_orgs">Government Organization</option>
+                                    <option value="hospitals">Hospital</option>
+                                    <option value="non-governmental_orgs">Non-Governmental Organization</option>
+                                    <option value="police_stations">Police Station</option>
                                 </select>  
                             </div>
                         </div>
@@ -184,34 +184,16 @@
 
                                         if (isset($_GET['category'])) {
                                             $category = $_GET['category'];
-                                        }
 
-                                        switch($category){
-                                            case "Fire Department":
-                                                $category = "fire_departments";
-                                                break;
-                                            case "Government Organization":
-                                                $category = "government_orgs";
-                                                break;
-                                            case "Hospital":
-                                                $category = "hospitals";
-                                                break;
-                                            case "Non-Governmental Organization":
-                                                $category = "non-governmental_orgs";
-                                                break;
-                                            case "Police Station":
-                                                $category = "police_stations";
-                                                break;
-                                        }
+                                            $fetch_insti = mysqli_query($conn, "SELECT Institution FROM $category WHERE Municipality='$municipality'");
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT Institution FROM $category WHERE Municipality='$municipality'");
-
-                                        if (mysqli_num_rows($fetch_insti) > 0){
-                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
-                                               <option value="<?php echo $fetch_row['Institution'] ?>"> <?php echo $fetch_row['Institution'] ?> </option>
-                                            <?php }
-                                        } else {
-                                            echo "No Records.";
+                                            if (mysqli_num_rows($fetch_insti) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
+                                                <option value="<?php echo $fetch_row['Institution'] ?>"> <?php echo $fetch_row['Institution'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
                                         }
                                     ?>
                                 </select>
@@ -228,14 +210,19 @@
                                             $municipality = $_GET['municipality'];
                                         }
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT `Contact Information` FROM police_stations WHERE Municipality='$municipality'");
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
 
-                                        if (mysqli_num_rows($fetch_insti) > 0){
-                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
-                                               <option value="<?php echo $fetch_row['Contact Information'] ?>"> <?php echo $fetch_row['Contact Information'] ?> </option>
-                                            <?php }
-                                        } else {
-                                            echo "No Records.";
+                                            $fetch_ci = mysqli_query($conn, "SELECT `Contact Information` FROM $category WHERE Municipality='$municipality'");
+
+                                            if (mysqli_num_rows($fetch_ci) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_ci)){ ?>
+                                                <option value="<?php echo $fetch_row['Contact Information'] ?>"> <?php echo $fetch_row['Contact Information'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
+
                                         }
                                     ?>
                                 </select>
@@ -249,14 +236,19 @@
                                             $municipality = $_GET['municipality'];
                                         }
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT `URL from Google Maps` FROM police_stations WHERE Municipality='$municipality'");
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
 
-                                        if (mysqli_num_rows($fetch_insti) > 0){
-                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
-                                               <option value="<?php echo $fetch_row['URL from Google Maps'] ?>"> <?php echo $fetch_row['URL from Google Maps'] ?> </option>
-                                            <?php }
-                                        } else {
-                                            echo "No Records.";
+                                            $fetch_maps = mysqli_query($conn, "SELECT `URL from Google Maps` FROM $category WHERE Municipality='$municipality'");
+
+                                            if (mysqli_num_rows($fetch_maps) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_maps)){ ?>
+                                                <option value="<?php echo $fetch_row['URL from Google Maps'] ?>"> <?php echo $fetch_row['URL from Google Maps'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
+
                                         }
                                     ?>
                                 </select>

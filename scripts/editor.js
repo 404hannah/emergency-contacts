@@ -12,7 +12,6 @@ function Municipality(){
 
     chosenCategory = getVariable('category');
 
-    alert("Running!");
     if(chosenCategory == undefined){
         window.location.href = "editor.php?municipality=" + encodeURIComponent(chosen);
     } else {
@@ -26,7 +25,6 @@ function Category(){
 
     chosen = getVariable('municipality');
 
-    alert("Running 2!");
     if(chosen == undefined){
         window.location.href = "editor.php?category=" + encodeURIComponent(chosenCategory);
     } else {
