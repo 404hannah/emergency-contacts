@@ -97,7 +97,9 @@
                                         echo "No Records.";
                                     }
                                     
-                                    /* if (mysqli_num_rows($fetch_ngos) > 0){
+                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non-governmental_orgs");
+
+                                    if (mysqli_num_rows($fetch_ngos) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
                                             <tr>
                                                 <td><?php echo $fetch_row['Municipality'] ?></td>
@@ -134,7 +136,7 @@
                         <div class="first-row">
                             <div clas="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <select class="municipality">
+                                <select class="municipality" onselect="Municpality()">
                                     <option value="" disabled selected>Select municipality</option>
                                     <option value="Tarlac City">TARLAC CITY</option>
                                     <option value="Anao">ANAO</option>
@@ -173,18 +175,69 @@
                         <div class="middle-row">
                             <div clas="column">
                                 <p>Institution:</p>
-                                <select class="institution"></select>
+                                <select class="institution">
+                                    <option value="" disabled selected>Select institutions from a municpality</option>
+                                    <?php
+                                        /* if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        } */
+
+                                        $fetch_insti = mysqli_query($conn, "SELECT Institution FROM police_stations");
+
+                                        if (mysqli_num_rows($fetch_insti) > 0){
+                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
+                                               <option value="<?php echo $fetch_row['Institution'] ?>"> <?php echo $fetch_row['Institution'] ?> </option>
+                                            <?php }
+                                        } else {
+                                            echo "No Records.";
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
         
                         <div class="last-row">
                             <div clas="column">
                                 <p>Contact Information:</p>
-                                <select class="contact-info"></select>
+                                <select class="contact-info">
+                                    <option value="" disabled selected>Select contact information from a municpality</option>
+                                    <?php
+                                        /* if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        } */
+
+                                        $fetch_insti = mysqli_query($conn, "SELECT `Contact Information`  FROM police_stations");
+
+                                        if (mysqli_num_rows($fetch_insti) > 0){
+                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
+                                               <option value="<?php echo $fetch_row['Contact Information'] ?>"> <?php echo $fetch_row['Contact Information'] ?> </option>
+                                            <?php }
+                                        } else {
+                                            echo "No Records.";
+                                        }
+                                    ?>
+                                </select>
                             </div>
                             <div clas="column">
                                 <p>URL from Google Maps:</p>
-                                <select class="google-maps"></select>
+                                <select class="google-maps">
+                                    <option value="" disabled selected>Select URL from Google Maps from a municpality</option>
+                                    <?php
+                                        /* if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        } */
+
+                                        $fetch_insti = mysqli_query($conn, "SELECT `URL from Google Maps` FROM police_stations");
+
+                                        if (mysqli_num_rows($fetch_insti) > 0){
+                                            while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
+                                               <option value="<?php echo $fetch_row['URL from Google Maps'] ?>"> <?php echo $fetch_row['URL from Google Maps'] ?> </option>
+                                            <?php }
+                                        } else {
+                                            echo "No Records.";
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
         
