@@ -23,9 +23,9 @@
             <h1>CM</h1>
         </header>
         <header class="header-right">
-            <div class="log-out">
+            <a class="log-out" href="index.php">
                 <p>LOG OUT</p>
-            </div>
+            </a>
             <div class="switch-mode"  onclick="switchMode()">
                 <i class='bx bxs-moon bx-lg'></i>
             </div>
@@ -160,12 +160,12 @@
                             <div clas="column">
                                 <p>Category:</p>
                                 <select class="category">
-                                    <option value="" disabled selected>Select municipality</option>
-                                    <option value="Tarlac City">TARLAC CITY</option>
-                                    <option value="Anao">ANAO</option>
-                                    <option value="Bamban">BAMBAN</option>
-                                    <option value="Camiling">CAMILING</option>
-                                    <option value="Capas">CAPAS</option>
+                                    <option value="" disabled selected>Select category</option>
+                                    <option value="Fire Department">Fire Department</option>
+                                    <option value="Government Organization">Government Organization</option>
+                                    <option value="Hospital">Hospital</option>
+                                    <option value="Non-Governmental Organization">Non-Governmental Organization</option>
+                                    <option value="Police Station">Police Station</option>
                                 </select>  
                             </div>
                         </div>
