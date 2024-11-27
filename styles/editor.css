@@ -17,7 +17,7 @@ section{
     position: absolute;
     top: -60px;
     left: 0px;
-    z-index: -1;
+    z-index: 0;
 
     color: #0B0B0B;
     text-align: center;
@@ -69,14 +69,31 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    background-color: #728F90;
+
     border-radius: 30px;
 
     width: 70vw;
     height: 55vh;
     
     padding: 10px;
+}
+
+.sub-form{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #728F90;
+    border-radius: 30px;
+
+    width: 70vw;
+    height: 55vh;
+    padding: 10px;
+
+    z-index: 5;
 }
 
 form p{
@@ -109,18 +126,6 @@ form select{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.table-container{
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    
-    overflow-y: auto;
 }
 
 .first-row, .middle-row, .last-row{
@@ -165,13 +170,25 @@ form select{
 }
 
 .container-view{
-    width: 60vw;
-    height: 45vh;
+    width: 98%;
+    height: 98%;
 
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.table-container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    
+    overflow-y: auto;
 }
 
 .table-container::-webkit-scrollbar{
