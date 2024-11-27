@@ -82,7 +82,7 @@
                                     }
 
                                     $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals");
-
+                                    
                                     if (mysqli_num_rows($fetch_hospitals) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_hospitals)){ ?>
                                             <tr>
@@ -96,10 +96,8 @@
                                     } else {
                                         echo "No Records.";
                                     }
-
-                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non-governmental_orgs");
-
-                                    if (mysqli_num_rows($fetch_ngos) > 0){
+                                    
+                                    /* if (mysqli_num_rows($fetch_ngos) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
                                             <tr>
                                                 <td><?php echo $fetch_row['Municipality'] ?></td>
@@ -111,7 +109,7 @@
                                         <?php }
                                     } else {
                                         echo "No Records.";
-                                    }
+                                    } */
 
                                     $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations");
 
@@ -127,7 +125,7 @@
                                         <?php }
                                     } else {
                                         echo "No Records.";
-                                    } */
+                                    }
                                 ?>
                             </table>
                         </div>
@@ -136,12 +134,39 @@
                         <div class="first-row">
                             <div clas="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <select class="municipality"></select>
+                                <select class="municipality">
+                                    <option value="" disabled selected>Select municipality</option>
+                                    <option value="Tarlac City">TARLAC CITY</option>
+                                    <option value="Anao">ANAO</option>
+                                    <option value="Bamban">BAMBAN</option>
+                                    <option value="Camiling">CAMILING</option>
+                                    <option value="Capas">CAPAS</option>
+                                    <option value="Concepcion">CONCEPCION</option>
+                                    <option value="Gerona">GERONA</option>
+                                    <option value="La Paz">LA PAZ</option>
+                                    <option value="Mayontoc">MAYANTOC</option>
+                                    <option value="Moncada">MONCADA</option>
+                                    <option value="Paniqui">PANIQUI</option>
+                                    <option value="Pura">PURA</option>
+                                    <option value="Ramos">RAMOS</option>
+                                    <option value="San Clemente">SAN CLEMENTE</option>
+                                    <option value="San Jose">SAN JOSE</option>
+                                    <option value="San Miguel">SAN MANUEL</option>
+                                    <option value="Santa Ignacia">SANTA IGNACIA</option>
+                                    <option value="Victoria">VICTORIA</option>
+                                </select>
                             </div>
         
                             <div clas="column">
                                 <p>Category:</p>
-                                <select class="category"></select>
+                                <select class="category">
+                                    <option value="" disabled selected>Select municipality</option>
+                                    <option value="Tarlac City">TARLAC CITY</option>
+                                    <option value="Anao">ANAO</option>
+                                    <option value="Bamban">BAMBAN</option>
+                                    <option value="Camiling">CAMILING</option>
+                                    <option value="Capas">CAPAS</option>
+                                </select>  
                             </div>
                         </div>
         

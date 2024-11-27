@@ -93,7 +93,7 @@ form{
     height: 55vh;
     padding: 10px;
 
-    z-index: 5;
+    z-index: 1;
 }
 
 form p{
