@@ -186,7 +186,7 @@ CREATE TABLE `non-governmental_orgs` (
 --
 
 INSERT INTO `non-governmental_orgs` (`NGO_ID`, `Municipality`, `Category`, `Institution`, `Contact Information`, `URL from Google Maps`) VALUES
-(1, 'Tarlac City', 'Non-Governmental Organizations', 'Philippine Red Cross Tarlac Chapter', '+63 (043)982 0318', 'https://maps.app.goo.gl/L85QoooCf6VaJ23P7');
+(1, 'Tarlac City', 'Non-Governmental Organization', 'Philippine Red Cross Tarlac Chapter', '+63 (043)982 0318', 'https://maps.app.goo.gl/L85QoooCf6VaJ23P7');
 
 -- --------------------------------------------------------
 
