@@ -65,11 +65,13 @@ form{
     border-style: none;
 }
 
-form div{
+form .login{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    text-decoration: none;
 }
 
 .submit{
