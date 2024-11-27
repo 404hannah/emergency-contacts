@@ -136,7 +136,7 @@
                         <div class="first-row">
                             <div clas="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <select class="municipality" onselect="Municpality()">
+                                <select class="municipality" onchange="Municipality()">
                                     <option value="" disabled selected>Select municipality</option>
                                     <option value="Tarlac City">TARLAC CITY</option>
                                     <option value="Anao">ANAO</option>
@@ -161,7 +161,7 @@
         
                             <div clas="column">
                                 <p>Category:</p>
-                                <select class="category">
+                                <select class="category" onchange="Category()">
                                     <option value="" disabled selected>Select category</option>
                                     <option value="Fire Department">Fire Department</option>
                                     <option value="Government Organization">Government Organization</option>
@@ -176,13 +176,35 @@
                             <div clas="column">
                                 <p>Institution:</p>
                                 <select class="institution">
-                                    <option value="" disabled selected>Select institutions from a municpality</option>
+                                    <option value="" disabled selected>Select institutions from a municipality</option>
                                     <?php
-                                        /* if (isset($_GET['municipality'])) {
+                                        if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];
-                                        } */
+                                        }
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT Institution FROM police_stations");
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+                                        }
+
+                                        switch($category){
+                                            case "Fire Department":
+                                                $category = "fire_departments";
+                                                break;
+                                            case "Government Organization":
+                                                $category = "government_orgs";
+                                                break;
+                                            case "Hospital":
+                                                $category = "hospitals";
+                                                break;
+                                            case "Non-Governmental Organization":
+                                                $category = "non-governmental_orgs";
+                                                break;
+                                            case "Police Station":
+                                                $category = "police_stations";
+                                                break;
+                                        }
+
+                                        $fetch_insti = mysqli_query($conn, "SELECT Institution FROM $category WHERE Municipality='$municipality'");
 
                                         if (mysqli_num_rows($fetch_insti) > 0){
                                             while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
@@ -200,13 +222,13 @@
                             <div clas="column">
                                 <p>Contact Information:</p>
                                 <select class="contact-info">
-                                    <option value="" disabled selected>Select contact information from a municpality</option>
+                                    <option value="" disabled selected>Select contact information from a municipality</option>
                                     <?php
-                                        /* if (isset($_GET['municipality'])) {
+                                        if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];
-                                        } */
+                                        }
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT `Contact Information`  FROM police_stations");
+                                        $fetch_insti = mysqli_query($conn, "SELECT `Contact Information` FROM police_stations WHERE Municipality='$municipality'");
 
                                         if (mysqli_num_rows($fetch_insti) > 0){
                                             while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
@@ -221,13 +243,13 @@
                             <div clas="column">
                                 <p>URL from Google Maps:</p>
                                 <select class="google-maps">
-                                    <option value="" disabled selected>Select URL from Google Maps from a municpality</option>
+                                    <option value="" disabled selected>Select URL from Google Maps from a municipality</option>
                                     <?php
-                                        /* if (isset($_GET['municipality'])) {
+                                        if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];
-                                        } */
+                                        }
 
-                                        $fetch_insti = mysqli_query($conn, "SELECT `URL from Google Maps` FROM police_stations");
+                                        $fetch_insti = mysqli_query($conn, "SELECT `URL from Google Maps` FROM police_stations WHERE Municipality='$municipality'");
 
                                         if (mysqli_num_rows($fetch_insti) > 0){
                                             while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
@@ -251,5 +273,6 @@
         </section>
 
         <script src="../scripts/tabs.js"></script>
+        <script src="../scripts/editor.js"></script>
     </body>
 </html>
