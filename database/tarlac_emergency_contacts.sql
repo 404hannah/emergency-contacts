@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 04:59 AM
+-- Generation Time: Nov 27, 2024 at 06:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -186,7 +186,8 @@ CREATE TABLE `non-governmental_orgs` (
 --
 
 INSERT INTO `non-governmental_orgs` (`NGO_ID`, `Municipality`, `Category`, `Institution`, `Contact Information`, `URL from Google Maps`) VALUES
-(1, 'Tarlac City', 'Non-Governmental Organization', 'Philippine Red Cross Tarlac Chapter', '+63 (043)982 0318', 'https://maps.app.goo.gl/L85QoooCf6VaJ23P7');
+(1, 'Tarlac City', 'Non-Governmental Organization', 'Philippine Red Cross Tarlac Chapter', '+63 (043)982 0318', 'https://maps.app.goo.gl/L85QoooCf6VaJ23P7'),
+(2, 'Capas', 'Non-Governmental Organization', 'Aeta Ako, Pilipino Ako Inc.', '0917 875 0183', 'https://maps.app.goo.gl/AkHj85cyX2NZJq4EA');
 
 -- --------------------------------------------------------
 
@@ -298,7 +299,7 @@ ALTER TABLE `hospitals`
 -- AUTO_INCREMENT for table `non-governmental_orgs`
 --
 ALTER TABLE `non-governmental_orgs`
-  MODIFY `NGO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `NGO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `police_stations`
