@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2024 at 06:42 AM
+-- Generation Time: Nov 28, 2024 at 01:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -169,10 +169,10 @@ INSERT INTO `hospitals` (`Hospital_ID`, `Municipality`, `Category`, `Institution
 -- --------------------------------------------------------
 
 --
--- Table structure for table `non-governmental_orgs`
+-- Table structure for table `non_government_orgs`
 --
 
-CREATE TABLE `non-governmental_orgs` (
+CREATE TABLE `non_government_orgs` (
   `NGO_ID` int(11) NOT NULL,
   `Municipality` varchar(50) NOT NULL,
   `Category` varchar(50) NOT NULL,
@@ -182,10 +182,10 @@ CREATE TABLE `non-governmental_orgs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `non-governmental_orgs`
+-- Dumping data for table `non_government_orgs`
 --
 
-INSERT INTO `non-governmental_orgs` (`NGO_ID`, `Municipality`, `Category`, `Institution`, `Contact Information`, `URL from Google Maps`) VALUES
+INSERT INTO `non_government_orgs` (`NGO_ID`, `Municipality`, `Category`, `Institution`, `Contact Information`, `URL from Google Maps`) VALUES
 (1, 'Tarlac City', 'Non-Governmental Organization', 'Philippine Red Cross Tarlac Chapter', '+63 (043)982 0318', 'https://maps.app.goo.gl/L85QoooCf6VaJ23P7'),
 (2, 'Capas', 'Non-Governmental Organization', 'Aeta Ako, Pilipino Ako Inc.', '0917 875 0183', 'https://maps.app.goo.gl/AkHj85cyX2NZJq4EA');
 
@@ -262,9 +262,9 @@ ALTER TABLE `hospitals`
   ADD PRIMARY KEY (`Hospital_ID`);
 
 --
--- Indexes for table `non-governmental_orgs`
+-- Indexes for table `non_government_orgs`
 --
-ALTER TABLE `non-governmental_orgs`
+ALTER TABLE `non_government_orgs`
   ADD PRIMARY KEY (`NGO_ID`);
 
 --
@@ -296,9 +296,9 @@ ALTER TABLE `hospitals`
   MODIFY `Hospital_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `non-governmental_orgs`
+-- AUTO_INCREMENT for table `non_government_orgs`
 --
-ALTER TABLE `non-governmental_orgs`
+ALTER TABLE `non_government_orgs`
   MODIFY `NGO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
