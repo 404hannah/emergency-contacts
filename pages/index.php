@@ -26,6 +26,20 @@
             <div class="search-bar">
                 <input type="text" class="search-textbox">
                 <i class='bx bx-search bx-md' onclick="search()"></i>
+                <?php
+                    
+                   if (isset($_GET['search'])) {
+                        $search = $_GET['search'];
+
+                        $fetch_search = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution='$search'");
+                        
+                        if (mysqli_num_rows($fetch_search) > 0){
+                            echo "<script> result(); </script>";
+                        } else {
+                            echo "<script> noResult(); </script>";
+                        }
+                    }
+                ?>
             </div>
             <a href="about.html">ABOUT</a>
             <div class="switch-mode" onclick="switchMode()">

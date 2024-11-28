@@ -96,8 +96,8 @@
                                     } else {
                                         echo "No Records.";
                                     }
-                                    
-                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non-governmental_orgs");
+
+                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs");
 
                                     if (mysqli_num_rows($fetch_ngos) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
@@ -180,7 +180,7 @@
                                     <option value="fire_departments" <?php echo ($category == 'fire_departments') ? 'selected' : '';?>>Fire Department</option>
                                     <option value="government_orgs" <?php echo ($category == 'government_orgs') ? 'selected' : '';?>>Government Organization</option>
                                     <option value="hospitals" <?php echo ($category == 'hospitals') ? 'selected' : '';?>>Hospital</option>
-                                    <option value="non-governmental_orgs" <?php echo ($category == 'non-governmental_orgs') ? 'selected' : '';?>>Non-Governmental Organization</option>
+                                    <option value="non_government_orgs" <?php echo ($category == 'non_government_orgs') ? 'selected' : '';?>>Non-Governmental Organization</option>
                                     <option value="police_stations" <?php echo ($category == 'police_stations') ? 'selected' : '';?>>Police Station</option>
                                 </select>  
                             </div>
