@@ -14,13 +14,8 @@ function Municipality(){
 
     if(chosenCategory == undefined){
         window.location.href = "editor.php?municipality=" + encodeURIComponent(chosen);
-
-        // chosen.value = encodeURIComponent(chosen); 
     } else {
         window.location.href = "editor.php?municipality=" + encodeURIComponent(chosen) + "&category=" + encodeURIComponent(chosenCategory);
-        
-        /* chosen.value = encodeURIComponent(chosen); 
-        chosenCategory.value = encodeURIComponent(chosenCategory); */
     }    
 }
 
@@ -32,12 +27,7 @@ function Category(){
 
     if(chosen == undefined){
         window.location.href = "editor.php?category=" + encodeURIComponent(chosenCategory);
-
-        // chosenCategory.value = encodeURIComponent(chosenCategory);
     } else {
-        window.location.href = "editor.php?municipality=" + encodeURIComponent(chosen) + "&category=" + encodeURIComponent(chosenCategory);  
-        
-        /* chosen.value = encodeURIComponent(chosen); 
-        chosenCategory.value = encodeURIComponent(chosenCategory); */
+        window.location.href = "editor.php?municipality=" + encodeURIComponent(chosen) + "&category=" + encodeURIComponent(chosenCategory);
     }
 }

@@ -138,24 +138,31 @@
                                 <p class="municipality-text">Municipality:</p>
                                 <select class="municipality" onchange="Municipality()">
                                     <option value="" disabled selected>Select municipality</option>
-                                    <option value="Tarlac City">TARLAC CITY</option>
-                                    <option value="Anao">ANAO</option>
-                                    <option value="Bamban">BAMBAN</option>
-                                    <option value="Camiling">CAMILING</option>
-                                    <option value="Capas">CAPAS</option>
-                                    <option value="Concepcion">CONCEPCION</option>
-                                    <option value="Gerona">GERONA</option>
-                                    <option value="La Paz">LA PAZ</option>
-                                    <option value="Mayontoc">MAYANTOC</option>
-                                    <option value="Moncada">MONCADA</option>
-                                    <option value="Paniqui">PANIQUI</option>
-                                    <option value="Pura">PURA</option>
-                                    <option value="Ramos">RAMOS</option>
-                                    <option value="San Clemente">SAN CLEMENTE</option>
-                                    <option value="San Jose">SAN JOSE</option>
-                                    <option value="San Miguel">SAN MANUEL</option>
-                                    <option value="Santa Ignacia">SANTA IGNACIA</option>
-                                    <option value="Victoria">VICTORIA</option>
+                                    <?php 
+                                        if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        } else {
+                                            $municipality = "X";
+                                        }
+                                    ?>
+                                    <option value="Tarlac City" <?php echo ($municipality == 'Tarlac City') ? 'selected' : '';?>>TARLAC CITY</option>
+                                    <option value="Anao" <?php echo ($municipality == 'Anao') ? 'selected' : '';?>>ANAO</option>
+                                    <option value="Bamban" <?php echo ($municipality == 'Bamban') ? 'selected' : '';?>>BAMBAN</option>
+                                    <option value="Camiling" <?php echo ($municipality == 'Camiling') ? 'selected' : '';?>>CAMILING</option>
+                                    <option value="Capas" <?php echo ($municipality == 'Capas') ? 'selected' : '';?>>CAPAS</option>
+                                    <option value="Concepcion" <?php echo ($municipality == 'Concepcion') ? 'selected' : '';?>>CONCEPCION</option>
+                                    <option value="Gerona" <?php echo ($municipality == 'Gerona') ? 'selected' : '';?>>GERONA</option>
+                                    <option value="La Paz" <?php echo ($municipality == 'La Paz') ? 'selected' : '';?>>LA PAZ</option>
+                                    <option value="Mayantoc" <?php echo ($municipality == 'Mayantoc') ? 'selected' : '';?>>MAYANTOC</option>
+                                    <option value="Moncada" <?php echo ($municipality == 'Moncada') ? 'selected' : '';?>>MONCADA</option>
+                                    <option value="Paniqui" <?php echo ($municipality == 'Paniqui') ? 'selected' : '';?>>PANIQUI</option>
+                                    <option value="Pura" <?php echo ($municipality == 'Pura') ? 'selected' : '';?>>PURA</option>
+                                    <option value="Ramos" <?php echo ($municipality == 'Ramos') ? 'selected' : '';?>>RAMOS</option>
+                                    <option value="San Clemente" <?php echo ($municipality == 'San Clemente') ? 'selected' : '';?>>SAN CLEMENTE</option>
+                                    <option value="San Jose" <?php echo ($municipality == 'San Jose') ? 'selected' : '';?>>SAN JOSE</option>
+                                    <option value="San Miguel" <?php echo ($municipality == 'San Miguel') ? 'selected' : '';?>>SAN MANUEL</option>
+                                    <option value="Santa Ignacia" <?php echo ($municipality == 'Santa Ignacia') ? 'selected' : '';?>>SANTA IGNACIA</option>
+                                    <option value="Victoria" <?php echo ($municipality == 'Victoria') ? 'selected' : '';?>>VICTORIA</option>
                                 </select>
                             </div>
         
@@ -163,11 +170,18 @@
                                 <p>Category:</p>
                                 <select class="category" onchange="Category()">
                                     <option value="" disabled selected>Select category</option>
-                                    <option value="fire_departments">Fire Department</option>
-                                    <option value="government_orgs">Government Organization</option>
-                                    <option value="hospitals">Hospital</option>
-                                    <option value="non-governmental_orgs">Non-Governmental Organization</option>
-                                    <option value="police_stations">Police Station</option>
+                                    <?php 
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+                                        } else {
+                                            $category = "X";
+                                        }
+                                    ?>
+                                    <option value="fire_departments" <?php echo ($category == 'fire_departments') ? 'selected' : '';?>>Fire Department</option>
+                                    <option value="government_orgs" <?php echo ($category == 'government_orgs') ? 'selected' : '';?>>Government Organization</option>
+                                    <option value="hospitals" <?php echo ($category == 'hospitals') ? 'selected' : '';?>>Hospital</option>
+                                    <option value="non-governmental_orgs" <?php echo ($category == 'non-governmental_orgs') ? 'selected' : '';?>>Non-Governmental Organization</option>
+                                    <option value="police_stations" <?php echo ($category == 'police_stations') ? 'selected' : '';?>>Police Station</option>
                                 </select>  
                             </div>
                         </div>
