@@ -24,8 +24,8 @@
         </header>
         <header class="header-right">
             <div class="search-bar">
-                <input type="text">
-                <i class='bx bx-search bx-md'></i>
+                <input type="text" class="search-textbox">
+                <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.html">ABOUT</a>
             <div class="switch-mode" onclick="switchMode()">
@@ -79,5 +79,6 @@
         </div>
 
         <script src="../scripts/index.js"></script>
+        <script src="../scripts/search.js"></script>
     </body>
 </html>

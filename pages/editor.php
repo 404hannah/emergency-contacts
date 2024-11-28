@@ -23,9 +23,9 @@
             <h1>CM</h1>
         </header>
         <header class="header-right">
-            <div class="log-out">
+            <a class="log-out" href="index.php">
                 <p>LOG OUT</p>
-            </div>
+            </a>
             <div class="switch-mode"  onclick="switchMode()">
                 <i class='bx bxs-moon bx-lg'></i>
             </div>
@@ -97,7 +97,9 @@
                                         echo "No Records.";
                                     }
                                     
-                                    /* if (mysqli_num_rows($fetch_ngos) > 0){
+                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non-governmental_orgs");
+
+                                    if (mysqli_num_rows($fetch_ngos) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
                                             <tr>
                                                 <td><?php echo $fetch_row['Municipality'] ?></td>
@@ -134,38 +136,52 @@
                         <div class="first-row">
                             <div clas="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <select class="municipality">
+                                <select class="municipality" onchange="Municipality()">
                                     <option value="" disabled selected>Select municipality</option>
-                                    <option value="Tarlac City">TARLAC CITY</option>
-                                    <option value="Anao">ANAO</option>
-                                    <option value="Bamban">BAMBAN</option>
-                                    <option value="Camiling">CAMILING</option>
-                                    <option value="Capas">CAPAS</option>
-                                    <option value="Concepcion">CONCEPCION</option>
-                                    <option value="Gerona">GERONA</option>
-                                    <option value="La Paz">LA PAZ</option>
-                                    <option value="Mayontoc">MAYANTOC</option>
-                                    <option value="Moncada">MONCADA</option>
-                                    <option value="Paniqui">PANIQUI</option>
-                                    <option value="Pura">PURA</option>
-                                    <option value="Ramos">RAMOS</option>
-                                    <option value="San Clemente">SAN CLEMENTE</option>
-                                    <option value="San Jose">SAN JOSE</option>
-                                    <option value="San Miguel">SAN MANUEL</option>
-                                    <option value="Santa Ignacia">SANTA IGNACIA</option>
-                                    <option value="Victoria">VICTORIA</option>
+                                    <?php 
+                                        if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        } else {
+                                            $municipality = "X";
+                                        }
+                                    ?>
+                                    <option value="Tarlac City" <?php echo ($municipality == 'Tarlac City') ? 'selected' : '';?>>TARLAC CITY</option>
+                                    <option value="Anao" <?php echo ($municipality == 'Anao') ? 'selected' : '';?>>ANAO</option>
+                                    <option value="Bamban" <?php echo ($municipality == 'Bamban') ? 'selected' : '';?>>BAMBAN</option>
+                                    <option value="Camiling" <?php echo ($municipality == 'Camiling') ? 'selected' : '';?>>CAMILING</option>
+                                    <option value="Capas" <?php echo ($municipality == 'Capas') ? 'selected' : '';?>>CAPAS</option>
+                                    <option value="Concepcion" <?php echo ($municipality == 'Concepcion') ? 'selected' : '';?>>CONCEPCION</option>
+                                    <option value="Gerona" <?php echo ($municipality == 'Gerona') ? 'selected' : '';?>>GERONA</option>
+                                    <option value="La Paz" <?php echo ($municipality == 'La Paz') ? 'selected' : '';?>>LA PAZ</option>
+                                    <option value="Mayantoc" <?php echo ($municipality == 'Mayantoc') ? 'selected' : '';?>>MAYANTOC</option>
+                                    <option value="Moncada" <?php echo ($municipality == 'Moncada') ? 'selected' : '';?>>MONCADA</option>
+                                    <option value="Paniqui" <?php echo ($municipality == 'Paniqui') ? 'selected' : '';?>>PANIQUI</option>
+                                    <option value="Pura" <?php echo ($municipality == 'Pura') ? 'selected' : '';?>>PURA</option>
+                                    <option value="Ramos" <?php echo ($municipality == 'Ramos') ? 'selected' : '';?>>RAMOS</option>
+                                    <option value="San Clemente" <?php echo ($municipality == 'San Clemente') ? 'selected' : '';?>>SAN CLEMENTE</option>
+                                    <option value="San Jose" <?php echo ($municipality == 'San Jose') ? 'selected' : '';?>>SAN JOSE</option>
+                                    <option value="San Miguel" <?php echo ($municipality == 'San Miguel') ? 'selected' : '';?>>SAN MANUEL</option>
+                                    <option value="Santa Ignacia" <?php echo ($municipality == 'Santa Ignacia') ? 'selected' : '';?>>SANTA IGNACIA</option>
+                                    <option value="Victoria" <?php echo ($municipality == 'Victoria') ? 'selected' : '';?>>VICTORIA</option>
                                 </select>
                             </div>
         
                             <div clas="column">
                                 <p>Category:</p>
-                                <select class="category">
-                                    <option value="" disabled selected>Select municipality</option>
-                                    <option value="Tarlac City">TARLAC CITY</option>
-                                    <option value="Anao">ANAO</option>
-                                    <option value="Bamban">BAMBAN</option>
-                                    <option value="Camiling">CAMILING</option>
-                                    <option value="Capas">CAPAS</option>
+                                <select class="category" onchange="Category()">
+                                    <option value="" disabled selected>Select category</option>
+                                    <?php 
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+                                        } else {
+                                            $category = "X";
+                                        }
+                                    ?>
+                                    <option value="fire_departments" <?php echo ($category == 'fire_departments') ? 'selected' : '';?>>Fire Department</option>
+                                    <option value="government_orgs" <?php echo ($category == 'government_orgs') ? 'selected' : '';?>>Government Organization</option>
+                                    <option value="hospitals" <?php echo ($category == 'hospitals') ? 'selected' : '';?>>Hospital</option>
+                                    <option value="non-governmental_orgs" <?php echo ($category == 'non-governmental_orgs') ? 'selected' : '';?>>Non-Governmental Organization</option>
+                                    <option value="police_stations" <?php echo ($category == 'police_stations') ? 'selected' : '';?>>Police Station</option>
                                 </select>  
                             </div>
                         </div>
@@ -173,18 +189,83 @@
                         <div class="middle-row">
                             <div clas="column">
                                 <p>Institution:</p>
-                                <select class="institution"></select>
+                                <select class="institution">
+                                    <option value="" disabled selected>Select institutions from a municipality</option>
+                                    <?php
+                                        if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        }
+
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+
+                                            $fetch_insti = mysqli_query($conn, "SELECT Institution FROM $category WHERE Municipality='$municipality'");
+
+                                            if (mysqli_num_rows($fetch_insti) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_insti)){ ?>
+                                                <option value="<?php echo $fetch_row['Institution'] ?>"> <?php echo $fetch_row['Institution'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
         
                         <div class="last-row">
                             <div clas="column">
                                 <p>Contact Information:</p>
-                                <select class="contact-info"></select>
+                                <select class="contact-info">
+                                    <option value="" disabled selected>Select contact information from a municipality</option>
+                                    <?php
+                                        if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        }
+
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+
+                                            $fetch_ci = mysqli_query($conn, "SELECT `Contact Information` FROM $category WHERE Municipality='$municipality'");
+
+                                            if (mysqli_num_rows($fetch_ci) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_ci)){ ?>
+                                                <option value="<?php echo $fetch_row['Contact Information'] ?>"> <?php echo $fetch_row['Contact Information'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
+
+                                        }
+                                    ?>
+                                </select>
                             </div>
                             <div clas="column">
                                 <p>URL from Google Maps:</p>
-                                <select class="google-maps"></select>
+                                <select class="google-maps">
+                                    <option value="" disabled selected>Select URL from Google Maps from a municipality</option>
+                                    <?php
+                                        if (isset($_GET['municipality'])) {
+                                            $municipality = $_GET['municipality'];
+                                        }
+
+                                        if (isset($_GET['category'])) {
+                                            $category = $_GET['category'];
+
+                                            $fetch_maps = mysqli_query($conn, "SELECT `URL from Google Maps` FROM $category WHERE Municipality='$municipality'");
+
+                                            if (mysqli_num_rows($fetch_maps) > 0){
+                                                while($fetch_row = mysqli_fetch_assoc($fetch_maps)){ ?>
+                                                <option value="<?php echo $fetch_row['URL from Google Maps'] ?>"> <?php echo $fetch_row['URL from Google Maps'] ?> </option>
+                                                <?php }
+                                            } else {
+                                                echo "No Records.";
+                                            }
+
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
         
@@ -198,5 +279,6 @@
         </section>
 
         <script src="../scripts/tabs.js"></script>
+        <script src="../scripts/editor.js"></script>
     </body>
 </html>
