@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+        <script src='../scripts/search.js'></script>
     </head>
 
     <body>
@@ -35,18 +35,79 @@
         </header>
 
         <section>
-            <h2>Search Results for " "</h2>
+            <?php 
+                if (isset($_GET['search'])) {
+                    $search = $_GET['search'];
+
+                    $counter = 0; 
+
+                    $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
+                    if (mysqli_num_rows($fetch_fire) > 0){
+                        $counter = $counter + mysqli_num_rows($fetch_fire);
+                    }
+
+                    $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
+                    if (mysqli_num_rows($fetch_gov) > 0){
+                        $counter = $counter + mysqli_num_rows($fetch_gov);
+                    }
+
+                    $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
+                    if (mysqli_num_rows($fetch_hospitals) > 0){
+                        $counter = $counter + mysqli_num_rows($fetch_hospitals);
+                    }
+
+                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
+                    if (mysqli_num_rows($fetch_ngos) > 0){
+                        $counter = $counter + mysqli_num_rows($fetch_ngos);
+                    } */
+
+                    $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
+                    if (mysqli_num_rows($fetch_police) > 0){
+                        $counter = $counter + mysqli_num_rows($fetch_police);
+                    }
+                }
+            ?>
+            <h2>Search Results for "<?php echo "$search"?>"</h2>
             <div class="results">
-                <p>Found 1 Result/s.</p>
+                <p>Found <?php echo "$counter"?> Result/s.</p>
                 <div class="main-contents">
-                    <?php
-                    if (isset($_GET['search'])) {
-                        $search = $_GET['search'];
-
-                        $fetch_results = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
+                    <?php                    
+                        if (mysqli_num_rows($fetch_fire) > 0){
+                            while($fetch_row = mysqli_fetch_assoc($fetch_fire)){ ?>
+                                <div class="result">
+                                    <div class="text">
+                                        <h4><?php echo $fetch_row['Institution'] ?></h4>
+                                        <h3><?php echo $fetch_row['Contact Information'] ?></h3>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
+                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
+                                    </div>
+                                </div>
+                            <?php }
+                        }
                                         
-                        if (mysqli_num_rows($fetch_results) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
+                        if (mysqli_num_rows($fetch_gov) > 0){
+                            $counter = $counter + mysqli_num_rows($fetch_gov);
+                            while($fetch_row = mysqli_fetch_assoc($fetch_gov)){ ?>
+                                <div class="result">
+                                    <div class="text">
+                                        <h4><?php echo $fetch_row['Institution'] ?></h4>
+                                        <h3><?php echo $fetch_row['Contact Information'] ?></h3>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
+                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
+                                    </div>
+                                </div>
+                            <?php }
+                        }
+                                        
+                        if (mysqli_num_rows($fetch_hospitals) > 0){
+                            $counter = $counter + mysqli_num_rows($fetch_hospitals);
+                            while($fetch_row = mysqli_fetch_assoc($fetch_hospitals)){ ?>
                                 <div class="result">
                                     <div class="text">
                                         <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -61,46 +122,10 @@
                             <?php }
                         }
 
-                        $fetch_results = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
-                                        
-                        if (mysqli_num_rows($fetch_results) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
-                                <div class="result">
-                                    <div class="text">
-                                        <h4><?php echo $fetch_row['Institution'] ?></h4>
-                                        <h3><?php echo $fetch_row['Contact Information'] ?></h3>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
-                                    </div>
-                                </div>
-                            <?php }
-                        }
-
-                        $fetch_results = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
-                                        
-                        if (mysqli_num_rows($fetch_results) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
-                                <div class="result">
-                                    <div class="text">
-                                        <h4><?php echo $fetch_row['Institution'] ?></h4>
-                                        <h3><?php echo $fetch_row['Contact Information'] ?></h3>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
-                                    </div>
-                                </div>
-                            <?php }
-                        }
-
-                        /* $fetch_results = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
-                                        
-                        if (mysqli_num_rows($fetch_results) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
+                        /*              
+                        if (mysqli_num_rows($fetch_ngos) > 0){
+                            $counter = $counter + mysqli_num_rows($fetch_ngos);
+                            while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
                                 <div class="result">
                                     <div class="text">
                                         <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -114,11 +139,10 @@
                                 </div>
                             <?php }
                         } */
-
-                        $fetch_results = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
                                         
-                        if (mysqli_num_rows($fetch_results) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
+                        if (mysqli_num_rows($fetch_police) > 0){
+                            $counter = $counter + mysqli_num_rows($fetch_police);
+                            while($fetch_row = mysqli_fetch_assoc($fetch_police)){ ?>
                                 <div class="result">
                                     <div class="text">
                                         <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -132,7 +156,7 @@
                                 </div>
                             <?php }
                         }
-                    } ?>
+                        ?>
                 </div>
                 <div class="user-report-hover">
                     <div class="pop-up">

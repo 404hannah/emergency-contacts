@@ -190,7 +190,7 @@
                             <div clas="column">
                                 <p>Institution:</p>
                                 <select class="institution">
-                                    <option value="" disabled selected>Select institutions from a municipality</option>
+                                    <option value="" disabled selected>Select institutions from a municipality and category</option>
                                     <?php
                                         if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];
@@ -218,7 +218,7 @@
                             <div clas="column">
                                 <p>Contact Information:</p>
                                 <select class="contact-info">
-                                    <option value="" disabled selected>Select contact information from a municipality</option>
+                                    <option value="" disabled selected>Select contact information from a municipality and category</option>
                                     <?php
                                         if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];
@@ -244,7 +244,7 @@
                             <div clas="column">
                                 <p>URL from Google Maps:</p>
                                 <select class="google-maps">
-                                    <option value="" disabled selected>Select URL from Google Maps from a municipality</option>
+                                    <option value="" disabled selected>Select URL from Google Maps from a municipality and category</option>
                                     <?php
                                         if (isset($_GET['municipality'])) {
                                             $municipality = $_GET['municipality'];

@@ -15,20 +15,17 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+        <script src='../scripts/search.js'></script>
     </head>
 
     <body>
         <header class="header-left">
-            <a href="index.html">TARLAC EMERGENCY CONTACTS</a>
+            <a href="index.php">TARLAC EMERGENCY CONTACTS</a>
         </header>
         <header class="header-right">
             <div class="search-bar">
                 <input type="text" class="search-textbox">
-                <i class='bx bx-search bx-md' onclick="search()"></i>
                 <?php
-                    echo "<script src='../scripts/search.js'></script>";
-
                     if (isset($_GET['search'])) {
                         $search = $_GET['search'];
 
@@ -48,15 +45,16 @@
                             echo "<script> result(); </script>";
                         } elseif (mysqli_num_rows($fetch_hospitals) > 0){
                             echo "<script> result(); </script>";
-                        } elseif (mysqli_num_rows($fetch_ngos) > 0){
+                        } /* elseif (mysqli_num_rows($fetch_ngos) > 0){
                             echo "<script> result(); </script>";
-                        } elseif (mysqli_num_rows($fetch_police) > 0){
+                        } */ elseif (mysqli_num_rows($fetch_police) > 0){
                             echo "<script> result(); </script>";
                         } else {
                             echo "<script> noResult(); </script>";   
                         }
                     }
                 ?>
+                <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.html">ABOUT</a>
             <div class="switch-mode" onclick="switchMode()">
@@ -110,6 +108,5 @@
         </div>
 
         <script src="../scripts/index.js"></script>
-        
     </body>
 </html>
