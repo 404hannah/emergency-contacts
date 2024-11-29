@@ -69,6 +69,8 @@ section h1{
     color: black;
     font-weight: 700;
     font-size: 175%;
+
+    text-align: center;
 }
 
 .user-report-hover{

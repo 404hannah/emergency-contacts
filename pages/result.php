@@ -43,7 +43,7 @@
                         if (isset($_GET['search'])) {
                             $search = $_GET['search'];
 
-                            $fetch_results = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution='$search'");
+                            $fetch_results = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
                                             
                             if (mysqli_num_rows($fetch_results) > 0){
                                 while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
@@ -61,7 +61,7 @@
                                 <?php }
                             }
 
-                            $fetch_results = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution='$search'");
+                            $fetch_results = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
                                             
                             if (mysqli_num_rows($fetch_results) > 0){
                                 while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
@@ -79,7 +79,7 @@
                                 <?php }
                             }
 
-                            $fetch_results = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution='$search'");
+                            $fetch_results = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
                                             
                             if (mysqli_num_rows($fetch_results) > 0){
                                 while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
@@ -97,7 +97,7 @@
                                 <?php }
                             }
 
-                            /* $fetch_results = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution='$search'");
+                            /* $fetch_results = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
                                             
                             if (mysqli_num_rows($fetch_results) > 0){
                                 while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>
@@ -115,7 +115,7 @@
                                 <?php }
                             } */
 
-                            $fetch_results = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution='$search'");
+                            $fetch_results = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
                                             
                             if (mysqli_num_rows($fetch_results) > 0){
                                 while($fetch_row = mysqli_fetch_assoc($fetch_results)){ ?>

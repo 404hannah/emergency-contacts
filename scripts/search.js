@@ -18,5 +18,5 @@ function result(){
 
 function noResult(){
     searchValue = getVariable('search');
-    window.location.href = "no-result.html?search=" + encodeURIComponent(searchValue);
+    window.location.href = "no-result.php?search=" + encodeURIComponent(searchValue);
 }

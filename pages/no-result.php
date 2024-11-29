@@ -1,3 +1,7 @@
+<?php 
+    include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,12 +35,17 @@
         </header>
 
         <section>
-            <h2>Search Results for " "</h2>
+            <?php
+                if (isset($_GET['search'])) {
+                    $search = $_GET['search'];
+                }
+            ?>
+            <h2>Search Results for "<?php echo "$search"?>"</h2>
             <div class="results">
                 <div class="main-contents">
                     <h1>We are Sorry.</h1>
-                    <h2>There are No Results for " ".</h2>
-                    <input type="button" class="back" value="Go Back to Home Page">
+                    <h2>There are No Results for "<?php echo "$search"?>".</h2>
+                    <a class="back" href="index.php">Go Back to Home Page</a>
                 </div>
                 <div class="user-report-hover">
                     <div class="pop-up">
