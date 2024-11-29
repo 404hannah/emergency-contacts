@@ -28,12 +28,29 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
                 <?php
                     echo "<script src='../scripts/search.js'></script>";
-                   if (isset($_GET['search'])) {
+
+                    if (isset($_GET['search'])) {
                         $search = $_GET['search'];
 
-                        $fetch_search = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution='$search'");
+                        $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
                         
-                        if (mysqli_num_rows($fetch_search) > 0){
+                        $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
+
+                        $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
+
+                        // $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
+
+                        $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
+
+                        if (mysqli_num_rows($fetch_fire) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_gov) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_hospitals) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_ngos) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_police) > 0){
                             echo "<script> result(); </script>";
                         } else {
                             echo "<script> noResult(); </script>";   
