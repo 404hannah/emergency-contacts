@@ -1,15 +1,22 @@
+let searchValue;
+
 function search(){
     const searchBox = document.querySelector('.search-textbox');
     searchValue = searchBox.value.trim();
     window.location.href = "index.php?search=" + encodeURIComponent(searchValue);
 }
 
+function getVariable(variable) {
+    const varValue = new URLSearchParams(window.location.search);
+    return varValue.get(variable);
+}
+
 function result(){
-    alert("1");
+    searchValue = getVariable('search');
     window.location.href = "result.php?search=" + encodeURIComponent(searchValue);
 }
 
 function noResult(){
-    alert("2");
+    searchValue = getVariable('search');
     window.location.href = "no-result.html?search=" + encodeURIComponent(searchValue);
 }

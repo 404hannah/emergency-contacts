@@ -27,7 +27,7 @@
                 <input type="text" class="search-textbox">
                 <i class='bx bx-search bx-md' onclick="search()"></i>
                 <?php
-                    
+                    echo "<script src='../scripts/search.js'></script>";
                    if (isset($_GET['search'])) {
                         $search = $_GET['search'];
 
@@ -36,7 +36,7 @@
                         if (mysqli_num_rows($fetch_search) > 0){
                             echo "<script> result(); </script>";
                         } else {
-                            echo "<script> noResult(); </script>";
+                            echo "<script> noResult(); </script>";   
                         }
                     }
                 ?>
@@ -93,6 +93,6 @@
         </div>
 
         <script src="../scripts/index.js"></script>
-        <script src="../scripts/search.js"></script>
+        
     </body>
 </html>
