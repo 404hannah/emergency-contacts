@@ -1,5 +1,42 @@
 <?php 
     include 'connection.php';
+
+    if(isset($_POST['save'])){
+
+        echo "<script>alert('Data added.');</script>";
+
+        $municipalityInput = $_POST['municipality'];
+        $categoryInput = $_POST['category'];
+        $instiInput = $_POST['institution'];
+        $contactInput = $_POST['contact-info'];
+        $mapsInput = $_POST['google-maps'];
+
+        switch($categoryInput){
+            case "Fire Department":
+                $insert = "INSERT INTO fire_departments (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                break;
+            case "Government Organization":
+                $insert = "INSERT INTO government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                break;
+            case "Hospital":
+                $insert = "INSERT INTO hospitals (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                break;
+            case "Non-Governmental Organization":
+                $insert = "INSERT INTO non_government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                break;
+            case "Police Station":
+                $insert = "INSERT INTO police_stations (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                break;
+            default:
+        }
+
+        $conn->query($insert);
+        header('Location: editor.php');
+        ?>
+        <?php  /*  echo "<script>alert('Data added.');</script>" ?>
+        <?php echo "<script>window.location.href = 'editor.php';</script>" ?>
+        <?php */
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +52,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
-        <script src='../scripts/add.js'></script>
     </head>
 
     <body>
@@ -34,7 +69,7 @@
         </header>
 
         <section>
-            <form>
+            <div class="sub-section">
                 <div class="tabs">
                     <div class="view" onclick="viewMode()">VIEW MODE</div>
                     <div class="manage" onclick="manageMode()">MANAGE MODE</div>
@@ -134,7 +169,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="container-manage">
+                    <form method="POST" class="container-manage">
                         <?php
                             $municipalityVal = ""; 
                             $categoryVal = "";
@@ -158,45 +193,45 @@
                                         }
                                     }
                                 }
-                            }      
+                            }
                         ?>
                         <div class="first-row">
                             <div class="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <input type="text" class="municipality" value="<?php echo $municipalityVal ?>">
+                                <input type="text" class="municipality" name="municipality" value="<?php echo $municipalityVal ?>">
                             </div>
         
                             <div class="column">
                                 <p>Category:</p>
-                                <input type="text" class="category" value="<?php echo $categoryVal ?>">
+                                <input type="text" class="category" name="category" value="<?php echo $categoryVal ?>">
                             </div>
                         </div>
         
                         <div class="middle-row">
                             <div class="column">
                                 <p>Institution:</p>
-                                <input type="text" class="institution" value="<?php echo $institutionVal ?>">
+                                <input type="text" class="institution" name="institution" value="<?php echo $institutionVal ?>">
                             </div>
                         </div>
         
                         <div class="last-row">
                             <div class="column">
                                 <p>Contact Information:</p>
-                                <input type="text" class="contact-info" value="<?php echo $contactInfoVal ?>">
+                                <input type="text" class="contact-info" name="contact-info" value="<?php echo $contactInfoVal ?>">
                             </div>
                             <div class="column">
                                 <p>URL from Google Maps:</p>
-                                <input type="text" class="google-maps" value="<?php echo $mapsVal ?>">
+                                <input type="text" class="google-maps" name="google-maps" value="<?php echo $mapsVal ?>">
                             </div>
                         </div>
         
                         <div class="buttons">
-                            <a class="save" href="">SAVE CONTENT</a>
+                            <input type="submit" class="save" name="save" value="SAVE CONTENT">
                             <a class="cancel" href="editor.php">CANCEL</a>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </section>
 
         <script src="../scripts/tabs.js"></script>

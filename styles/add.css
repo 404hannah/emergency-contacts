@@ -62,7 +62,7 @@ section{
     background-color: #728F90;;
 }
 
-form{
+.sub-section{
     position: relative;
 
     display: flex;
@@ -97,7 +97,7 @@ form{
     z-index: 1;
 }
 
-form p{
+.sub-section p{
     font-family: Dosis;
     font-size: x-large;
     font-weight: 500;
@@ -108,7 +108,7 @@ form p{
     margin-left: 10px;
 }
 
-form input{
+.sub-section input{
     margin-right: 40px;
     margin-bottom: 10px;
 
@@ -154,9 +154,12 @@ form input{
     width: 60vw;
 }
 
-.save, .cancel{
+.buttons .save{
+    width: 200px;
+    height: 100%;
+
     margin-right: 40px;
-    width: 175px;
+    margin-bottom: 0px;
 
     background-color: white;
     padding: 8px;
@@ -168,11 +171,15 @@ form input{
     color: black;
     font-size: x-large;
     text-align: center;
+
+    margin-right: 40px;
 }
 
 .cancel{
-    margin-right: 40px;
     width: 125px;
+
+    margin-right: 40px;
+    margin-bottom: 0px;
 
     background-color: white;
     padding: 8px;
@@ -184,6 +191,8 @@ form input{
     color: black;
     font-size: x-large;
     text-align: center;
+
+    margin-right: 40px;
 }
 
 .container-view{
@@ -251,7 +260,7 @@ th, td{
 
 
 @media only screen and (max-width: 800px){
-    form input{
+    .sub-section input{
         width: 142px;
     }
 
@@ -259,7 +268,7 @@ th, td{
         width: 300px;
     }
 
-    form p{
+    .sub-section p{
         font-size: larger;
         margin-left: 5px;
     }

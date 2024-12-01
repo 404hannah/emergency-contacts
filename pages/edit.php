@@ -33,7 +33,7 @@
         </header>
 
         <section>
-            <form>
+            <form method="POST">
                 <div class="tabs">
                     <div class="view" onclick="viewMode()">VIEW MODE</div>
                     <div class="manage" onclick="manageMode()">MANAGE MODE</div>
@@ -191,8 +191,8 @@
         
                         <div class="buttons">
                             <a class="cancel" href="editor.php">CANCEL</a>
-                            <a class="save">SAVE EDIT</a>
-                            <a class="delete">DELETE CONTENT</a>
+                            <input type="submit" class="save" value="SAVE EDIT">
+                            <input type="submit" class="delete" value="DELETE CONTENT">
                         </div>
                     </div>
                 </div>
