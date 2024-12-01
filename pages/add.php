@@ -79,7 +79,7 @@
                     <div class="first-row">
                         <div clas="column">
                             <p class="municipality-text">Municipality:</p>
-                            <input type="text" class="municipality" placeholder="<?php
+                            <input type="text" class="municipality" value="<?php
                                 if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
                                     $municipality = $_GET['Municipality'];
                                     $category = $_GET['Category'];
@@ -99,7 +99,7 @@
     
                         <div clas="column">
                             <p>Category:</p>
-                            <input type="text" class="category" placeholder="<?php
+                            <input type="text" class="category" value="<?php
                                 if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
                                     $municipality = $_GET['Municipality'];
                                     $category = $_GET['Category'];
@@ -122,7 +122,7 @@
                     <div class="middle-row">
                         <div clas="column">
                             <p>Institution:</p>
-                            <input type="text" class="institution" placeholder="<?php
+                            <input type="text" class="institution" value="<?php
                                 if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
                                     $municipality = $_GET['Municipality'];
                                     $category = $_GET['Category'];
@@ -144,7 +144,7 @@
                     <div class="last-row">
                         <div clas="column">
                             <p>Contact Information:</p>
-                            <input type="text" class="contact-info" placeholder="<?php
+                            <input type="text" class="contact-info" value="<?php
                                 if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
                                     $municipality = $_GET['Municipality'];
                                     $category = $_GET['Category'];
@@ -163,7 +163,7 @@
                         </div>
                         <div clas="column">
                             <p>URL from Google Maps:</p>
-                            <input type="text" class="google-maps" placeholder="<?php
+                            <input type="text" class="google-maps" value="<?php
                                  if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
                                     $municipality = $_GET['Municipality'];
                                     $category = $_GET['Category'];
