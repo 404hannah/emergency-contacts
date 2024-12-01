@@ -43,7 +43,7 @@
                         <tr>
                             <th>Municipality</th>
                             <th>Category</th>
-                            <th class="institution">Institution</th>
+                            <th>Institution</th>
                             <th>Contact Information</th>
                             <th>Url from Google Maps</th>
                         </tr>

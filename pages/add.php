@@ -35,15 +35,29 @@
 
         <section>
             <?php
-                /* if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                    $municipality = $_GET['Municipality'];
-                    $category = $_GET['Category'];
-                    $institution = $_GET['Institution'];
-                    $contactInfo = $_GET['Contact Information'];
-                    $googleMaps = $_GET['URL from Google Maps'];
-    
-                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-                } */
+                $municipalityVal = ""; 
+                $categoryVal = "";
+                $institutionVal = ""; 
+                $contactInfoVal = ""; 
+                $mapsVal = "";
+
+                if (isset($_GET['category'])) {
+                    $category = $_GET['category'];
+                    if(isset($_GET['institution'])){
+                        $institution = $_GET['institution'];
+                    
+                        $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
+                        if (mysqli_num_rows($fetch_chosen) > 0){
+                            while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
+                                $municipalityVal = $fetch_row['Municipality']; 
+                                $categoryVal = $fetch_row['Category'];
+                                $institutionVal = $fetch_row['Institution']; 
+                                $contactInfoVal = $fetch_row['Contact Information']; 
+                                $mapsVal = $fetch_row['URL from Google Maps'];
+                            }
+                        }
+                    }
+                }      
             ?>
             <form>
                 <div class="tabs">
@@ -55,7 +69,7 @@
                         <tr>
                             <th>Municipality</th>
                             <th>Category</th>
-                            <th class="institution">Institution</th>
+                            <th>Institution</th>
                             <th>Contact Information</th>
                             <th>Url from Google Maps</th>
                         </tr>
@@ -77,108 +91,32 @@
                 </div>
                 <div class="container-manage">
                     <div class="first-row">
-                        <div clas="column">
+                        <div class="column">
                             <p class="municipality-text">Municipality:</p>
-                            <input type="text" class="municipality" value="<?php
-                                if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                                    $municipality = $_GET['Municipality'];
-                                    $category = $_GET['Category'];
-                                    $institution = $_GET['Institution'];
-                                    $contactInfo = $_GET['Contact Information'];
-                                    $googleMaps = $_GET['URL from Google Maps'];
-                    
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ ?>
-                                        <?php echo $fetch_row['Institution'] ?>
-                                    <?php }
-                                    }
-                                }
-                            ?>">
+                            <input type="text" class="municipality" value="<?php echo $municipalityVal ?>">
                         </div>
     
-                        <div clas="column">
+                        <div class="column">
                             <p>Category:</p>
-                            <input type="text" class="category" value="<?php
-                                if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                                    $municipality = $_GET['Municipality'];
-                                    $category = $_GET['Category'];
-                                    $institution = $_GET['Institution'];
-                                    $contactInfo = $_GET['Contact Information'];
-                                    $googleMaps = $_GET['URL from Google Maps'];
-                    
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ ?>
-                                        <?php echo $fetch_row['Category'] ?>
-                                    <?php }
-                                    }
-                                }
-                            ?>">
+                            <input type="text" class="category" value="<?php echo $categoryVal ?>">
                         </div>
                     </div>
     
                     <div class="middle-row">
-                        <div clas="column">
+                        <div class="column">
                             <p>Institution:</p>
-                            <input type="text" class="institution" value="<?php
-                                if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                                    $municipality = $_GET['Municipality'];
-                                    $category = $_GET['Category'];
-                                    $institution = $_GET['Institution'];
-                                    $contactInfo = $_GET['Contact Information'];
-                                    $googleMaps = $_GET['URL from Google Maps'];
-                    
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ ?>
-                                        <?php echo $fetch_row['Institution'] ?>
-                                    <?php }
-                                    }
-                                }
-                            ?>">
+                            <input type="text" class="institution" value="<?php echo $institutionVal ?>">
                         </div>
                     </div>
     
                     <div class="last-row">
-                        <div clas="column">
+                        <div class="column">
                             <p>Contact Information:</p>
-                            <input type="text" class="contact-info" value="<?php
-                                if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                                    $municipality = $_GET['Municipality'];
-                                    $category = $_GET['Category'];
-                                    $institution = $_GET['Institution'];
-                                    $contactInfo = $_GET['Contact Information'];
-                                    $googleMaps = $_GET['URL from Google Maps'];
-                    
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ ?>
-                                        <?php echo $fetch_row['Contact Information'] ?>
-                                    <?php }
-                                    }
-                                }
-                            ?>">
+                            <input type="text" class="contact-info" value="<?php echo $contactInfoVal ?>">
                         </div>
-                        <div clas="column">
+                        <div class="column">
                             <p>URL from Google Maps:</p>
-                            <input type="text" class="google-maps" value="<?php
-                                 if (isset($_GET['Municipality']) and isset($_GET['Category']) and isset($_GET['Institution']) and isset($_GET['Contact Information']) and isset($_GET['URL from Google Maps'])) {
-                                    $municipality = $_GET['Municipality'];
-                                    $category = $_GET['Category'];
-                                    $institution = $_GET['Institution'];
-                                    $contactInfo = $_GET['Contact Information'];
-                                    $googleMaps = $_GET['URL from Google Maps'];
-                    
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM category WHERE Institution='$institution'");
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ ?>
-                                        <?php echo $fetch_row['URL from Google Maps'] ?>
-                                    <?php }
-                                    }
-                                 }
-                            ?>">
+                            <input type="text" class="google-maps" value="<?php echo $mapsVal ?>">
                         </div>
                     </div>
     
