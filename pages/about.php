@@ -1,3 +1,7 @@
+<?php 
+    include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +16,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+        
+        <script src='../scripts/search.js'></script>
     </head>
 
     <body>
@@ -21,10 +26,39 @@
         </header>
         <header class="header-right">
             <div class="search-bar">
-                <input type="text">
-                <i class='bx bx-search bx-md'></i>
+                <input type="text" class="search-textbox">
+                <?php
+                    if (isset($_GET['search'])) {
+                        $search = $_GET['search'];
+
+                        $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
+                        
+                        $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
+
+                        $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
+
+                        $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
+
+                        $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
+
+                        if (mysqli_num_rows($fetch_fire) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_gov) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_hospitals) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_ngos) > 0){
+                            echo "<script> result(); </script>";
+                        } elseif (mysqli_num_rows($fetch_police) > 0){
+                            echo "<script> result(); </script>";
+                        } else {
+                            echo "<script> noResult(); </script>";   
+                        }
+                    }
+                ?>
+                <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
-            <a href="about.html">ABOUT</a>
+            <a href="about.php">ABOUT</a>
             <div class="switch-mode"  onclick="switchMode()">
                 <i class='bx bxs-moon bx-lg' id="bx-mode"></i>
             </div>
@@ -45,10 +79,10 @@
                         <li>Government</li>
                         <li>Non-Governmental Organizations (NGOs) Or Others</li>
                     </ul>
-                    <p class="log-in">Content Manager? Log In <a href="login.html">Here</a></p>
+                    <p class="log-in">Content Manager? Log In <a href="login.php">Here</a></p>
                 </div>
                 <div class="report-container">
-                    <a class="user-report" href="contact-us.html">
+                    <a class="user-report" href="contact-us.php">
                         <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
                         <p>CONTACT US</p>
                     </a>

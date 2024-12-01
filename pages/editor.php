@@ -97,7 +97,7 @@
                                         echo "No Records.";
                                     }
 
-                                    /* $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs");
+                                    $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs");
 
                                     if (mysqli_num_rows($fetch_ngos) > 0){
                                         while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
@@ -111,7 +111,7 @@
                                         <?php }
                                     } else {
                                         echo "No Records.";
-                                    } */
+                                    }
 
                                     $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations");
 

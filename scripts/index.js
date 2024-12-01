@@ -8,16 +8,6 @@ function printHoverOut(){
     printHoverElem.style.visibility = 'hidden';
 }
 
-function reportHover(){
-    const reportHoverElem = document.querySelector('.user-report-hover');
-    reportHoverElem.style.visibility = 'visible';
-}
-
-function reportHoverOut(){
-    const reportHoverElem = document.querySelector('.user-report-hover');
-    reportHoverElem.style.visibility = 'hidden';
-}
-
 function switchMode(){
     const bxModeId = document.getElementById('bx-mode');
     const bodyElem = document.querySelector('body');

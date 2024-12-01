@@ -6,16 +6,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Home</title>
+        <title>Log In</title>
         
         <link rel="stylesheet" href="../styles/header.css">
-        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="../styles/login.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        
+
         <script src='../scripts/search.js'></script>
     </head>
 
@@ -58,57 +58,27 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode" onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg' id="bx-mode"></i>
+            <div class="switch-mode"  onclick="switchMode()">
+                <i class='bx bxs-moon bx-lg'></i>
             </div>
         </header>
 
-        <section class="menu-wrapper">
-            <div class="menu">
-                <p>MUNICPALITIES<p>
-                <a>TARLAC CITY</a>
-                <a>ANAO</a>
-                <a>BAMBAN</a>
-                <a>CAMILING</a>
-                <a>CAPAS</a>
-                <a>CONCEPCION</a>
-                <a>GERONA</a>
-                <a>LA PAZ</a>
-                <a>MAYANTOC</a>
-                <a>MONCADA</a>
-                <a>PANIQUI</a>
-                <a>PURA</a>
-                <a>RAMOS</a>
-                <a>SAN CLEMENTE</a>
-                <a>SAN JOSE</a>
-                <a>SAN MANUEL</a>
-                <a>SANTA IGNACIA</a>
-                <a>VICTORIA</a>
+        <section class="login-section">
+            <div class="login-titles">
+                <h2>CONTENT MANAGER</h2>
+                <h1>LOG IN</h1>
             </div>
+
+            <form>
+                <p class="username-p">Username</p>
+                <input type="text" class="username">
+                <p>Password</p>
+                <input type="text" class="password">
+
+                <p>Not supposed to be here? <a href="index.php">Go Back</a></p>
+                <a class="login" href="editor.php"><input type="button" class="submit" value="Submit"></a>
+            </form>
         </section>
 
-        <div class="menu-button" onclick="menu()">
-            <div class="div1"></div>
-            <div class="div2"></div>
-        </div>
-
-        <div class="print-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
-            Download an Offline Version of this Site
-            <div class="print" onmouseover="printHover()" onmouseout="printHoverOut()">
-                <img src="../icons/Printer.png" alt="Print icon" width="30" height="30">
-            </div>
-        </div>
-
-        <div class="user-report-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
-            Report an Issue about the Website
-            <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="contact-us.php">
-                <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
-            </a>
-        </div>
-
-        <script src="../scripts/index.js"></script>
-        <script src="../scripts/report-hover.js"></script>
     </body>
 </html>

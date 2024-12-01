@@ -6,16 +6,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Home</title>
+        <title>Contact Us</title>
         
         <link rel="stylesheet" href="../styles/header.css">
-        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="../styles/contact-us.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        
+
         <script src='../scripts/search.js'></script>
     </head>
 
@@ -58,57 +58,27 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode" onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg' id="bx-mode"></i>
+            <div class="switch-mode"  onclick="switchMode()">
+                <i class='bx bxs-moon bx-lg'></i>
             </div>
         </header>
 
-        <section class="menu-wrapper">
-            <div class="menu">
-                <p>MUNICPALITIES<p>
-                <a>TARLAC CITY</a>
-                <a>ANAO</a>
-                <a>BAMBAN</a>
-                <a>CAMILING</a>
-                <a>CAPAS</a>
-                <a>CONCEPCION</a>
-                <a>GERONA</a>
-                <a>LA PAZ</a>
-                <a>MAYANTOC</a>
-                <a>MONCADA</a>
-                <a>PANIQUI</a>
-                <a>PURA</a>
-                <a>RAMOS</a>
-                <a>SAN CLEMENTE</a>
-                <a>SAN JOSE</a>
-                <a>SAN MANUEL</a>
-                <a>SANTA IGNACIA</a>
-                <a>VICTORIA</a>
+        <section>
+            <div class="text-above">
+                <h1>CONTACT US</h1>
+                <p>Thank you for reaching out! Please provide details about the issue you're experiencing so we can assist you promptly.</p>
             </div>
+
+            <form>
+                <p class="email-text">Email Address:</p>
+                <input type="text" class="email">
+                <p>Subject:</p>
+                <input type="text" class="subject">
+                <p>Description of the Problem:</p>
+                <textarea class="description" name="description" rows="6" cols="80"></textarea>
+                <div><input type="button" class="submit" value="Submit"></div>
+            </form>
         </section>
 
-        <div class="menu-button" onclick="menu()">
-            <div class="div1"></div>
-            <div class="div2"></div>
-        </div>
-
-        <div class="print-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
-            Download an Offline Version of this Site
-            <div class="print" onmouseover="printHover()" onmouseout="printHoverOut()">
-                <img src="../icons/Printer.png" alt="Print icon" width="30" height="30">
-            </div>
-        </div>
-
-        <div class="user-report-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
-            Report an Issue about the Website
-            <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="contact-us.php">
-                <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
-            </a>
-        </div>
-
-        <script src="../scripts/index.js"></script>
-        <script src="../scripts/report-hover.js"></script>
     </body>
 </html>

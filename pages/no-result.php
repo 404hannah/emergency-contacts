@@ -1,5 +1,6 @@
 <?php 
     include 'connection.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
+        <script src='../scripts/search.js'></script>
     </head>
 
     <body>
@@ -25,11 +27,41 @@
         </header>
         <header class="header-right">
             <div class="search-bar">
-                <input type="text">
-                <i class='bx bx-search bx-md'></i>
+                <input type="text" class="search-textbox">
+                <?php
+                    if (isset($_GET['search']) and !isset($_SESSION['search']) and $_SESSION['search'] == $_GET['search']) {
+                            $_SESSION['search'] = $_GET['search'];
+                            $search = $_GET['search'];
+
+                            $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
+                            
+                            $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
+
+                            $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
+
+                            $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
+
+                            $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
+
+                            if (mysqli_num_rows($fetch_fire) > 0){
+                                echo "<script> result(); </script>";
+                            } elseif (mysqli_num_rows($fetch_gov) > 0){
+                                echo "<script> result(); </script>";
+                            } elseif (mysqli_num_rows($fetch_hospitals) > 0){
+                                echo "<script> result(); </script>";
+                            } elseif (mysqli_num_rows($fetch_ngos) > 0){
+                                echo "<script> result(); </script>";
+                            } elseif (mysqli_num_rows($fetch_police) > 0){
+                                echo "<script> result(); </script>";
+                            } else {
+                                echo "<script> noResult(); </script>";   
+                            }
+                        }
+                    ?>
+                <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
-            <a href="about.html">ABOUT</a>
-            <div class="switch-mode"  onclick="switchMode()">
+            <a href="about.php">ABOUT</a>
+            <div class="switch-mode" onclick="switchMode()">
                 <i class='bx bxs-moon bx-lg'></i>
             </div>
         </header>
@@ -52,12 +84,13 @@
                         <img src="../icons/info.png" alt="Information icon" width="30" height="30">
                         Something's Missing? Report it Here.
                     </div>
-                    <div class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()">
+                    <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="contact-us.php">
                         <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
         
+        <script src="../scripts/report-hover.js"></script>
     </body>
 </html>
