@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2024 at 01:24 PM
+-- Generation Time: Dec 01, 2024 at 08:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `tarlac_emergency_contacts`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `User_ID` int(11) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`User_ID`, `Username`, `Password`) VALUES
+(1, 'shane', 'blanco'),
+(2, 'hannah', 'pulmano'),
+(3, 'stephen', 'nierras'),
+(4, 'princess', 'pasamonte');
 
 -- --------------------------------------------------------
 
@@ -244,6 +266,12 @@ INSERT INTO `police_stations` (`Police_Station_ID`, `Municipality`, `Category`, 
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`User_ID`);
+
+--
 -- Indexes for table `fire_departments`
 --
 ALTER TABLE `fire_departments`
@@ -276,6 +304,12 @@ ALTER TABLE `police_stations`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `fire_departments`
