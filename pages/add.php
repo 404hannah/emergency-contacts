@@ -1,6 +1,7 @@
 <?php 
     include 'connection.php';
 
+    // Add data
     if(isset($_POST['save'])){
         $municipalityInput = $_POST['municipality'];
         $categoryInput = $_POST['category'];
@@ -28,7 +29,6 @@
         }
 
         $conn->query($insert);
-        echo "<script> alert('Data added.'); </script>";
         header('Location: editor.php');
     }
 ?>

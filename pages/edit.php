@@ -60,7 +60,6 @@
         }
 
         $conn->query($update);
-        echo "<script> alert('Data added.'); </script>";
         header('Location: editor.php');
     }
 ?>
