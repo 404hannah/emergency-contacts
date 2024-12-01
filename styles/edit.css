@@ -62,7 +62,7 @@ section{
     background-color: #728F90;;
 }
 
-form{
+.sub-section{
     position: relative;
 
     display: flex;
@@ -97,7 +97,7 @@ form{
     z-index: 1;
 }
 
-form p{
+.sub-section p{
     font-family: Dosis;
     font-size: x-large;
     font-weight: 500;
@@ -108,7 +108,7 @@ form p{
     margin-left: 10px;
 }
 
-form input{
+.sub-section input{
     margin-right: 40px;
     margin-bottom: 10px;
 
@@ -148,14 +148,16 @@ form input{
     display: flex;
     flex-direction: row;
     justify-content: start;
+    align-items: center;
 
     margin-top: 30px;
     margin-bottom: 20px;
     width: 60vw;
 }
 
-.delete{
+.buttons .delete{
     width: 200px;
+    margin-bottom: 0px;
 
     background-color: white;
     padding: 8px;
@@ -169,8 +171,9 @@ form input{
     text-align: center;
 }
 
-.save{
+.buttons .save{
     margin-right: 40px;
+    margin-bottom: 0px;
     width: 150px;
 
     background-color: white;
@@ -185,7 +188,7 @@ form input{
     text-align: center;
 }
 
-.cancel{
+.buttons .cancel{
     margin-right: 40px;
     width: 125px;
 
@@ -265,7 +268,7 @@ th, td{
 }
 
 @media only screen and (max-width: 800px){
-    form input{
+    .sub-section input{
         width: 142px;
     }
 
@@ -273,7 +276,7 @@ th, td{
         width: 300px;
     }
 
-    form p{
+    .sub-section p{
         font-size: larger;
         margin-left: 5px;
     }

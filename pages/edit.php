@@ -1,5 +1,68 @@
 <?php 
     include 'connection.php';
+    // Find the id
+    if (isset($_GET['category'])) {
+        $category = $_GET['category'];
+        if(isset($_GET['institution'])){
+            $institution = $_GET['institution'];
+        
+            $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
+            if (mysqli_num_rows($fetch_chosen) > 0){
+                while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
+                    switch($category){
+                        case "fire_departments":
+                            $idInput = $fetch_row['Fire_Dept_ID'];
+                            break;
+                        case "government_orgs":
+                            $idInput = $fetch_row['Gov.Organization_ID'];
+                            break;
+                        case "hospitals":
+                            $idInput = $fetch_row['Hospital_ID'];
+                            break;
+                        case "non_government_orgs":
+                            $idInput = $fetch_row['NGO_ID'];
+                            break;
+                        case "police_stations":
+                            $idInput = $fetch_row['Police_Station_ID'];
+                            break;
+                        default:
+                    }   
+                }
+            }
+        }
+    } 
+
+    // Update the data
+    if(isset($_POST['save'])){
+        $municipalityInput = $_POST['municipality'];
+        $categoryInput = $_POST['category'];
+        $instiInput = $_POST['institution'];
+        $contactInput = $_POST['contact-info'];
+        $mapsInput = $_POST['google-maps'];
+
+        switch($categoryInput){
+            case "Fire Department":
+                $update = "UPDATE fire_departments SET Fire_Dept_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Fire_Dept_ID='$idInput'";
+                break;
+            case "Government Organization":
+                $update = "UPDATE government_orgs SET Gov.Organization_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Gov.Organization_ID='$idInput'";
+                break;
+            case "Hospital":
+                $update = "UPDATE hospitals SET Hospital_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Hospital_ID='$idInput'";
+                break;
+            case "Non-Governmental Organization":
+                $update = "UPDATE non_government_orgs SET NGO_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE NGO_ID='$idInput'";
+                break;
+            case "Police Station":
+                $update = "UPDATE police_stations SET Police_Station_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Police_Station_ID='$idInput'";
+                break;
+            default:
+        }
+
+        $conn->query($update);
+        echo "<script> alert('Data added.'); </script>";
+        header('Location: editor.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +96,7 @@
         </header>
 
         <section>
-            <form method="POST">
+            <div class="sub-section">
                 <div class="tabs">
                     <div class="view" onclick="viewMode()">VIEW MODE</div>
                     <div class="manage" onclick="manageMode()">MANAGE MODE</div>
@@ -133,8 +196,8 @@
                             </table>
                         </div>
                     </div>
-                    <div class="container-manage">
-                        <?php
+                    <form method="POST" class="container-manage">
+                    <?php
                             $municipalityVal = ""; 
                             $categoryVal = "";
                             $institutionVal = ""; 
@@ -157,44 +220,44 @@
                                         }
                                     }
                                 }
-                            }      
+                            }
                         ?>
                         <div class="first-row">
                             <div class="column">
                                 <p class="municipality-text">Municipality:</p>
-                                <input type="text" class="municipality" value="<?php echo $municipalityVal ?>">
+                                <input type="text" class="municipality" name="municipality" value="<?php echo $municipalityVal ?>">
                             </div>
         
                             <div class="column">
                                 <p>Category:</p>
-                                <input type="text" class="category" value="<?php echo $categoryVal ?>">
+                                <input type="text" class="category" name="category" value="<?php echo $categoryVal ?>">
                             </div>
                         </div>
         
                         <div class="middle-row">
                             <div class="column">
                                 <p>Institution:</p>
-                                <input type="text" class="institution" value="<?php echo $institutionVal ?>">
+                                <input type="text" class="institution" name="institution" value="<?php echo $institutionVal ?>">
                             </div>
                         </div>
         
                         <div class="last-row">
                             <div class="column">
                                 <p>Contact Information:</p>
-                                <input type="text" class="contact-info" value="<?php echo $contactInfoVal ?>">
+                                <input type="text" class="contact-info" name="contact-info" value="<?php echo $contactInfoVal ?>">
                             </div>
                             <div class="column">
                                 <p>URL from Google Maps:</p>
-                                <input type="text" class="google-maps" value="<?php echo $mapsVal ?>">
+                                <input type="text" class="google-maps" name="google-maps" value="<?php echo $mapsVal ?>">
                             </div>
                         </div>
         
                         <div class="buttons">
                             <a class="cancel" href="editor.php">CANCEL</a>
-                            <input type="submit" class="save" value="SAVE EDIT">
-                            <input type="submit" class="delete" value="DELETE CONTENT">
+                            <input type="submit" class="save" name="save" value="SAVE EDIT">
+                            <input type="submit" class="delete" name="delete" value="DELETE CONTENT">
                         </div>
-                    </div>
+                    </form>
                 </div>
             </form>
         </section>

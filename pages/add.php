@@ -2,9 +2,6 @@
     include 'connection.php';
 
     if(isset($_POST['save'])){
-
-        echo "<script>alert('Data added.');</script>";
-
         $municipalityInput = $_POST['municipality'];
         $categoryInput = $_POST['category'];
         $instiInput = $_POST['institution'];
@@ -31,11 +28,8 @@
         }
 
         $conn->query($insert);
+        echo "<script> alert('Data added.'); </script>";
         header('Location: editor.php');
-        ?>
-        <?php  /*  echo "<script>alert('Data added.');</script>" ?>
-        <?php echo "<script>window.location.href = 'editor.php';</script>" ?>
-        <?php */
     }
 ?>
 
