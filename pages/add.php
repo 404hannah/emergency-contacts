@@ -34,95 +34,166 @@
         </header>
 
         <section>
-            <?php
-                $municipalityVal = ""; 
-                $categoryVal = "";
-                $institutionVal = ""; 
-                $contactInfoVal = ""; 
-                $mapsVal = "";
-
-                if (isset($_GET['category'])) {
-                    $category = $_GET['category'];
-                    if(isset($_GET['institution'])){
-                        $institution = $_GET['institution'];
-                    
-                        $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
-                        if (mysqli_num_rows($fetch_chosen) > 0){
-                            while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
-                                $municipalityVal = $fetch_row['Municipality']; 
-                                $categoryVal = $fetch_row['Category'];
-                                $institutionVal = $fetch_row['Institution']; 
-                                $contactInfoVal = $fetch_row['Contact Information']; 
-                                $mapsVal = $fetch_row['URL from Google Maps'];
-                            }
-                        }
-                    }
-                }      
-            ?>
             <form>
                 <div class="tabs">
                     <div class="view" onclick="viewMode()">VIEW MODE</div>
                     <div class="manage" onclick="manageMode()">MANAGE MODE</div>
                 </div>
-                <div class="container-view">
-                    <table>
-                        <tr>
-                            <th>Municipality</th>
-                            <th>Category</th>
-                            <th>Institution</th>
-                            <th>Contact Information</th>
-                            <th>Url from Google Maps</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="container-manage">
-                    <div class="first-row">
-                        <div class="column">
-                            <p class="municipality-text">Municipality:</p>
-                            <input type="text" class="municipality" value="<?php echo $municipalityVal ?>">
-                        </div>
-    
-                        <div class="column">
-                            <p>Category:</p>
-                            <input type="text" class="category" value="<?php echo $categoryVal ?>">
+                <div class="sub-form">
+                    <div class="container-view">
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>Municipality</th>
+                                    <th>Category</th>
+                                    <th>Institution</th>
+                                    <th>Contact Information</th>
+                                    <th>Url from Google Maps</th>
+                                </tr>
+                                <?php
+                                    $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments");
+
+                                    if (mysqli_num_rows($fetch_fire) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_fire)){ ?>
+                                            <tr>
+                                                <td><?php echo $fetch_row['Municipality'] ?></td>
+                                                <td><?php echo $fetch_row['Category'] ?></td>
+                                                <td><?php echo $fetch_row['Institution'] ?></td>
+                                                <td><?php echo $fetch_row['Contact Information'] ?></td>
+                                                <td><?php echo $fetch_row['URL from Google Maps'] ?></td>
+                                            </tr>
+                                        <?php }
+                                    } else {
+                                        echo "No Records.";
+                                    }
+
+                                    $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs");
+
+                                    if (mysqli_num_rows($fetch_gov) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_gov)){ ?>
+                                            <tr>
+                                                <td><?php echo $fetch_row['Municipality'] ?></td>
+                                                <td><?php echo $fetch_row['Category'] ?></td>
+                                                <td><?php echo $fetch_row['Institution'] ?></td>
+                                                <td><?php echo $fetch_row['Contact Information'] ?></td>
+                                                <td><?php echo $fetch_row['URL from Google Maps'] ?></td>
+                                            </tr>
+                                        <?php }
+                                    } else {
+                                        echo "No Records.";
+                                    }
+
+                                    $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals");
+                                    
+                                    if (mysqli_num_rows($fetch_hospitals) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_hospitals)){ ?>
+                                            <tr>
+                                                <td><?php echo $fetch_row['Municipality'] ?></td>
+                                                <td><?php echo $fetch_row['Category'] ?></td>
+                                                <td><?php echo $fetch_row['Institution'] ?></td>
+                                                <td><?php echo $fetch_row['Contact Information'] ?></td>
+                                                <td><?php echo $fetch_row['URL from Google Maps'] ?></td>
+                                            </tr>
+                                        <?php }
+                                    } else {
+                                        echo "No Records.";
+                                    }
+
+                                    $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs");
+
+                                    if (mysqli_num_rows($fetch_ngos) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_ngos)){ ?>
+                                            <tr>
+                                                <td><?php echo $fetch_row['Municipality'] ?></td>
+                                                <td><?php echo $fetch_row['Category'] ?></td>
+                                                <td><?php echo $fetch_row['Institution'] ?></td>
+                                                <td><?php echo $fetch_row['Contact Information'] ?></td>
+                                                <td><?php echo $fetch_row['URL from Google Maps'] ?></td>
+                                            </tr>
+                                        <?php }
+                                    } else {
+                                        echo "No Records.";
+                                    }
+
+                                    $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations");
+
+                                    if (mysqli_num_rows($fetch_police) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_police)){ ?>
+                                            <tr>
+                                                <td><?php echo $fetch_row['Municipality'] ?></td>
+                                                <td><?php echo $fetch_row['Category'] ?></td>
+                                                <td><?php echo $fetch_row['Institution'] ?></td>
+                                                <td><?php echo $fetch_row['Contact Information'] ?></td>
+                                                <td><?php echo $fetch_row['URL from Google Maps'] ?></td>
+                                            </tr>
+                                        <?php }
+                                    } else {
+                                        echo "No Records.";
+                                    }
+                                ?>
+                            </table>
                         </div>
                     </div>
-    
-                    <div class="middle-row">
-                        <div class="column">
-                            <p>Institution:</p>
-                            <input type="text" class="institution" value="<?php echo $institutionVal ?>">
+                    <div class="container-manage">
+                        <?php
+                            $municipalityVal = ""; 
+                            $categoryVal = "";
+                            $institutionVal = ""; 
+                            $contactInfoVal = ""; 
+                            $mapsVal = "";
+
+                            if (isset($_GET['category'])) {
+                                $category = $_GET['category'];
+                                if(isset($_GET['institution'])){
+                                    $institution = $_GET['institution'];
+                                
+                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
+                                    if (mysqli_num_rows($fetch_chosen) > 0){
+                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
+                                            $municipalityVal = $fetch_row['Municipality']; 
+                                            $categoryVal = $fetch_row['Category'];
+                                            $institutionVal = $fetch_row['Institution']; 
+                                            $contactInfoVal = $fetch_row['Contact Information']; 
+                                            $mapsVal = $fetch_row['URL from Google Maps'];
+                                        }
+                                    }
+                                }
+                            }      
+                        ?>
+                        <div class="first-row">
+                            <div class="column">
+                                <p class="municipality-text">Municipality:</p>
+                                <input type="text" class="municipality" value="<?php echo $municipalityVal ?>">
+                            </div>
+        
+                            <div class="column">
+                                <p>Category:</p>
+                                <input type="text" class="category" value="<?php echo $categoryVal ?>">
+                            </div>
                         </div>
-                    </div>
-    
-                    <div class="last-row">
-                        <div class="column">
-                            <p>Contact Information:</p>
-                            <input type="text" class="contact-info" value="<?php echo $contactInfoVal ?>">
+        
+                        <div class="middle-row">
+                            <div class="column">
+                                <p>Institution:</p>
+                                <input type="text" class="institution" value="<?php echo $institutionVal ?>">
+                            </div>
                         </div>
-                        <div class="column">
-                            <p>URL from Google Maps:</p>
-                            <input type="text" class="google-maps" value="<?php echo $mapsVal ?>">
+        
+                        <div class="last-row">
+                            <div class="column">
+                                <p>Contact Information:</p>
+                                <input type="text" class="contact-info" value="<?php echo $contactInfoVal ?>">
+                            </div>
+                            <div class="column">
+                                <p>URL from Google Maps:</p>
+                                <input type="text" class="google-maps" value="<?php echo $mapsVal ?>">
+                            </div>
                         </div>
-                    </div>
-    
-                    <div class="buttons">
-                        <a class="save" href="">SAVE CONTENT</a>
-                        <a class="cancel" href="editor.php">CANCEL</a>
+        
+                        <div class="buttons">
+                            <a class="save" href="">SAVE CONTENT</a>
+                            <a class="cancel" href="editor.php">CANCEL</a>
+                        </div>
                     </div>
                 </div>
             </form>

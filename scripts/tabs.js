@@ -6,7 +6,6 @@ function viewMode(){
     manage.style.display = 'none';
     view.style.display = 'flex';
     subform.style.backgroundColor = '#9B9B9B';
-    
 }
 
 function manageMode(){
