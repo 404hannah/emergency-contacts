@@ -270,8 +270,8 @@
                         </div>
         
                         <div class="buttons">
-                            <a class="edit" href="edit.html">EDIT CONTENT</a>
-                            <a class="add" href="add.html">ADD CONTENT</a>
+                            <a class="edit" onclick="edit()">EDIT CONTENT</a>
+                            <a class="add" onclick="add()">ADD CONTENT</a>
                         </div>
                     </div>
                 </div>

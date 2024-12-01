@@ -1,3 +1,7 @@
+<?php 
+    include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -91,7 +95,7 @@
                     </div>
     
                     <div class="buttons">
-                        <a class="cancel" href="editor.html">CANCEL</a>
+                        <a class="cancel" href="editor.php">CANCEL</a>
                         <a class="save">SAVE EDIT</a>
                         <a class="delete">DELETE CONTENT</a>
                     </div>
