@@ -99,5 +99,42 @@
 
         <script src="../scripts/index.js"></script>
         <script src="../scripts/report-hover.js"></script>
+        
+        <!--Where I started messing things up-->
+        <?php
+            include 'connection.php';
+            $query = "SELECT DISTINCT Municipality FROM government_orgs";
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div>';
+                    echo '<div class="form-container">';
+                    echo '<div class="record">';
+                        // In this part, I used the Municapality Column of government_orgs table. 
+                        // So, if, for example, may nadelete na municipality duon, then, deads. (Inadd ko talaga ung Concepcion ID#7)
+                        // Nakabase ung sequence ng mga ito sa ID# nila. Not alphabetically.
+                        // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.  
+                        echo '<h2>' . $row['Municipality'] . '</h2>';
+                        echo '<div class="categories">';
+                            // Ze five Buttons
+                            echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">HOSPITAL</button>';
+                            echo '<button class="category police openPopup" data-table="police_stations" data-municipality="' . $row['Municipality'] . '">POLICE</button>';
+                            echo '<button class="short-category fire openPopup" data-table="fire_departments" data-municipality="' . $row['Municipality'] . '">FIRE</button>';
+                            echo '<button class="long-category government openPopup" data-table="government_orgs" data-municipality="' . $row['Municipality'] . '">GOVERNMENT</button>';
+                            echo '<button class="short-category ngo openPopup" data-table="non_government_orgs" data-municipality="' . $row['Municipality'] . '">NGO</button>';
+                        echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No records found.</p>';
+            }
+        ?>
+        <!--Di ko na chineck if nagamit ko ba talga toh-->
+        <div class="popup" id="popup">
+            <div class="popup-content">Loading...</div>
+            <button id="closePopup">Close</button>
+        </div>
     </body>
 </html>
