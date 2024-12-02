@@ -28,6 +28,15 @@
     color: #253EE2;
 }
 
+.login-section a:hover{
+    color: lightblue;
+}
+
+.login-section a:active{
+    opacity: 0.5;
+}
+
+
 form{
     position: relative;
     
@@ -85,4 +94,26 @@ form .login{
     font-family: Dosis;
     font-weight: 700;
     font-size: x-large;
+}
+
+.submit:hover{
+    background-color: #e2e2e2; 
+}
+
+.submit:active{
+    opacity: 75%;
+}
+
+@media only screen and (min-width: 501px) and (max-width: 850px){
+    form{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    form{
+        width: 250px;
+        height: 300px;
+    }
 }

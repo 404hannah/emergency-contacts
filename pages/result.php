@@ -29,7 +29,12 @@
             <div class="search-bar">
                 <input type="text" class="search-textbox">
                 <?php
-                    if (isset($_GET['search']) and !isset($_SESSION['search']) and $_SESSION['search'] == $_GET['search']) {
+                    if (!isset($_SESSION['search'])){
+                        $_SESSION['search'] = $_GET['search'];
+                    }
+                    
+                    if (isset($_GET['search'])) {
+                        if ($_SESSION['search'] !== $_GET['search']) {
                             $_SESSION['search'] = $_GET['search'];
                             $search = $_GET['search'];
 
@@ -57,13 +62,11 @@
                                 echo "<script> noResult(); </script>";   
                             }
                         }
-                    ?>
+                    }
+                ?>
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode" onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg'></i>
-            </div>
         </header>
 
         <section>

@@ -195,13 +195,70 @@ h3{
     justify-content: center;
 
     visibility: visible;
+    bottom: 25px;
+    background-color: orange;
 }
 
 .user-report img{
     margin-right: 0px;
 }
 
-.user-report{
-    bottom: 25px;
-    background-color: orange;
+@media only screen and (min-width: 501px) and (max-width: 650px){
+    .text h4{
+        font-size: 100%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text h3{
+        font-size: 150%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .result{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result text{
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .text h4{
+        font-size: 100%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text h3{
+        font-size: 150%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .result{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result text{
+        margin-left: 0px;
+    }
+
+    .result .icons img{
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+    }
+
+    .results{
+        padding-bottom: 20px;
+    }
 }

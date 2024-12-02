@@ -19,10 +19,10 @@
             echo "No Records.";
         }
 
-        if ($success){
+        if ($success == "true"){
             header('Location: editor.php');
         } else {
-            echo "<script> alert('Incorrect information.'); </script>"; 
+            // echo "<script> alert('Incorrect information.'); </script>"; 
         }
     }
 ?>
@@ -84,9 +84,6 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode"  onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg'></i>
-            </div>
         </header>
 
         <section class="login-section">
