@@ -26,9 +26,6 @@
             <a class="log-out" href="index.php">
                 <p>LOG OUT</p>
             </a>
-            <div class="switch-mode"  onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg'></i>
-            </div>
         </header>
 
         <section>

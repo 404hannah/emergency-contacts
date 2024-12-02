@@ -115,7 +115,8 @@ form select{
     font-size: medium;
 
     padding: 5px;
-    width: 400px;
+    max-width: 400px;
+    width: 80%;
 }
 
 .container-manage{
@@ -137,10 +138,19 @@ form select{
     width: 60vw;
 }   
 
+.first-row .column{
+    width: 100%;
+}
+
+.middle-row .column{
+    width: 100%;
+}
+
 .middle-row select{
     margin-right: 40px;
 
-    width: 840px;
+    width: 80%;
+    max-width: 840px;
 }
 
 .buttons{
@@ -231,17 +241,47 @@ th, td{
     flex: 1;
 }
 
-@media only screen and (max-width: 800px){
-    form input{
-        width: 142px;
+@media only screen and (min-width: 601px) and (max-width: 850px){
+    .tabs{
+        width: 100%
     }
 
-    .middle-row input{
-        width: 300px;
+    .first-row .column{
+        width: 80%;
+    }
+    
+    .middle-row .column{
+        width: 100%;
     }
 
-    form p{
+    .add, .edit{
         font-size: larger;
-        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    .tabs{
+        font-size: x-large;
+        top: -50px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .tabs{
+        width: 100%;
+        font-size: larger;
+        top: -40px;
+    }
+
+    .first-row .column{
+        width: 80%;
+    }
+    
+    .middle-row .column{
+        width: 100%;
+    }
+
+    .add, .edit{
+        font-size: medium;
+        margin-right: 10px;
     }
 }

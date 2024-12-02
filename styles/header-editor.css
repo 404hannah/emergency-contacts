@@ -53,7 +53,7 @@ header{
 }
 
 .header-right{
-    width: 25%;
+    width: 20%;
     right: 0px;
     border-bottom-left-radius: 30px;
     justify-content: center;
@@ -88,54 +88,52 @@ header{
     font-weight: 700;
 }
 
-.switch-mode{
-    width: 50px;
-    height: 50px;
-    background-color: white;
-
-    margin-left: 20px;
-    margin-right: 30px;
-    border-radius: 30px;
-}
-
-.switch-mode i{
-    margin-top: 1px;
-    margin-left: 2px;
-}
-
-
-@media only screen and (min-width: 1281px){
-
-}
-
-@media only screen and (min-width: 1001px) and (max-width: 1200px){
-    .header-left h2{
-        font-size: x-large;
-    }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 1000px){
-    .header-left h2{
-        font-size: x-large;
-    }
-}
-
-@media only screen and (min-width: 501px) and (max-width: 800px){
+@media only screen and (min-width: 1001px) and (max-width: 1280px){
     .header-left{
-        width: 100vw;
-        height: 6.5vh;
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 951px) and (max-width: 1000px){
+    .header-left{
+        width: 60%;
+    }
+
+    .log-out p{
+        font-size: larger;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 950px){
+    .header-left{
+        width: 75vw;
+        border-radius: 0px;
+    }
+
+    .header-left {
+        width: 75vw;
         border-radius: 0px;
     }
 
     .header-right{
-        width: 100vw;
-        height: 6.5vh;
-        top: 6.5%;
+        width: 25vw;
         border-radius: 0px;
+    }
+
+    .header-left h2{
+        font-size: x-large;
+    }
+
+    .header-left h1{
+        font-size: 300%;
+    }
+
+    .log-out p{
+        font-size: larger;
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen  and (min-width: 501px) and (max-width: 600px){
     .header-left{
         width: 100vw;
         height: 6vh;
@@ -143,7 +141,12 @@ header{
     }
 
     .header-left h2{
-        font-size: larger;
+        font-size: x-large;
+        margin-right: 10px;
+    }
+
+    .header-left h1{
+        font-size: 250%;
     }
 
     .header-right{
@@ -151,5 +154,37 @@ header{
         height: 8vh;
         top: 6%;
         border-radius: 0px;
+    }
+
+    .log-out p{
+        font-size: larger;
+    }
+}
+
+@media only screen  and (max-width: 500px){
+    .header-left{
+        width: 100vw;
+        height: 5vh;
+        border-radius: 0px;
+    }
+
+    .header-left h2{
+        margin-right: 10px;
+        font-size: larger;
+    }
+
+    .header-left h1{
+        font-size: 250%;
+    }
+
+    .header-right{
+        width: 100vw;
+        height: 8vh;
+        top: 5%;
+        border-radius: 0px;
+    }
+
+    .log-out p{
+        font-size: larger;
     }
 }
