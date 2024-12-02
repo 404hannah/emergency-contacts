@@ -58,9 +58,6 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode" onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg' id="bx-mode"></i>
-            </div>
         </header>
 
         <section class="menu-wrapper">
@@ -90,14 +87,6 @@
         <div class="menu-button" onclick="menu()">
             <div class="div1"></div>
             <div class="div2"></div>
-        </div>
-
-        <div class="print-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
-            Download an Offline Version of this Site
-            <div class="print" onmouseover="printHover()" onmouseout="printHoverOut()">
-                <img src="../icons/Printer.png" alt="Print icon" width="30" height="30">
-            </div>
         </div>
 
         <div class="user-report-hover">

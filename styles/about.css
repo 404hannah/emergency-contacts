@@ -1,15 +1,23 @@
+body{
+    overflow: hidden;
+}
+
 section{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
 
-    margin-left: 12.5vw;
-    margin-top: 20vh;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
 
 section h2{
     color: #0B0B0B;
     text-align: left;
+    width: 70vw;
     font-family: Dosis;
     font-size: 175%;
     margin-top: 2px;
@@ -21,6 +29,7 @@ section h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     background-color: #728F90;
     border-radius: 30px;
@@ -38,7 +47,7 @@ section h2{
     display: flex;
     flex-direction: column;
     align-items: start;
-    width: 70vw;
+    width: 100%;
 }
 
 .main-contents h4{
@@ -61,10 +70,6 @@ section h2{
     margin-bottom: 5px;
 }
 
-.main-contents .p2{
-    width: 600px;
-}
-
 .main-contents li{
     color: #0B0B0B;
     font-family: Dosis;
@@ -75,6 +80,14 @@ section h2{
 .log-in a{
    color: blue;
    text-decoration: underline;
+}
+
+.log-in a:hover{
+    color: lightblue;
+}
+
+.log-in a:active{
+    opacity: 0.5;
 }
 
 .report-container{
@@ -104,6 +117,14 @@ section h2{
     background-color: #D76B1E;
 }
 
+.user-report:hover{
+    background-color: #d67a38; 
+}
+
+.user-report:active{
+    background-color: #da8d56;
+}
+
 .user-report img{
     margin-right: 0px;
 }
@@ -116,4 +137,50 @@ section h2{
     font-weight: 700;
 
     margin-left: 5px;
+}
+
+@media only screen and (min-width: 501px) and (max-width: 850px){
+    .about-box{
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .main-contents h4{
+        font-size: smaller;
+    }
+    
+    .main-contents p{
+        font-size: smaller;
+    }
+
+    .main-contents li{
+        font-size: smaller;
+    }
+
+    .report-container{
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .about-box{
+        width: 80vw;
+        height: 65vh;
+    }
+
+    .main-contents h4{
+        font-size: smaller;
+    }
+    
+    .main-contents p{
+        font-size: smaller;
+    }
+
+    .main-contents li{
+        font-size: smaller;
+    }
+
+    .report-container{
+        width: 80vw;
+    }
 }

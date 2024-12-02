@@ -107,7 +107,7 @@
     margin-right: 5px;
 }
 
-.print-hover, .user-report-hover{
+.user-report-hover{
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -127,15 +127,8 @@
     visibility: hidden;
 }
 
-.print-hover img, .user-report-hover img{
+.user-report-hover img{
     margin-right: 5px;
-}
-
-.print-hover{
-    right: 25px;
-    bottom: 80px;
-
-    width: 380px;
 }
 
 .user-report-hover{
