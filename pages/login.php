@@ -10,8 +10,9 @@
 
         if (mysqli_num_rows($fetch_accounts) > 0){
             while($fetch_row = mysqli_fetch_assoc($fetch_accounts)){
-                if ($username = $fetch_row['Username'] and $password = $fetch_row['Password']){
+                if ($username == $fetch_row['Username'] and $password == $fetch_row['Password']){
                     $success = "true";
+                    break;
                 }
             }
         } else {
@@ -98,11 +99,11 @@
                 <p class="username-p">Username</p>
                 <input type="text" class="username" name="username">
                 <p>Password</p>
-                <input type="text" class="password" name="password">
+                <input type="password" class="password" name="password">
 
                 <p>Not supposed to be here? <a href="index.php">Go Back</a></p>
                 <div class="login">
-                    <input type="button" class="submit" name="submit" value="Submit">
+                    <input type="submit" class="submit" name="submit" value="Submit">
                 </div>
             </form>
         </section>
