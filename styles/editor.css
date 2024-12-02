@@ -128,7 +128,7 @@ form select{
     justify-content: center;
 }
 
-.first-row, .middle-row, .last-row{
+.first-row, .middle-row{
     display: flex;
     flex-direction: row;
     justify-content: start;

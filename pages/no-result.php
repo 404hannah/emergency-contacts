@@ -61,9 +61,6 @@
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
             <a href="about.php">ABOUT</a>
-            <div class="switch-mode" onclick="switchMode()">
-                <i class='bx bxs-moon bx-lg'></i>
-            </div>
         </header>
 
         <section>
