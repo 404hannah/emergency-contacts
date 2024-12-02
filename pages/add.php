@@ -1,40 +1,46 @@
 <?php 
     include 'connection.php';
-
-    // Add data
-    if(isset($_POST['save'])){
-        $municipalityInput = $_POST['municipality'];
-        $categoryInput = $_POST['category'];
-        $instiInput = $_POST['institution'];
-        $contactInput = $_POST['contact-info'];
-        $mapsInput = $_POST['google-maps'];
-
-        switch($categoryInput){
-            case "Fire Department":
-                $insert = "INSERT INTO fire_departments (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
-                break;
-            case "Government Organization":
-                $insert = "INSERT INTO government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
-                break;
-            case "Hospital":
-                $insert = "INSERT INTO hospitals (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
-                break;
-            case "Non-Governmental Organization":
-                $insert = "INSERT INTO non_government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
-                break;
-            case "Police Station":
-                $insert = "INSERT INTO police_stations (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
-                break;
-            default:
-        }
-
-        $conn->query($insert);
-        header('Location: editor.php');
-    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        // Add data
+        if(isset($_POST['save'])){
+            $municipalityInput = $_POST['municipality'];
+            $categoryInput = $_POST['category'];
+            $instiInput = $_POST['institution'];
+            $contactInput = $_POST['contact-info'];
+            $mapsInput = $_POST['google-maps'];
+
+            switch($categoryInput){
+                case "Fire Department":
+                    $insert = "INSERT INTO fire_departments (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                    break;
+                case "Government Organization":
+                    $insert = "INSERT INTO government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                    break;
+                case "Hospital":
+                    $insert = "INSERT INTO hospitals (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                    break;
+                case "Non-Governmental Organization":
+                    $insert = "INSERT INTO non_government_orgs (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                    break;
+                case "Police Station":
+                    $insert = "INSERT INTO police_stations (Municipality, Category, Institution, `Contact Information`, `URL from Google Maps`) VALUES ('$municipalityInput', '$categoryInput', '$instiInput', '$contactInput', '$mapsInput')";
+                    break;
+                default:
+            }
+
+            if(isset($insert) && $conn->query($insert) == TRUE){
+                echo "<script> alert('Data added succesfully.'); </script>"; 
+                $conn->query($insert);
+                header('Location: editor.php');
+            } else {
+                echo "<script> alert('Error: Could not add record.'); </script>"; 
+            };
+        }
+    ?>
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Add Content</title>

@@ -1,5 +1,8 @@
 let chosen;
 let chosenCategory;
+let municipality;
+let category;
+let institution;
 
 function getVariable(variable) {
     const varValue = new URLSearchParams(window.location.search);
@@ -45,11 +48,27 @@ function getChoices(){
 function edit(){
     getChoices();
 
-    window.location.href = "edit.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
+    if(!municipality){
+        alert("Select municipality.");
+    } else if(!category){
+        alert("Select category.");
+    } else if(!institution) {
+        alert("Select institution.");
+    } else{
+        window.location.href = "edit.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
+    }
 }
 
 function add(){
     getChoices();
 
-    window.location.href = "add.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
+    if(!municipality){
+        alert("Select municipality.");
+    } else if(!category){
+        alert("Select category.");
+    } else if(!institution) {
+        alert("Select institution.");
+    } else{
+        window.location.href = "add.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
+    }
 }

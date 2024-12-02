@@ -1,71 +1,79 @@
 <?php 
     include 'connection.php';
-    // Find the id
-    if (isset($_GET['category'])) {
-        $category = $_GET['category'];
-        if(isset($_GET['institution'])){
-            $institution = $_GET['institution'];
-        
-            $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
-            if (mysqli_num_rows($fetch_chosen) > 0){
-                while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
-                    switch($category){
-                        case "fire_departments":
-                            $idInput = $fetch_row['Fire_Dept_ID'];
-                            break;
-                        case "government_orgs":
-                            $idInput = $fetch_row['Gov.Organization_ID'];
-                            break;
-                        case "hospitals":
-                            $idInput = $fetch_row['Hospital_ID'];
-                            break;
-                        case "non_government_orgs":
-                            $idInput = $fetch_row['NGO_ID'];
-                            break;
-                        case "police_stations":
-                            $idInput = $fetch_row['Police_Station_ID'];
-                            break;
-                        default:
-                    }   
-                }
-            }
-        }
-    } 
-
-    // Update the data
-    if(isset($_POST['save'])){
-        $municipalityInput = $_POST['municipality'];
-        $categoryInput = $_POST['category'];
-        $instiInput = $_POST['institution'];
-        $contactInput = $_POST['contact-info'];
-        $mapsInput = $_POST['google-maps'];
-
-        switch($categoryInput){
-            case "Fire Department":
-                $update = "UPDATE fire_departments SET Fire_Dept_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Fire_Dept_ID='$idInput'";
-                break;
-            case "Government Organization":
-                $update = "UPDATE government_orgs SET Gov.Organization_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Gov.Organization_ID='$idInput'";
-                break;
-            case "Hospital":
-                $update = "UPDATE hospitals SET Hospital_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Hospital_ID='$idInput'";
-                break;
-            case "Non-Governmental Organization":
-                $update = "UPDATE non_government_orgs SET NGO_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE NGO_ID='$idInput'";
-                break;
-            case "Police Station":
-                $update = "UPDATE police_stations SET Police_Station_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Police_Station_ID='$idInput'";
-                break;
-            default:
-        }
-
-        $conn->query($update);
-        header('Location: editor.php');
-    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+    <?php 
+        // Find the id
+        if (isset($_GET['category'])) {
+            $category = $_GET['category'];
+            if(isset($_GET['institution'])){
+                $institution = $_GET['institution'];
+            
+                $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
+                if (mysqli_num_rows($fetch_chosen) > 0){
+                    while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
+                        switch($category){
+                            case "fire_departments":
+                                $idInput = $fetch_row['Fire_Dept_ID'];
+                                break;
+                            case "government_orgs":
+                                $idInput = $fetch_row['Gov.Organization_ID'];
+                                break;
+                            case "hospitals":
+                                $idInput = $fetch_row['Hospital_ID'];
+                                break;
+                            case "non_government_orgs":
+                                $idInput = $fetch_row['NGO_ID'];
+                                break;
+                            case "police_stations":
+                                $idInput = $fetch_row['Police_Station_ID'];
+                                break;
+                            default:
+                        }   
+                    }
+                }
+            }
+        } 
+
+        // Update the data
+        if(isset($_POST['save'])){
+            $municipalityInput = $_POST['municipality'];
+            $categoryInput = $_POST['category'];
+            $instiInput = $_POST['institution'];
+            $contactInput = $_POST['contact-info'];
+            $mapsInput = $_POST['google-maps'];
+
+            switch($categoryInput){
+                case "Fire Department":
+                    $update = "UPDATE fire_departments SET Fire_Dept_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Fire_Dept_ID='$idInput'";
+                    break;
+                case "Government Organization":
+                    $update = "UPDATE government_orgs SET Gov.Organization_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Gov.Organization_ID='$idInput'";
+                    break;
+                case "Hospital":
+                    $update = "UPDATE hospitals SET Hospital_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Hospital_ID='$idInput'";
+                    break;
+                case "Non-Governmental Organization":
+                    $update = "UPDATE non_government_orgs SET NGO_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE NGO_ID='$idInput'";
+                    break;
+                case "Police Station":
+                    $update = "UPDATE police_stations SET Police_Station_ID='$idInput', Municipality='$municipalityInput', Category='$categoryInput', Institution='$instiInput', `Contact Information`='$contactInput', `URL from Google Maps`='$mapsInput' WHERE Police_Station_ID='$idInput'";
+                    break;
+                default:
+            }
+            
+            if(isset($update) && $conn->query($update) == TRUE){
+                echo "<script> alert('Data updated succesfully.'); </script>"; 
+                $conn->query($update);
+                header('Location: editor.php');
+            } else {
+                echo "<script> alert('Error: Could not update record.'); </script>"; 
+            };
+        }
+    ?>
+
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Edit Content</title>

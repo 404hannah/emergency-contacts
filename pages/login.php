@@ -1,34 +1,39 @@
 <?php 
     include 'connection.php';
-
-    if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $success = "false";
-
-        $fetch_accounts = mysqli_query($conn, "SELECT * FROM accounts");
-
-        if (mysqli_num_rows($fetch_accounts) > 0){
-            while($fetch_row = mysqli_fetch_assoc($fetch_accounts)){
-                if ($username == $fetch_row['Username'] and $password == $fetch_row['Password']){
-                    $success = "true";
-                    break;
-                }
-            }
-        } else {
-            echo "No Records.";
-        }
-
-        if ($success == "true"){
-            header('Location: editor.php');
-        } else {
-            // echo "<script> alert('Incorrect information.'); </script>"; 
-        }
-    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        if(isset($_POST['submit'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $success = FALSE;
+
+            $fetch_accounts = mysqli_query($conn, "SELECT * FROM accounts");
+
+            if (mysqli_num_rows($fetch_accounts) > 0){
+                while($fetch_row = mysqli_fetch_assoc($fetch_accounts)){
+                    if ($username == $fetch_row['Username'] and $password == $fetch_row['Password']){
+                        $success = TRUE;
+                        break;
+                    }
+                }
+            } else {
+                echo "No Records.";
+            }
+
+            if ($success == TRUE){
+                echo "<script> alert('Log in successful.'); </script>"; 
+                header('Location: editor.php');
+            } elseif (!$username && !$password) {
+                
+            } else {
+                echo "<script> alert('Incorrect information.'); </script>"; 
+            }
+        }
+    ?>
+
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Log In</title>
