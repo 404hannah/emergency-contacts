@@ -116,7 +116,7 @@ section{
     font-size: medium;
 
     padding: 5px;
-    width: 400px;
+    width: 100%;
 }
 
 .container-manage{
@@ -138,10 +138,22 @@ section{
     width: 60vw;
 }   
 
+.municipality, .contact-info{
+    margin-right: 10px;
+}
+
+.category, .google-maps{
+    margin-left: 10px;
+}
+
+.first-row .column, .middle-row .column, .last-row .column{
+    width: 100%;
+}
+
 .middle-row input{
     margin-right: 40px;
 
-    width: 850px;
+    width: 80%;
 }
 
 .buttons{
@@ -258,18 +270,57 @@ th, td{
     flex: 1;
 }
 
-
-@media only screen and (max-width: 800px){
-    .sub-section input{
-        width: 142px;
+@media only screen and (min-width: 851px) and (max-width: 1000px){
+    .header-left{
+        width: 60%;
     }
 
-    .middle-row input{
-        width: 300px;
-    }
-
-    .sub-section p{
+    .log-out p{
         font-size: larger;
-        margin-left: 5px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 850px){
+    .tabs{
+        width: 100%
+    }
+
+    .first-row .column{
+        width: 80%;
+    }
+    
+    .middle-row .column{
+        width: 100%;
+    }
+
+    .buttons .save, .cancel{
+        font-size: larger;
+        margin-right: 10px;
+    }
+
+    .tabs{
+        font-size: x-large;
+        top: -50px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .tabs{
+        width: 100%;
+        font-size: larger;
+        top: -40px;
+    }
+
+    .first-row .column{
+        width: 80%;
+    }
+    
+    .middle-row .column{
+        width: 100%;
+    }
+
+    .buttons .save, .cancel{
+        font-size: medium;
+        margin-right: 10px;
     }
 }
