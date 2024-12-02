@@ -1,5 +1,29 @@
 <?php 
     include 'connection.php';
+
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $success = "false";
+
+        $fetch_accounts = mysqli_query($conn, "SELECT * FROM accounts");
+
+        if (mysqli_num_rows($fetch_accounts) > 0){
+            while($fetch_row = mysqli_fetch_assoc($fetch_accounts)){
+                if ($username = $fetch_row['Username'] and $password = $fetch_row['Password']){
+                    $success = "true";
+                }
+            }
+        } else {
+            echo "No Records.";
+        }
+
+        if ($success){
+            header('Location: editor.php');
+        } else {
+            echo "<script> alert('Incorrect information.'); </script>"; 
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +41,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
         <script src='../scripts/search.js'></script>
+        <script src='../scripts/login.js'></script>
     </head>
 
     <body>
@@ -69,14 +94,16 @@
                 <h1>LOG IN</h1>
             </div>
 
-            <form>
+            <form method="POST" class="container-manage">
                 <p class="username-p">Username</p>
-                <input type="text" class="username">
+                <input type="text" class="username" name="username">
                 <p>Password</p>
-                <input type="text" class="password">
+                <input type="text" class="password" name="password">
 
                 <p>Not supposed to be here? <a href="index.php">Go Back</a></p>
-                <a class="login" href="editor.php"><input type="button" class="submit" value="Submit"></a>
+                <div class="login">
+                    <input type="button" class="submit" name="submit" value="Submit">
+                </div>
             </form>
         </section>
 
