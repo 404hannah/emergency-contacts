@@ -292,6 +292,13 @@ th, td{
     .middle-row .column{
         width: 100%;
     }
+    
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     .buttons .save, .cancel{
         font-size: larger;
