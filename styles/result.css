@@ -144,6 +144,14 @@ h3{
     margin-left: 15px;
 }
 
+.result .icons img:hover{
+    background: #bfcdcd;
+}
+
+.result .icons img:active{
+    opacity: 0.75;
+}
+
 .user-report-hover{
     position: absolute;
     right: 20px;
