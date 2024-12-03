@@ -216,7 +216,7 @@
     }
 }
 
-/* WHERE THINGS GONE ROGUE*/
+/* WHERE THINGS GONE MONKEY*/
 
 .form-container {
     max-height: 90vh;
@@ -227,7 +227,6 @@
 }
 
 .record {
-    
     margin: 0.5vw;
     padding: 20px;
     background-color: #404040;
@@ -279,6 +278,7 @@
     color: #fff;
     font-size: 2.2vw;
 }
+
 .short-category {
     display: flex;
     justify-content: center;
@@ -291,6 +291,7 @@
     color: #fff;
     font-size: 2.8vw;
 }
+
 .long-category {
     display: flex;
     justify-content: center;
@@ -303,6 +304,7 @@
     color: #fff;
     font-size: 1.5vw;
 }
+
 .hospital {
     background-color: #4CAF50;
 }
@@ -324,28 +326,47 @@
 }
 
 /* Pop up-ers */
+
 .popup {
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
+    width: 70vw;
     transform: translate(-50%, -50%);
     background: #fff;
     border: 1px solid #ccc;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(#848484);
     padding: 20px;
     display: none;
     z-index: 1000;
 }
-
-.popup-content {
-    max-height: 400px;
-    overflow-y: auto;
-}
-
 .popup-record {
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.gmaps {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.copy-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.popup-content {
+    max-height: 30vw;
+    overflow-y: auto;
 }
 
 #closePopup {
