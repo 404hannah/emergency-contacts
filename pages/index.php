@@ -54,6 +54,18 @@
                             echo "<script> noResult(); </script>";   
                         }
                     }
+
+                    $query = "SELECT DISTINCT Municipality FROM government_orgs";
+                    $result = mysqli_query($conn, $query);
+                    $i = 0;
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                                $id[$i] = "#" . $row['Municipality'];
+                                $i = $i + 1;
+                        }
+                    } else {
+                        echo '<p>No records found.</p>';
+                    }
                 ?>
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
@@ -63,24 +75,24 @@
         <section class="menu-wrapper">
             <div class="menu">
                 <p>MUNICPALITIES<p>
-                <a>TARLAC CITY</a>
-                <a>ANAO</a>
-                <a>BAMBAN</a>
-                <a>CAMILING</a>
-                <a>CAPAS</a>
-                <a>CONCEPCION</a>
-                <a>GERONA</a>
-                <a>LA PAZ</a>
-                <a>MAYANTOC</a>
-                <a>MONCADA</a>
-                <a>PANIQUI</a>
-                <a>PURA</a>
-                <a>RAMOS</a>
-                <a>SAN CLEMENTE</a>
-                <a>SAN JOSE</a>
-                <a>SAN MANUEL</a>
-                <a>SANTA IGNACIA</a>
-                <a>VICTORIA</a>
+                <a href="<?php echo $id[0] ?>">TARLAC CITY</a>
+                <a href="<?php echo $id[1] ?>">ANAO</a>
+                <a href="<?php echo $id[2] ?>">BAMBAN</a>
+                <a href="<?php echo $id[3] ?>">CAMILING</a>
+                <a href="<?php echo $id[4] ?>">CAPAS</a>
+                <a href="<?php echo $id[5] ?>">CONCEPCION</a>
+                <a href="<?php echo $id[6] ?>">GERONA</a>
+                <a href="<?php echo $id[7] ?>">LA PAZ</a>
+                <a href="<?php echo $id[8] ?>">MAYANTOC</a>
+                <a href="<?php echo $id[9] ?>">MONCADA</a>
+                <a href="<?php echo $id[10] ?>">PANIQUI</a>
+                <a href="<?php echo $id[11] ?>">PURA</a>
+                <a href="<?php echo $id[12] ?>">RAMOS</a>
+                <a href="<?php echo $id[13] ?>">SAN CLEMENTE</a>
+                <a href="<?php echo $id[14] ?>">SAN JOSE</a>
+                <a href="<?php echo $id[15] ?>">SAN MANUEL</a>
+                <a href="<?php echo $id[16] ?>">SANTA IGNACIA</a>
+                <a href="<?php echo $id[17] ?>">VICTORIA</a>
             </div>
         </section>
 
@@ -105,6 +117,7 @@
             include 'connection.php';
             $query = "SELECT DISTINCT Municipality FROM government_orgs";
             $result = mysqli_query($conn, $query);
+            $i = 0;
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div>';
@@ -113,8 +126,11 @@
                         // In this part, I used the Municapality Column of government_orgs table. 
                         // So, if, for example, may nadelete na municipality duon, then, deads. (Inadd ko talaga ung Concepcion ID#7)
                         // Nakabase ung sequence ng mga ito sa ID# nila. Not alphabetically.
-                        // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.
-                        echo '<h2>' . $row['Municipality'] . '</h2>';
+                        // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.  
+                        $id = $row['Municipality'];
+                        $i = $i + 1;
+                        
+                        echo '<h2 id="<?php echo  $id[$i] ?>">' . $row['Municipality'] . '</h2>';
                         echo '<div class="categories">';
                             // Ze five Buttons
                             echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">HOSPITAL</button>';
