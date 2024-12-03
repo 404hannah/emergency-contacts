@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             const record = document.createElement('div');
                             record.classList.add('popup-record');
                             record.innerHTML = `
-                            <h3>${item.Institution}</h3>
-                            <p>Contact: ${item['Contact Information']}</p>
-                            <a href="${item.URL}" target="_blank"><button>Go to Link</button></a>
-                            <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')">Copy to Clipboard</button>
+                            <h3 class="texts">${item.Institution}</h3>
+                            <p class="texts">Contact: ${item['Contact Information']}</p>
+                            <a href="${item['URL from Google Maps']}" target="_blank"><button class="gmaps"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button></a>
+                            <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
                         `;
                             popupContent.appendChild(record);
                         });
                     } else {
-                        popupContent.innerHTML = '<p>No records found.</p>';
+                        popupContent.innerHTML = '<p class="norecord">No records found.</p>';
                     }
                     showPopup();
                 })
