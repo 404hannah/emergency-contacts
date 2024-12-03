@@ -26,7 +26,7 @@
         </header>
         <header class="header-right">
             <div class="search-bar">
-                <input type="text" class="search-textbox">
+                <input type="text" class="search-textbox" placeholder="Search institutions">
                 <?php
                     if (isset($_GET['search'])) {
                         $search = $_GET['search'];
