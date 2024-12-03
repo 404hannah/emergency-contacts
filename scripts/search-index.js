@@ -3,7 +3,7 @@ let searchValue;
 function search(){
     const searchBox = document.querySelector('.search-textbox');
     searchValue = searchBox.value.trim();
-    window.location.href = "../index.php?search=" + encodeURIComponent(searchValue);
+    window.location.href = "index.php?search=" + encodeURIComponent(searchValue);
 }
 
 function getVariable(variable) {
@@ -13,10 +13,10 @@ function getVariable(variable) {
 
 function result(){
     searchValue = getVariable('search');
-    window.location.href = "result.php?search=" + encodeURIComponent(searchValue);
+    window.location.href = "pages/result.php?search=" + encodeURIComponent(searchValue);
 }
 
 function noResult(){
     searchValue = getVariable('search');
-    window.location.href = "no-result.php?search=" + encodeURIComponent(searchValue);
+    window.location.href = "pages/no-result.php?search=" + encodeURIComponent(searchValue);
 }
