@@ -94,7 +94,7 @@
             <h1>CM</h1>
         </header>
         <header class="header-right">
-            <a class="log-out" href="index.php">
+            <a class="log-out" href="../index.php">
                 <p>LOG OUT</p>
             </a>
         </header>

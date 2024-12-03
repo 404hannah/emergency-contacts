@@ -23,7 +23,7 @@
 
     <body>
         <header class="header-left">
-            <a href="index.php">TARLAC EMERGENCY CONTACTS</a>
+            <a href="../index.php">TARLAC EMERGENCY CONTACTS</a>
         </header>
         <header class="header-right">
             <div class="search-bar">
@@ -74,7 +74,7 @@
                 <div class="main-contents">
                     <h1>We are Sorry.</h1>
                     <h2>There are No Results for "<?php echo "$search"?>".</h2>
-                    <a class="back" href="index.php">Go Back to Home Page</a>
+                    <a class="back" href="../index.php">Go Back to Home Page</a>
                 </div>
                 <div class="user-report-hover">
                     <div class="pop-up">

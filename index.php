@@ -1,5 +1,5 @@
 <?php 
-    include 'connection.php';
+    include 'pages/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,15 +8,15 @@
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Home</title>
         
-        <link rel="stylesheet" href="../styles/header.css">
-        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/index.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
         
-        <script src='../scripts/search.js'></script>
+        <script src='scripts/search.js'></script>
     </head>
 
     <body>
@@ -69,7 +69,7 @@
                 ?>
                 <i class='bx bx-search bx-md' onclick="search()"></i>
             </div>
-            <a href="about.php">ABOUT</a>
+            <a href="pages/about.php">ABOUT</a>
         </header>
 
         <section class="menu-wrapper">
@@ -104,17 +104,14 @@
         <div class="user-report-hover">
             <img src="../icons/info.png" alt="Information icon" width="30" height="30">
             Report an Issue about the Website
-            <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="contact-us.php">
+            <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="pages/contact-us.php">
                 <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
             </a>
         </div>
-
-        <script src="../scripts/index.js"></script>
-        <script src="../scripts/report-hover.js"></script>
         
         <!--Where I started messing things up-->
         <?php
-            include 'connection.php';
+            include 'pages/connection.php';
             $query = "SELECT DISTINCT Municipality FROM government_orgs";
             $result = mysqli_query($conn, $query);
             $i = 0;
@@ -127,10 +124,10 @@
                         // So, if, for example, may nadelete na municipality duon, then, deads. (Inadd ko talaga ung Concepcion ID#7)
                         // Nakabase ung sequence ng mga ito sa ID# nila. Not alphabetically.
                         // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.  
-                        $id = $row['Municipality'];
+                        $id[$i] = $row['Municipality'];
+                       
+                        echo '<h2 id="' . $id[$i] . '">' . $row['Municipality'] . '</h2>';
                         $i = $i + 1;
-                        
-                        echo '<h2 id="<?php echo  $id[$i] ?>">' . $row['Municipality'] . '</h2>';
                         echo '<div class="categories">';
                             // Ze five Buttons
                             echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">HOSPITAL</button>';
@@ -152,5 +149,8 @@
             <div class="popup-content">Loading...</div>
             <button id="closePopup">Close</button>
         </div>
+
+        <script src="scripts/index.js"></script>
+        <script src="scripts/report-hover.js"></script>
     </body>
 </html>

@@ -52,7 +52,7 @@
 
     <body>
         <header class="header-left">
-            <a href="index.php">TARLAC EMERGENCY CONTACTS</a>
+            <a href="../index.php">TARLAC EMERGENCY CONTACTS</a>
         </header>
         <header class="header-right">
             <div class="search-bar">
@@ -103,7 +103,7 @@
                 <p>Password</p>
                 <input type="password" class="password" name="password">
 
-                <p>Not supposed to be here? <a href="index.php">Go Back</a></p>
+                <p>Not supposed to be here? <a href="../index.php">Go Back</a></p>
                 <div class="login">
                     <input type="submit" class="submit" name="submit" value="Submit">
                 </div>

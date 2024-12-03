@@ -22,7 +22,7 @@
 
     <body>
         <header class="header-left">
-            <a href="index.php">TARLAC EMERGENCY CONTACTS</a>
+            <a href="../index.php">TARLAC EMERGENCY CONTACTS</a>
         </header>
         <header class="header-right">
             <div class="search-bar">
