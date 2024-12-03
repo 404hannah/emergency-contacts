@@ -102,10 +102,10 @@
         </div>
 
         <div class="user-report-hover">
-            <img src="../icons/info.png" alt="Information icon" width="30" height="30">
+            <img src="icons/info.png" alt="Information icon" width="30" height="30">
             Report an Issue about the Website
             <a class="user-report" onmouseover="reportHover()" onmouseout="reportHoverOut()" href="pages/contact-us.php">
-                <img src="../icons/User-Report.png" alt="User report icon" width="30" height="30">
+                <img src="icons/User-Report.png" alt="User report icon" width="30" height="30">
             </a>
         </div>
         

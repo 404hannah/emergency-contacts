@@ -66,16 +66,15 @@
                 <p>Thank you for reaching out! Please provide details about the issue you're experiencing so we can assist you promptly.</p>
             </div>
 
-            <form>
+            <form action="mailto:tarlacemergencycontacts@gmail.com" method="post" enctype="text/plain">
                 <p class="email-text">Email Address:</p>
                 <input type="text" class="email">
                 <p>Subject:</p>
-                <input type="text" class="subject">
+                <input type="text" class="subject" name="subject">
                 <p>Description of the Problem:</p>
-                <textarea class="description" name="description" rows="6" cols="80"></textarea>
-                <div><input type="button" class="submit" value="Submit"></div>
+                <textarea class="description" name="body" rows="6" cols="80"></textarea>
+                <div><input type="submit" class="submit" value="Submit"></div>
             </form>
         </section>
-
     </body>
 </html>
