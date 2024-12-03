@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const category = button.getAttribute('data-table');
             const municipality = button.getAttribute('data-municipality');
 
-            fetch('fetch_records.php', {
+            fetch('/emergency-contacts/pages/fetch_records.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             record.innerHTML = `
                             <h3 class="texts">${item.Institution}</h3>
                             <p class="texts">Contact: ${item['Contact Information']}</p>
-                            <a href="${item['URL from Google Maps']}" target="_blank"><button class="gmaps"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button></a>
-                            <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
+                            <a href="${item['URL from Google Maps']}" target="_blank"><button class="gmaps"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button></a>
+                            <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
                         `;
                             popupContent.appendChild(record);
                         });
