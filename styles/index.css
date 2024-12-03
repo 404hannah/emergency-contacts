@@ -1,5 +1,5 @@
 .menu-wrapper{
-    position: absolute;
+    position: fixed;
     display: block;
     top: 13%;
 
@@ -67,7 +67,7 @@
 }
 
 .menu-button{
-    position: absolute;
+    position: fixed;
     top: 46%;
     left: 28%;
 

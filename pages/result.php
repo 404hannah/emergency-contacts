@@ -133,7 +133,7 @@
                                     </div>
                                     <div class="icons">
                                         <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
                                         <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                                     </div>
                                     <div class="icons">
                                         <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
                                         <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                                     </div>
                                     <div class="icons">
                                         <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
                                         <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
                                     </div>
                                     <div class="icons">
                                         <a href="<?php echo $fetch_row['URL from Google Maps'] ?>"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
-                                        <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
+                                        <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
                                         <a href="<?php echo $fetch_row['Contact Information'] ?>"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>

@@ -113,7 +113,7 @@
                         // In this part, I used the Municapality Column of government_orgs table. 
                         // So, if, for example, may nadelete na municipality duon, then, deads. (Inadd ko talaga ung Concepcion ID#7)
                         // Nakabase ung sequence ng mga ito sa ID# nila. Not alphabetically.
-                        // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.  
+                        // Also don't worry about duplicates, naka DISTINCT sila sa query in line 106.
                         echo '<h2>' . $row['Municipality'] . '</h2>';
                         echo '<div class="categories">';
                             // Ze five Buttons
