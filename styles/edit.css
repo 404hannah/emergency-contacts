@@ -19,7 +19,7 @@ section{
     left: 0px;
     z-index: 0;
 
-    color: #0B0B0B;
+    color: white;
     text-align: center;
     font-family: Dosis;
     font-size: xx-large;
@@ -42,7 +42,7 @@ section{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
-    background-color: #9B9B9B;;
+    background-color: #313131;;
 }
 
 .tabs .manage{
@@ -59,7 +59,7 @@ section{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
-    background-color: #728F90;;
+    background-color: #1D5C67;;
 }
 
 .sub-section{
@@ -70,7 +70,7 @@ section{
     align-items: center;
     justify-content: center;
     
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -87,7 +87,7 @@ section{
     align-items: center;
     justify-content: center;
     
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -150,6 +150,10 @@ section{
     width: 60vw;
 }   
 
+.column p{
+    color: white;
+}
+
 .middle-row input{
     margin-right: 40px;
 
@@ -171,10 +175,12 @@ section{
     width: 200px;
     margin-bottom: 0px;
 
-    background-color: white;
+    background-color: #A72A8C;
     padding: 10px;
     border-radius: 10px;
-    border-style: none;
+    border-color: #796F6F;
+    border-width: 2px;
+    border-style: solid;
 
     font-family: Dosis;
     font-weight: 700;
@@ -188,10 +194,12 @@ section{
     margin-bottom: 0px;
     width: 150px;
 
-    background-color: white;
+    background-color: #A72A8C;
     padding: 10px;
     border-radius: 10px;
-    border-style: none;
+    border-color: #796F6F;
+    border-width: 2px;
+    border-style: solid;
 
     font-family: Dosis;
     font-weight: 700;
@@ -204,16 +212,26 @@ section{
     margin-right: 40px;
     width: 125px;
 
-    background-color: white;
+    background-color: #A72A8C;
     padding: 10px;
     border-radius: 10px;
-    border-style: none;
+    border-color: #796F6F;
+    border-width: 2px;
+    border-style: solid;
 
     font-family: Dosis;
     font-weight: 700;
     color: black;
     font-size: x-large;
     text-align: center;
+}
+
+.buttons .save:hover, .buttons .delete:hover, .buttons .cancel:hover{
+    background-color: #e144bf;
+}
+
+.buttons .save:active, .buttons .delete:active, .buttons .cancel:active{
+    background-color: #e187cd;
 }
 
 .container-view{
@@ -253,7 +271,7 @@ section{
 
 .table-container::-webkit-scrollbar-thumb{
     width: 10px;
-    background-color: black;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -265,11 +283,11 @@ table{
 table, th, td{
     border-style: solid;
     border-width: 3px;  
-    border-color: black;
+    border-color: white;
     border-collapse: collapse; 
 
     font-family: Dosis;
-    color: black;
+    color: white;
     font-size: large;
     text-align: center;
     padding: 5px;

@@ -2,7 +2,7 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background: #C7E5F4;
+    background: #1B1919;
 }
 
 a{
@@ -21,7 +21,7 @@ header{
     position: fixed;
     top: 0px;
 
-    background-color: #4A777E;
+    background-color: #1D5C67;
     height: 13vh;
 }
 
@@ -43,7 +43,7 @@ header{
 }
 
 .header-left h2{
-    color: #0B0B0B;
+    color: white;
     font-family: Dosis;
     font-size: xx-large;
     font-weight: 700;
@@ -78,6 +78,14 @@ header{
 
     margin-left: 30px;
     margin-right: 20px;
+}
+
+.log-out:hover{
+    background-color: rgb(255, 82, 82);
+}
+
+.log-out:active{
+    background-color: rgb(255, 141, 141);
 }
 
 .log-out p{
