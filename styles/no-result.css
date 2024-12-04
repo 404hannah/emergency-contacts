@@ -73,6 +73,14 @@ section h1{
     text-align: center;
 }
 
+.back:hover{
+    background-color: #65bbbb;
+}
+
+.back:active{
+    background-color: #a1e2e2;
+}
+
 .user-report-hover{
     position: absolute;
     right: 20px;

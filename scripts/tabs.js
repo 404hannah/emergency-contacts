@@ -15,5 +15,5 @@ function manageMode(){
     
     manage.style.display = 'flex';
     view.style.display = 'none';
-    subform.style.backgroundColor = '#728F90';
+    subform.style.backgroundColor = '#1D5C67';
 }

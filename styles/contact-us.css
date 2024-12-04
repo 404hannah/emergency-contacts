@@ -33,7 +33,7 @@ section p{
 form{
     position: relative;
     
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -49,6 +49,7 @@ form p{
     font-family: Dosis;
     font-size: large;
     font-weight: 500;
+    color: white;
 }
 
 .email, .subject, .description{
