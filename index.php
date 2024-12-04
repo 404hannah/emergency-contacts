@@ -112,7 +112,7 @@
         <!--Where I started messing things up-->
         <?php
             include 'pages/connection.php';
-            $query = "SELECT DISTINCT Municipality FROM government_orgs";
+            $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
             $result = mysqli_query($conn, $query);
             $i = 0;
             if (mysqli_num_rows($result) > 0) {
@@ -129,7 +129,6 @@
                         echo '<h2 id="' . $id[$i] . '">' . $row['Municipality'] . '</h2>';
                         $i = $i + 1;
                         echo '<div class="categories">';
-                            // Ze five Buttons
                             echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">HOSPITAL</button>';
                             echo '<button class="category police openPopup" data-table="police_stations" data-municipality="' . $row['Municipality'] . '">POLICE</button>';
                             echo '<button class="short-category fire openPopup" data-table="fire_departments" data-municipality="' . $row['Municipality'] . '">FIRE</button>';
@@ -144,7 +143,6 @@
                 echo '<p>No records found.</p>';
             }
         ?>
-        <!--Di ko na chineck if nagamit ko ba talga toh-->
         <div class="popup" id="popup">
             <div class="popup-content">Loading...</div>
             <button id="closePopup">Close</button>

@@ -1,6 +1,6 @@
 .menu-wrapper{
     position: fixed;
-    display: block;
+    display: none;
     top: 13%;
 
     background-color: #4A777E;
@@ -72,7 +72,7 @@
 .menu-button{
     position: fixed;
     top: 46%;
-    left: 28%;
+    left: 0%;
 
     width: 35px;
     height: 10vh;
@@ -349,24 +349,47 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
     display: flex;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: flex-start;
+    width: 100%;
     gap: 20px;
 }
+
 .texts {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 5px; 
+    font-size: 1.2rem;
+    flex-grow: 1; 
 }
-.gmaps {
+
+.gmaps, .copy-btn {
     display: flex;
-    flex-direction: row;
+    align-items: center; 
+    padding: 5px;
+    gap: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+    .gmaps img, .copy-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
 }
-.copy-btn {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+
+.popup-record a {
+    margin-left: auto;
+    text-decoration: none;
 }
+
 .popup-content {
     max-height: 30vw;
     overflow-y: auto;
@@ -375,7 +398,9 @@
 #closePopup {
     margin-top: 15px;
     display: inline-block;
-    padding: 5px 10px;
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    border-radius: 10px;
     background-color: #f44336;
     color: #fff;
     border: none;
