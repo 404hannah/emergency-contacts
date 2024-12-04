@@ -8,7 +8,7 @@ section{
 }
 
 section h2{
-    color: #0B0B0B;
+    color: white;
     text-align: center;
     font-family: Dosis;
     font-size: 175%;
@@ -17,7 +17,7 @@ section h2{
 }
 
 section h1{
-    color: #0B0B0B;
+    color: white;
     text-align: center;
     font-family: Dosis;
     font-size: 250%;
@@ -30,7 +30,7 @@ section h1{
     flex-direction: column;
     align-items: end;
 
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -60,10 +60,10 @@ section h1{
 
     border-style: solid;
     border-width: 8px;
-    border-color: #5D6769;
+    border-color: #65888D;
     border-radius: 15px;
 
-    background-color: #DAE9E9;
+    background-color: #3D8D8D;
 
     font-family: Dosis;
     color: black;
@@ -115,7 +115,7 @@ section h1{
     height: 40px;
 
     border-radius: 10px;
-    border-color: #2F3030;
+    border-color: #959595;
     border-width: 5px;
     border-style: solid;
 

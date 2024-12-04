@@ -15,7 +15,7 @@ section{
 }
 
 section h2{
-    color: #0B0B0B;
+    color: white;
     text-align: left;
     width: 70vw;
     font-family: Dosis;
@@ -31,7 +31,7 @@ section h2{
     align-items: center;
     justify-content: center;
 
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -51,7 +51,7 @@ section h2{
 }
 
 .main-contents h4{
-    color: #0B0B0B;
+    color: white;
     font-family: Dosis;
     font-size: medium;
     font-weight: bold;
@@ -61,7 +61,7 @@ section h2{
 }
 
 .main-contents p{
-    color: #0B0B0B;
+    color: white;
     font-family: Dosis;
     font-size: medium;
     font-weight: 400;
@@ -71,19 +71,19 @@ section h2{
 }
 
 .main-contents li{
-    color: #0B0B0B;
+    color: white;
     font-family: Dosis;
     font-size: medium;
     font-weight: 500;
 }
 
 .log-in a{
-   color: blue;
+   color: 31FAF0;
    text-decoration: underline;
 }
 
 .log-in a:hover{
-    color: lightblue;
+    color: 79fff8;
 }
 
 .log-in a:active{
@@ -104,7 +104,7 @@ section h2{
     height: 40px;
 
     border-radius: 15px;
-    border-color: #2F3030;
+    border-color: #959595;
     border-width: 5px;
     border-style: solid;
 

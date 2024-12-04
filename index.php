@@ -55,7 +55,7 @@
                         }
                     }
 
-                    $query = "SELECT DISTINCT Municipality FROM government_orgs";
+                    $query = $query = "SELECT DISTINCT Municipality FROM hospitals";
                     $result = mysqli_query($conn, $query);
                     $i = 0;
                     if (mysqli_num_rows($result) > 0) {
@@ -75,23 +75,23 @@
         <section class="menu-wrapper">
             <div class="menu">
                 <p>MUNICPALITIES<p>
-                <a href="<?php echo $id[0] ?>">TARLAC CITY</a>
-                <a href="<?php echo $id[1] ?>">ANAO</a>
-                <a href="<?php echo $id[2] ?>">BAMBAN</a>
-                <a href="<?php echo $id[3] ?>">CAMILING</a>
-                <a href="<?php echo $id[4] ?>">CAPAS</a>
-                <a href="<?php echo $id[5] ?>">CONCEPCION</a>
-                <a href="<?php echo $id[6] ?>">GERONA</a>
-                <a href="<?php echo $id[7] ?>">LA PAZ</a>
-                <a href="<?php echo $id[8] ?>">MAYANTOC</a>
-                <a href="<?php echo $id[9] ?>">MONCADA</a>
-                <a href="<?php echo $id[10] ?>">PANIQUI</a>
-                <a href="<?php echo $id[11] ?>">PURA</a>
-                <a href="<?php echo $id[12] ?>">RAMOS</a>
-                <a href="<?php echo $id[13] ?>">SAN CLEMENTE</a>
-                <a href="<?php echo $id[14] ?>">SAN JOSE</a>
-                <a href="<?php echo $id[15] ?>">SAN MANUEL</a>
-                <a href="<?php echo $id[16] ?>">SANTA IGNACIA</a>
+                <a href="<?php echo $id[0] ?>">ANAO</a>
+                <a href="<?php echo $id[1] ?>">BAMBAN</a>
+                <a href="<?php echo $id[2] ?>">CAMILING</a>
+                <a href="<?php echo $id[3] ?>">CAPAS</a>
+                <a href="<?php echo $id[4] ?>">CONCEPCION</a>
+                <a href="<?php echo $id[5] ?>">GERONA</a>
+                <a href="<?php echo $id[6] ?>">LA PAZ</a>
+                <a href="<?php echo $id[7] ?>">MAYANTOC</a>
+                <a href="<?php echo $id[8] ?>">MONCADA</a>
+                <a href="<?php echo $id[9] ?>">PANIQUI</a>
+                <a href="<?php echo $id[10] ?>">PURA</a>
+                <a href="<?php echo $id[11] ?>">RAMOS</a>
+                <a href="<?php echo $id[12] ?>">SAN CLEMENTE</a>
+                <a href="<?php echo $id[13] ?>">SAN JOSE</a>
+                <a href="<?php echo $id[14] ?>">SAN MANUEL</a>
+                <a href="<?php echo $id[15] ?>">SANTA IGNACIA</a>
+                <a href="<?php echo $id[16] ?>">TARLAC CITY</a>
                 <a href="<?php echo $id[17] ?>">VICTORIA</a>
             </div>
         </section>

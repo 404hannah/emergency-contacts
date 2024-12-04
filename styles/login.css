@@ -6,7 +6,7 @@
 
 .login-titles h2{
     font-size: 200%;
-    color: #0B0B0B;
+    color: white;
     text-align: center;
     font-family: Dosis;
 
@@ -16,7 +16,7 @@
 
 .login-titles h1{
     font-size: 300%;
-    color: #0B0B0B;
+    color: white;
     text-align: center;
     font-family: Dosis;
 
@@ -25,11 +25,11 @@
 
 .login-section a{
     text-decoration: underline;
-    color: #253EE2;
+    color: #31FAF0;
 }
 
 .login-section a:hover{
-    color: lightblue;
+    color: #79fff8;
 }
 
 .login-section a:active{
@@ -40,7 +40,7 @@
 form{
     position: relative;
     
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 20px;
 
     width: 325px;
@@ -53,6 +53,10 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+form p{
+    color: white;
 }
 
 .login-section form p{
@@ -94,10 +98,17 @@ form .login{
     font-family: Dosis;
     font-weight: 700;
     font-size: x-large;
+
+    background-color: #A72A8C;
+
+    border-radius: 10px;
+    border-color: #796F6F;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .submit:hover{
-    background-color: #e2e2e2; 
+    background-color: #ce4fb3; 
 }
 
 .submit:active{

@@ -8,7 +8,7 @@ section{
 }
 
 section h2{
-    color: #0B0B0B;
+    color: white;
     text-align: left;
     font-family: Dosis;
     font-size: 175%;
@@ -22,7 +22,7 @@ section h2{
     flex-direction: column;
     align-items: center;
 
-    background-color: #728F90;
+    background-color: #1D5C67;
     border-radius: 30px;
 
     width: 70vw;
@@ -35,7 +35,7 @@ section h2{
 }
 
 .results p{
-    color: #313131;
+    color: white;
     font-family: Dosis;
     font-size: medium;
     font-style: normal;
@@ -70,7 +70,7 @@ section h2{
 
 .main-contents::-webkit-scrollbar-thumb{
     width: 20px;
-    background-color: black;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -193,7 +193,7 @@ h3{
     height: 40px;
 
     border-radius: 10px;
-    border-color: #2F3030;
+    border-color: #959595;
     border-width: 5px;
     border-style: solid;
 
