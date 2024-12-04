@@ -41,7 +41,8 @@ INSERT INTO `accounts` (`User_ID`, `Username`, `Password`) VALUES
 (1, 'shane', 'blanco'),
 (2, 'hannah', 'pulmano'),
 (3, 'stephen', 'nierras'),
-(4, 'princess', 'pasamonte');
+(4, 'princess', 'pasamonte'),
+(5, 'gabriel', 'muyrong');
 
 -- --------------------------------------------------------
 
