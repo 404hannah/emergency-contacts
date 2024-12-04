@@ -44,6 +44,8 @@
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Add Content</title>
+
+        <link rel="icon" type="image/x-icon" href="../images/tec-logo.png">
         
         <link rel="stylesheet" href="../styles/header-editor.css">
         <link rel="stylesheet" href="../styles/add.css">
