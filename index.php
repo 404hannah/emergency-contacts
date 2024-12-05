@@ -57,7 +57,7 @@
                         }
                     }
 
-                    $query = $query = "SELECT DISTINCT Municipality FROM hospitals";
+                    $query = $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
                     $result = mysqli_query($conn, $query);
                     $i = 0;
                     if (mysqli_num_rows($result) > 0) {
