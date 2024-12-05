@@ -26,6 +26,7 @@
             if ($success == TRUE){
                 echo "<script> alert('Log in successful.'); </script>"; 
                 header('Location: editor.php');
+                exit();
             } elseif (!$username && !$password) {
                 
             } else {

@@ -72,7 +72,8 @@ function add() {
         window.location.href = "add.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
     }
 }
-function delete-btn() {
+
+/* function delete-btn() {
     getChoices();
     
     if (!municipality) {
@@ -87,4 +88,4 @@ function delete-btn() {
             window.location.href = `delete.php?category=${encodeURIComponent(category)}&institution=${encodeURIComponent(institution)}`;
         }
     }
-}
+} */

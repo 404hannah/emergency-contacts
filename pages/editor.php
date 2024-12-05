@@ -216,7 +216,6 @@
                         <div class="buttons">
                             <a class="edit" onclick="edit()">EDIT CONTENT</a>
                             <a class="add" onclick="add()">ADD CONTENT</a>
-                            <a class="delete-btn" onclick="delete-btn()">DELETE CONTENT</a>
                         </div>
                     </div>
                 </div>

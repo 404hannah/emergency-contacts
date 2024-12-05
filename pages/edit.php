@@ -68,8 +68,42 @@
                 echo "<script> alert('Data updated succesfully.'); </script>"; 
                 $conn->query($update);
                 header('Location: editor.php');
+                exit();
             } else {
                 echo "<script> alert('Error: Could not update record.'); </script>"; 
+            };
+        }
+
+        // Delete the data
+        if(isset($_POST['delete'])){
+            $categoryInput = $_POST['category'];
+
+            switch($categoryInput){
+                case "Fire Department":
+                    $delete = "DELETE FROM fire_departments WHERE Fire_Dept_ID='$idInput'";
+                    break;
+                case "Government Organization":
+                    $delete = "DELETE FROM government_orgs WHERE Gov.Organization_ID='$idInput'";
+                    break;
+                case "Hospital":
+                    $delete = "DELETE FROM hospitals WHERE Hospital_ID='$idInput'";
+                    break;
+                case "Non-Governmental Organization":
+                    $delete = "DELETE FROM non_government_orgs WHERE NGO_ID='$idInput'";
+                    break;
+                case "Police Station":
+                    $delete = "DELETE FROM police_stations WHERE Police_Station_ID='$idInput'";
+                    break;
+                default:
+            }
+            
+            if($conn->query($delete) == TRUE){
+                echo "<script> alert('Data deleted succesfully.'); </script>"; 
+                $conn->query($delete);
+                header('Location: editor.php');
+                exit();
+            } else {
+                echo "<script> alert('Error: Could not delete record.'); </script>"; 
             };
         }
     ?>

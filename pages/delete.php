@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+/* include 'connection.php';
 
 if (isset($_GET['category']) && isset($_GET['institution'])) {
     $category = $_GET['category'];
@@ -44,5 +44,5 @@ if (isset($_GET['category']) && isset($_GET['institution'])) {
 } else {
     echo "<script>alert('Required data is missing!');</script>";
     header('Location: editor.php');
-}
+} */
 ?>

@@ -36,6 +36,7 @@
                 echo "<script> alert('Data added succesfully.'); </script>"; 
                 $conn->query($insert);
                 header('Location: editor.php');
+                exit();
             } else {
                 echo "<script> alert('Error: Could not add record.'); </script>"; 
             };
