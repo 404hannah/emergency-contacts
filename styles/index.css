@@ -377,17 +377,6 @@
         height: 30px;
     }
 
-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: transform 0.3s ease;
-}
-
-button:hover{
-    transform: scale(1.2);
-}
 
 .popup-record a {
     margin-left: auto;

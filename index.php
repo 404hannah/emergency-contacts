@@ -77,8 +77,8 @@
         <section class="menu-wrapper">
             <div class="menu">
                 <p>MUNICPALITIES<p>
-                <a href="<?php echo $id[0] ?>">ANAO</a>
-                <a href="<?php echo $id[1] ?>">BAMBAN</a>
+                <a href="<?php echo $id[1] ?>">ANAO</a>
+                <a href="<?php echo $id[17] ?>">BAMBAN</a>
                 <a href="<?php echo $id[2] ?>">CAMILING</a>
                 <a href="<?php echo $id[3] ?>">CAPAS</a>
                 <a href="<?php echo $id[4] ?>">CONCEPCION</a>
@@ -93,8 +93,8 @@
                 <a href="<?php echo $id[13] ?>">SAN JOSE</a>
                 <a href="<?php echo $id[14] ?>">SAN MANUEL</a>
                 <a href="<?php echo $id[15] ?>">SANTA IGNACIA</a>
-                <a href="<?php echo $id[16] ?>">TARLAC CITY</a>
-                <a href="<?php echo $id[17] ?>">VICTORIA</a>
+                <a href="<?php echo $id[0] ?>">TARLAC CITY</a>
+                <a href="<?php echo $id[16] ?>">VICTORIA</a>
             </div>
         </section>
 
