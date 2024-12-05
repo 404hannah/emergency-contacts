@@ -2,9 +2,16 @@ function menu(){
     const menuElem = document.querySelector('.menu-wrapper');
     const menuBtn = document.querySelector('.menu-button');
 
+    mediaQuery = window.matchMedia('(max-width: 800px)');
+
     if(menuBtn.style.left == '0%'){
-        menuElem.style.display = 'block';
-        menuBtn.style.left = '28%';
+        if(mediaQuery.matches){
+            menuElem.style.display = 'block';
+            menuBtn.style.left = '80%';
+        } else {
+            menuElem.style.display = 'block';
+            menuBtn.style.left = '28%';
+        }
     } else {
         menuElem.style.display = 'none';
         menuBtn.style.left = '0%';

@@ -208,22 +208,12 @@
         top: 14%;
         width: 80vw;
     }
-
-    .menu-button{
-        top: 46%;
-        left: 80vw;
-    }
 }
 
 @media only screen and (max-width: 500px){
     .menu-wrapper{
         top: 14%;
         width: 80vw;
-    }
-
-    .menu-button{
-        top: 46%;
-        left: 80vw;
     }
 }
 

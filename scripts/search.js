@@ -1,4 +1,5 @@
 let searchValue;
+let searchTerm;
 
 function search(){
     const searchBox = document.querySelector('.search-textbox');
@@ -12,11 +13,11 @@ function getVariable(variable) {
 }
 
 function result(){
-    searchValue = getVariable('search');
-    window.location.href = "result.php?search=" + encodeURIComponent(searchValue);
+    searchTerm = getVariable('search');
+    window.location.href = "result.php?search=" + encodeURIComponent(searchTerm);
 }
 
 function noResult(){
-    searchValue = getVariable('search');
-    window.location.href = "no-result.php?search=" + encodeURIComponent(searchValue);
+    searchTerm = getVariable('search');
+    window.location.href = "no-result.php?search=" + encodeURIComponent(searchTerm);
 }
