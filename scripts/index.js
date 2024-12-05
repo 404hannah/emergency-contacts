@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const category = button.getAttribute('data-table');
             const municipality = button.getAttribute('data-municipality');
 
-            fetch('/emergency-contacts/pages/fetch_records.php', {
+            fetch('../pages/fetch_records.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
