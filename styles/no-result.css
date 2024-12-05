@@ -71,9 +71,11 @@ section h1{
     font-size: 175%;
 
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .back:hover{
+    transform: scale(1.1);
     background-color: #65bbbb;
 }
 
