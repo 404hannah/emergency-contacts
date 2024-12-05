@@ -27,7 +27,7 @@
 }
 
 .menu p{
-    color: black;
+    color: rgba(204, 199, 199, 0.90);
     font-size: larger;
     padding-left: 60px;
 }
