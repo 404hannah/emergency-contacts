@@ -49,9 +49,11 @@ header{
     line-height: normal;
     letter-spacing: 1px;
     padding: 5px;
+    transition: transform 0.3s ease;
 }
 
 .header-left a:hover{
+    transform: scale(1.05);
     opacity: 0.75;
 }
 
@@ -108,6 +110,7 @@ header{
 
     top: 5px;
     right: 10px;
+    transition: transform 0.3s ease;
 }
 
 .search-bar i:hover{
@@ -129,15 +132,30 @@ header{
 
     margin-left: 20px;
     margin-right: 20px;
+    transition: transform 0.3s ease;
 }
 
 .header-right a:hover{
     opacity: 0.75;
+    transform: scale(1.1);
 }
 
 .header-right a:active{
     opacity: 0.5;
 }
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
 
 @media only screen and (min-width: 801px) and (max-width: 1000px){
     .search-bar{
@@ -203,4 +221,5 @@ header{
         margin-left: 30px;
         margin-right: 5px;
     }
+    
 }
