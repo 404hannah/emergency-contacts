@@ -1,4 +1,4 @@
-let searchValue;
+var searchValue;
 
 function search(){
     const searchBox = document.querySelector('.search-textbox');
