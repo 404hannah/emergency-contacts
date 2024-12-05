@@ -33,8 +33,7 @@
             }
 
             if(isset($insert) && $conn->query($insert) == TRUE){
-                echo "<script> alert('Data added succesfully.'); </script>"; 
-                $conn->query($insert);
+                echo "<script> alert('Data added succesfully.'); </script>";
                 header('Location: editor.php');
                 exit();
             } else {

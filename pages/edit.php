@@ -65,8 +65,7 @@
             }
             
             if(isset($update) && $conn->query($update) == TRUE){
-                echo "<script> alert('Data updated succesfully.'); </script>"; 
-                $conn->query($update);
+                echo "<script> alert('Data updated succesfully.'); </script>";
                 header('Location: editor.php');
                 exit();
             } else {
@@ -98,8 +97,7 @@
             }
             
             if($conn->query($delete) == TRUE){
-                echo "<script> alert('Data deleted succesfully.'); </script>"; 
-                $conn->query($delete);
+                echo "<script> alert('Data deleted succesfully.'); </script>";
                 header('Location: editor.php');
                 exit();
             } else {
