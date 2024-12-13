@@ -17,11 +17,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        
         <script src='scripts/search-index.js'></script>
     </head>
 
     <body>
+
         <header class="header-left">
             <a href="index.php">TARLAC EMERGENCY CONTACTS</a>
         </header>
@@ -145,11 +145,12 @@
                 echo '<p>No records found.</p>';
             }
         ?>
+
         <div class="popup" id="popup">
             <div class="popup-content">Loading...</div>
             <button id="closePopup">Close</button>
         </div>
-
+        
         <script src="scripts/index.js"></script>
         <script src="scripts/report-hover.js"></script>
     </body>
