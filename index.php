@@ -103,6 +103,7 @@
             <div class="div2"></div>
         </div>
 
+        <section class="main">
         <div class="user-report-hover">
             <img src="icons/info.png" alt="Information icon" width="30" height="30">
             Report an Issue about the Website
@@ -150,6 +151,7 @@
             <div class="popup-content">Loading...</div>
             <button id="closePopup">Close</button>
         </div>
+        </section>
         
         <script src="scripts/index.js"></script>
         <script src="scripts/report-hover.js"></script>
