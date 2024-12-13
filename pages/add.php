@@ -172,23 +172,34 @@
                         <?php
                             $municipalityVal = ""; 
                             $categoryVal = "";
-                            $institutionVal = ""; 
-                            $contactInfoVal = ""; 
-                            $mapsVal = "";
 
                             if (isset($_GET['category'])) {
                                 $category = $_GET['category'];
-                                if(isset($_GET['institution'])){
-                                    $institution = $_GET['institution'];
-                                
-                                    $fetch_chosen = mysqli_query($conn, "SELECT * FROM $category WHERE Institution='$institution'");
-                                    if (mysqli_num_rows($fetch_chosen) > 0){
-                                        while($fetch_row = mysqli_fetch_assoc($fetch_chosen)){ 
-                                            $municipalityVal = $fetch_row['Municipality']; 
-                                            $categoryVal = $fetch_row['Category'];
-                                            $institutionVal = $fetch_row['Institution']; 
-                                            $contactInfoVal = $fetch_row['Contact Information']; 
-                                            $mapsVal = $fetch_row['URL from Google Maps'];
+                                if(isset($_GET['municipality'])){
+                                    $municipalityVal = $_GET['municipality'];
+
+
+                                    if ($category != ""){
+                                        switch ($category) {
+                                            case "fire_departments":
+                                                $categoryVal = "Fire Department";
+                                                break;
+                                            case "government_orgs":
+                                                $categoryVal = "Government Organization";
+                                                break;
+                                            case "hospitals":
+                                                $categoryVal = "Hospital";
+                                                break;
+                                            case "non_government_orgs":
+                                                $categoryVal = "Non-Governmental Organization";
+                                                break;
+                                            case "police_stations":
+                                                $categoryVal = "Police Station";
+                                                break;
+                                            default:
+                                                echo "<script>alert('Invalid category!');</script>";
+                                                header('Location: editor.php');
+                                                exit();
                                         }
                                     }
                                 }
@@ -209,18 +220,18 @@
                         <div class="middle-row">
                             <div class="column">
                                 <p>Institution:</p>
-                                <input type="text" class="institution" name="institution" value="<?php echo $institutionVal ?>">
+                                <input type="text" class="institution" name="institution">
                             </div>
                         </div>
         
                         <div class="last-row">
                             <div class="column">
                                 <p>Contact Information:</p>
-                                <input type="text" class="contact-info" name="contact-info" value="<?php echo $contactInfoVal ?>">
+                                <input type="text" class="contact-info" name="contact-info">
                             </div>
                             <div class="column">
                                 <p>URL from Google Maps:</p>
-                                <input type="text" class="google-maps" name="google-maps" value="<?php echo $mapsVal ?>">
+                                <input type="text" class="google-maps" name="google-maps">
                             </div>
                         </div>
         

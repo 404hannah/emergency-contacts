@@ -62,14 +62,10 @@ function edit() {
 function add() {
     getChoices();
 
-    if (!municipality) {
-        alert("Select municipality.");
-    } else if (!category) {
-        alert("Select category.");
-    } else if (!institution) {
-        alert("Select institution.");
+    if (!municipality && !category) {
+        alert("Select a municipality or a category.");
     } else {
-        window.location.href = "add.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category) + "&institution=" + encodeURIComponent(institution);
+        window.location.href = "add.php?municipality=" + encodeURIComponent(municipality) + "&category=" + encodeURIComponent(category);
     }
 }
 
