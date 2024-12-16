@@ -78,12 +78,12 @@ section h2{
 }
 
 .log-in a{
-   color: 31FAF0;
+   color: #31FAF0;
    text-decoration: underline;
 }
 
 .log-in a:hover{
-    color: 79fff8;
+    color: #79fff8;
 }
 
 .log-in a:active{
