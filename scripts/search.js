@@ -1,22 +1,14 @@
 let searchValue;
 
+const searchBox = document.querySelector('.search-textbox');
+
+searchBox.addEventListener("keypress", function(event) {
+    if(event.key === "Enter"){
+        document.getElementById('search-icon').click();
+    }
+});
+
 function search(){
-    const searchBox = document.querySelector('.search-textbox');
     searchValue = searchBox.value.trim();
     window.location.href = "../index.php?search=" + encodeURIComponent(searchValue);
-}
-
-function getVariable(variable) {
-    const varValue = new URLSearchParams(window.location.search);
-    return varValue.get(variable);
-}
-
-function result(){
-    searchValue = getVariable('search');
-    window.location.href = "result.php?search=" + encodeURIComponent(searchValue);
-}
-
-function noResult(){
-    searchValue = getVariable('search');
-    window.location.href = "no-result.php?search=" + encodeURIComponent(searchValue);
 }

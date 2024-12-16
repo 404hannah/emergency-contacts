@@ -17,7 +17,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <script src='scripts/search-index.js'></script>
+
+        <script src="scripts/result-index.js"></script>
     </head>
 
     <body>
@@ -69,7 +70,7 @@
                         echo '<p>No records found.</p>';
                     }
                 ?>
-                <i class='bx bx-search bx-md' onclick="search()"></i>
+                <i class='bx bx-search bx-md' id="search-icon" onclick="search()"></i>
             </div>
             <a href="pages/about.php">ABOUT</a>
         </header>
@@ -155,5 +156,6 @@
         
         <script src="scripts/index.js"></script>
         <script src="scripts/report-hover.js"></script>
+        <script src="scripts/search-index.js"></script>
     </body>
 </html>
