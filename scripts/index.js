@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="texts">Contact: ${item['Contact Information']}</p>
                             <a href="${item['URL from Google Maps']}" target="_blank"><button class="gmaps"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button></a>
                             <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
+                            <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="icons/Call.png" alt="Call icon" width="30" height="30"></button>
                         `;
                             popupContent.appendChild(record);
                         });
