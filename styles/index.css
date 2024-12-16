@@ -380,7 +380,7 @@ header{
     flex-grow: 1; 
 }
 
-.gmaps, .copy-btn {
+.gmaps, .copy-btn, .call-btn {
     display: flex;
     align-items: center; 
     padding: 5px;
@@ -390,7 +390,7 @@ header{
     border: none;
 }
 
-    .gmaps img, .copy-btn img {
+    .gmaps img, .copy-btn img, .call-btn img {
         width: 30px;
         height: 30px;
     }
