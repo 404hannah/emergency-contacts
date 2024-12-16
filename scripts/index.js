@@ -54,7 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             record.innerHTML = `
                             <h3 class="texts">${item.Institution}</h3>
                             <p class="texts">Contact: ${item['Contact Information']}</p>
-                            <a href="${item['URL from Google Maps']}" target="_blank"><button class="gmaps"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button></a>
+                            <button class="gmaps" onclick="showMap()"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                            <div class="map-modal" id="mapModal">
+                            <button class="map-modal-close" onclick="closeMap()">×</button>
+                            <iframe src="${item['URL from Google Maps']}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                             <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
                             <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="icons/Call.png" alt="Call icon" width="30" height="30"></button>
                         `;
@@ -86,4 +90,10 @@ function copyToClipboard(text) {
     }).catch(err => {
         console.error('Error copying text: ', err);
     });
+}
+function showMap() {
+    document.getElementById('mapModal').style.display = 'block';
+}
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
 }
