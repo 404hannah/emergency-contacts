@@ -115,13 +115,13 @@
                                         <h3><?php echo $fetch_row['Contact Information'] ?></h3>
                                     </div>
                                     <div class="icons">
-                                        <button class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                        <a class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
                                         <div class="map-modal" id="mapModal">
                                             <button class="map-modal-close" onclick="closeMap()">×</button>
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
                                     </div>
                                 </div>
                             <?php }
@@ -136,13 +136,13 @@
                                         <h3><?php echo $fetch_row['Contact Information'] ?></h3>
                                     </div>
                                     <div class="icons">
-                                        <button class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                        <a class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
                                         <div class="map-modal" id="mapModal">
                                             <button class="map-modal-close" onclick="closeMap()">×</button>
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
                                     </div>
                                 </div>
                             <?php }
@@ -157,13 +157,13 @@
                                         <h3><?php echo $fetch_row['Contact Information'] ?></h3>
                                     </div>
                                     <div class="icons">
-                                        <button class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                        <a class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
                                         <div class="map-modal" id="mapModal">
                                             <button class="map-modal-close" onclick="closeMap()">×</button>
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
                                     </div>
                                 </div>
                             <?php }
@@ -178,13 +178,13 @@
                                         <h3><?php echo $fetch_row['Contact Information'] ?></h3>
                                     </div>
                                     <div class="icons">
-                                        <button class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                        <a class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
                                         <div class="map-modal" id="mapModal">
                                             <button class="map-modal-close" onclick="closeMap()">×</button>
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
                                     </div>
                                 </div>
                             <?php }
@@ -199,13 +199,13 @@
                                         <h3><?php echo $fetch_row['Contact Information'] ?></h3>
                                     </div>
                                     <div class="icons">
-                                        <button class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                        <a class="gmaps" onclick="showMap()"><img src="../icons/Location.png" alt="Location icon" width="30" height="30"></a>
                                         <div class="map-modal" id="mapModal">
                                             <button class="map-modal-close" onclick="closeMap()">×</button>
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
                                     </div>
                                 </div>
                             <?php }
