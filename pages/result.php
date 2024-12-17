@@ -223,7 +223,14 @@
                 </div>
             </div>
         </section>
-        
+        <script>
+            function showMap() {
+                document.getElementById('mapModal').style.display = 'block';
+            }
+            function closeMap() {
+                document.getElementById('mapModal').style.display = 'none';
+            }
+        </script>
         <script src="../scripts/report-hover.js"></script>
         <script src='../scripts/index.js'></script>
         <script src='../scripts/search.js'></script>
