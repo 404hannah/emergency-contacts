@@ -20,6 +20,19 @@ Anao, Bamban, Camiling, Capas, Concepcion, Gerona, La Paz, Mayantoc, Moncada, Pa
 #### Each location is further divided into the types of institutions:
 Hospitals, Police stations, Fire departments, Government and Non-governmental organizations
 
+### Technologies
+#### Languages:
+* PHP
+* JavaScript
+* SQL
+* HTML
+* CSS
+
+#### Tools:
+* Visual Studio Code
+* GitHub
+* XAMPP
+
 ### Webpages
 #### For the public:
 * Index
