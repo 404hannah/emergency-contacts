@@ -1,5 +1,5 @@
 # Tarlac Emergency Contacts
-Provides a comprehensive list of contact information to relevant institutions in Tarlac, Philippines
+A group case study that provides a comprehensive list of contact information to relevant institutions in Tarlac, Philippines
 
 ### Features
 #### For the public:
