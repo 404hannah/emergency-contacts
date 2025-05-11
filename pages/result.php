@@ -121,7 +121,7 @@
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <a class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
                             <?php }
@@ -142,7 +142,7 @@
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <a class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
                             <?php }
@@ -163,7 +163,7 @@
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <a class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
                             <?php }
@@ -184,7 +184,7 @@
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <a class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
                             <?php }
@@ -205,7 +205,7 @@
                                             <iframe src="<?php echo $fetch_row['URL from Google Maps'] ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                         <a onclick="copyToClipboard('<?php echo $fetch_row['Contact Information'] ?>')"><img src="../icons/Copy.png" alt="Copy icon" width="30" height="30"></a>
-                                        <button class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                                        <a class="call-btn" onclick="window.location.href='tel:<?php echo $fetch_row['Contact Information'] ?>'"><img src="../icons/Call.png" alt="Call icon" width="30" height="30"></a>
                                     </div>
                                 </div>
                             <?php }
