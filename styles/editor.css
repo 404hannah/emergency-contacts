@@ -160,7 +160,7 @@ form select {
     text-align: center;
 }
 
-    .add:hover, .edit:hover,, .delete-btn:hover {
+    .add:hover, .edit:hover, .delete-btn:hover {
         background-color: #e144bf;
     }
 

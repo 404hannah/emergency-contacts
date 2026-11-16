@@ -12,6 +12,7 @@ include 'pages/connection.php';
     <link rel="icon" type="image/png" href="icons/tec-logo.png">
 
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/menu.css">
     <link rel="stylesheet" href="styles/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -29,30 +30,9 @@ include 'pages/connection.php';
     include './pages/components/header.php';
     ?>
 
-    <section class="menu-wrapper">
-        <div class="menu">
-            <p>
-                MUNICPALITIES
-            <p>
-                <?php
-                $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
-                $result = mysqli_query($conn, $query);
-                $i = 0;
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<a href="' . $row['Municipality'] . '">' . strtoupper($row['Municipality']) . '</a>';
-                    }
-                } else {
-                    echo "Error in loading headings.";
-                }
-                ?>
-        </div>
-    </section>
-
-    <div class="menu-button" onclick="menu()">
-        <div class="div1"></div>
-        <div class="div2"></div>
-    </div>
+    <?php
+    include './pages/components/menu.php';
+    ?>
 
     <section class="main">
         <div class="user-report-hover">
