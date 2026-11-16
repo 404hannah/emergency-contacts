@@ -1,7 +1,3 @@
-header{
-    z-index: 1;
-}
-
 .menu-wrapper{
     position: fixed;
     display: none;
