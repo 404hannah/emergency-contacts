@@ -59,7 +59,7 @@ include 'pages/connection.php';
                 }
             }
 
-            $query = $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
+            $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
             $result = mysqli_query($conn, $query);
             $i = 0;
             if (mysqli_num_rows($result) > 0) {
@@ -140,7 +140,9 @@ include 'pages/connection.php';
 
         <div class="popup" id="popup">
             <div class="popup-content">Loading...</div>
-            <button id="closePopup">Close</button>
+            <div class="close-btn-wrapper">
+                <button id="closePopup">Close</button>
+            </div>
         </div>
     </section>
 

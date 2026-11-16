@@ -192,50 +192,6 @@ header{
     background-color: orange;
 }
 
-@media only screen and (min-width: 1001px) and (max-width: 1200px){
-    .menu p{
-        padding-left: 20px;
-    }
-
-    .menu a{
-        padding-left: 15px;
-    }
-}
-
-@media only screen and (min-width: 801px) and (max-width: 1000px){
-    .menu p{
-        padding-left: 15px;
-    }
-
-    .menu a{
-        padding-left: 10px;
-    }
-}
-
-@media only screen and (min-width: 501px) and (max-width: 800px){
-    .menu-wrapper{
-        top: 14%;
-        width: 80vw;
-    }
-
-    body .main{
-        top: 14%;
-        height: 86vh;
-    }
-}
-
-@media only screen and (max-width: 500px){
-    .menu-wrapper{
-        top: 14%;
-        width: 80vw;
-    }
-
-    body .main{
-        top: 14%;
-        height: 86vh;
-    }
-}
-
 /* WHERE THINGS GONE MONKEY*/
 
 .form-container {
@@ -361,14 +317,22 @@ header{
     display: none;
     z-index: 1000;
 }
+
 .popup-record {
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between; 
-    align-items: flex-start;
     width: 100%;
+    gap: 20px;
+}
+
+.popup-record-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -485,4 +449,117 @@ header{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     z-index: 1000;
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1200px){
+    .menu p{
+        padding-left: 20px;
+    }
+
+    .menu a{
+        padding-left: 15px;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px){
+    .menu p{
+        padding-left: 15px;
+    }
+
+    .menu a{
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px){
+    .menu-wrapper{
+        top: 14%;
+        width: 80vw;
+    }
+
+    body .main{
+        top: 14%;
+        height: 86vh;
+    }
+
+    
+    .popup-content {
+        max-height: 60vw;
+    }
+
+    .popup-record {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .texts {
+        text-align: center;
+    }
+    
+    .popup-record-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close-btn-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    #closePopup {
+        margin-top: 5px;
+        font-size: large;
+        padding: 10px 25px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .menu-wrapper{
+        top: 14%;
+        width: 80vw;
+    }
+
+    body .main{
+        top: 14%;
+        height: 86vh;
+    }
+
+    .popup-content {
+        max-height: 80vw;
+    }
+
+    .popup-record {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .texts {
+        text-align: center;
+    }
+    
+    .popup-record-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close-btn-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    #closePopup {
+        margin-top: 5px;
+        font-size: large;
+        padding: 10px 25px;
+    }
 }

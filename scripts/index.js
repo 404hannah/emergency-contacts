@@ -54,13 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             record.innerHTML = `
                             <h3 class="texts">${item.Institution}</h3>
                             <p class="texts">Contact: ${item['Contact Information']}</p>
-                            <button class="gmaps" onclick="showMap()"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button>
                             <div class="map-modal" id="mapModal">
                             <button class="map-modal-close" onclick="closeMap()">×</button>
-                            <iframe src="${item['URL from Google Maps']}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="${item['URL from Google Maps']}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                            <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
-                            <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                            <div class='popup-record-btns'>
+                                <button class="gmaps" onclick="showMap()"><img src="icons/Location.png" alt="Location icon" width="30" height="30"></button>
+                                <button class="copy-btn" onclick="copyToClipboard('${item['Contact Information']}')"><img src="icons/Copy.png" alt="Copy icon" width="30" height="30"></button>
+                                <button class="call-btn" onclick="window.location.href='tel:${item['Contact Information']}'"><img src="icons/Call.png" alt="Call icon" width="30" height="30"></button>
+                            </div>
                         `;
                             popupContent.appendChild(record);
                         });
