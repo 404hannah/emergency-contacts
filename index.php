@@ -27,6 +27,7 @@ include 'pages/connection.php';
 
     <?php
     $indexUrl = 'index.php';
+    $aboutUrl = 'pages/about.php';
     include './pages/components/header.php';
     ?>
 

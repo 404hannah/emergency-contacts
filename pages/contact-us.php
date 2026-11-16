@@ -23,6 +23,7 @@ include 'connection.php';
 <body>
     <?php
     $indexUrl = '../index.php';
+    $aboutUrl = 'about.php';
     include './components/header.php';
     ?>
 

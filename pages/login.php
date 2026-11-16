@@ -54,6 +54,7 @@ if (isset($_POST['submit'])) {
 <body>
     <?php
     $indexUrl = '../index.php';
+    $aboutUrl = 'about.php';
     include './components/header.php';
     ?>
 
