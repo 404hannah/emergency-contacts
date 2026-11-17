@@ -1,19 +1,17 @@
 <?php
-include 'connection.php';
+include './components/connection.php';
 include './components/config.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$REGISTRATION_CODE = $_ENV['REGISTRATION_CODE'];
-echo "<script> console.log('Code: " . $REGISTRATION_CODE . "'); </script>";
+
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $code = $_POST['code'];
-
-
+    $registration_code = $_ENV['REGISTRATION_CODE'];
 
     // Checks if the username is not yet used
     $user_query = mysqli_prepare($conn, "SELECT Username FROM accounts WHERE Username = ?");
@@ -28,9 +26,9 @@ if (isset($_POST['register'])) {
         echo "<script> alert('Username is already in use.'); </script>";
     } else if (strlen($password) < 5) {
         echo "<script> alert('Password should be greater than 5 characters.'); </script>";
-    } else if (!$REGISTRATION_CODE) {
+    } else if (!$registration_code) {
         echo "<script> console.error('Environment registration code not set.'); </script>";
-    } else if (hash_equals($code, $REGISTRATION_CODE)) {
+    } else if (hash_equals($code, $registration_code)) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $register_query = mysqli_prepare($conn, "INSERT INTO `accounts` (`Username`, `Password`) VALUES (?, ?)");
         mysqli_stmt_bind_param($register_query, "ss", $username, $hash); // s stands for string

@@ -1,5 +1,5 @@
 <?php
-include 'pages/connection.php';
+include './pages/components/connection.php';
 ?>
 
 <!DOCTYPE html>
