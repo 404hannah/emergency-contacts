@@ -47,5 +47,5 @@
         ?>
         <i class='bx bx-search bx-md' id="search-icon" onclick="search()"></i>
     </div>
-    <a href="<?php echo $aboutUrl ?>">ABOUT</a>
+    <a href=<?php echo $aboutUrl ?>>ABOUT</a>
 </header>

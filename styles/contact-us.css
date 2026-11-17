@@ -43,6 +43,8 @@ form{
     padding-left: 2.5%;
     padding-right: 2.5%;
     padding-bottom: 1.5%;
+
+    margin-bottom: 40px;
 }
 
 form p{
@@ -117,6 +119,11 @@ form input{
 }
 
 @media only screen and (max-width: 500px){
+    form {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     form input{
         max-width: 80%;
     }

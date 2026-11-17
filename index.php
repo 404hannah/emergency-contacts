@@ -27,7 +27,7 @@ include 'pages/connection.php';
 
     <?php
     $indexUrl = 'index.php';
-    $aboutUrl = 'pages/about.php';
+    $aboutUrl = './pages/about.php';
     include './pages/components/header.php';
     ?>
 
@@ -46,7 +46,6 @@ include 'pages/connection.php';
 
         <!--Where I started messing things up-->
         <?php
-        include 'pages/connection.php';
         $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
         $result = mysqli_query($conn, $query);
         $i = 0;
@@ -64,12 +63,23 @@ include 'pages/connection.php';
                 echo '<h2 id="' . $id[$i] . '">' . $row['Municipality'] . '</h2>';
                 $i = $i + 1;
                 echo '<div class="categories">';
-                echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">HOSPITAL</button>';
-                echo '<button class="category police openPopup" data-table="police_stations" data-municipality="' . $row['Municipality'] . '">POLICE</button>';
-                echo '<button class="short-category fire openPopup" data-table="fire_departments" data-municipality="' . $row['Municipality'] . '">FIRE</button>';
-                echo '<button class="long-category government openPopup" data-table="government_orgs" data-municipality="' . $row['Municipality'] . '">GOVERNMENT</button>';
-                echo '<button class="short-category ngo openPopup" data-table="non_government_orgs" data-municipality="' . $row['Municipality'] . '">NGO</button>';
+                echo '<button class="category hospital openPopup" data-table="hospitals" data-municipality="' . $row['Municipality'] . '">
+                            HOSPITAL
+                        </button>';
+                echo '<button class="category police openPopup" data-table="police_stations" data-municipality="' . $row['Municipality'] . '">
+                            POLICE
+                        </button>';
+                echo '<button class="short-category fire openPopup" data-table="fire_departments" data-municipality="' . $row['Municipality'] . '">
+                            FIRE
+                        </button>';
+                echo '<button class="short-category government openPopup" data-table="government_orgs" data-municipality="' . $row['Municipality'] . '">
+                            GOV
+                        </button>';
+                echo '<button class="short-category ngo openPopup" data-table="non_government_orgs" data-municipality="' . $row['Municipality'] . '">
+                            NGO
+                        </button>';
                 echo '</div>';
+
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
