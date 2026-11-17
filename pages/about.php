@@ -9,7 +9,7 @@ include 'connection.php';
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
     <title>About Us</title>
 
-    <link rel="icon" type="image/x-icon" href="../images/tec-logo.png">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/about.css">
