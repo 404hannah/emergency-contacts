@@ -30,18 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `User_ID` int(11) NOT NULL,
   `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL
+  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`User_ID`, `Username`, `Password`) VALUES
-(1, 'shane', 'blanco'),
-(2, 'hannah', 'pulmano'),
-(3, 'stephen', 'nierras'),
-(4, 'princess', 'pasamonte');
 
 -- --------------------------------------------------------
 

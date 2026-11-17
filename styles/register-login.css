@@ -1,10 +1,10 @@
-.login-section{
+.auth-section{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-titles h2{
+.auth-titles h2{
     font-size: 200%;
     color: white;
     text-align: center;
@@ -14,7 +14,7 @@
     margin-bottom: 10px;
 }
 
-.login-titles h1{
+.auth-titles h1{
     font-size: 300%;
     color: white;
     text-align: center;
@@ -23,19 +23,18 @@
     margin: 10px;
 }
 
-.login-section a{
+.auth-section a{
     text-decoration: underline;
     color: #31FAF0;
 }
 
-.login-section a:hover{
+.auth-section a:hover{
     color: #79fff8;
 }
 
-.login-section a:active{
+.auth-section a:active{
     opacity: 0.5;
 }
-
 
 form{
     position: relative;
@@ -44,11 +43,8 @@ form{
     border-radius: 20px;
 
     width: 325px;
-    height: 300px;
-    padding-left: 55px;
-    padding-right: 55px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    height: 325px;
+    padding: 40px 55px;
 
     display: flex;
     flex-direction: column;
@@ -59,7 +55,7 @@ form p{
     color: white;
 }
 
-.login-section form p{
+.auth-section form p{
     font-family: Dosis;
     font-size: large;
     text-align: left;
@@ -78,7 +74,7 @@ form p{
     border-style: none;
 }
 
-form .login{
+form .auth{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,8 +83,7 @@ form .login{
     text-decoration: none;
 }
 
-.submit{
-    margin-top: 70px;
+.submit, .register{
     width: 110px;
 
     padding: 8px;
@@ -106,6 +101,14 @@ form .login{
     border-style: solid;
 }
 
+.submit{
+    margin-top: 70px;
+}
+
+.register {
+    margin-top: 20px;
+}
+
 .submit:hover{
     background-color: #ce4fb3; 
 }
@@ -118,6 +121,15 @@ form .login{
     form{
         width: 300px;
         height: 300px;
+        padding: 40px 45px;
+    }
+
+    .submit {
+        margin-top: 50px;
+    }
+
+    .register {
+        margin-top: 10px;
     }
 }
 
@@ -125,5 +137,14 @@ form .login{
     form{
         width: 250px;
         height: 300px;
+        padding: 40px 40px;
+    }
+
+    .submit {
+        margin-top: 50px;
+    }
+
+    .register {
+        margin-top: 10px;
     }
 }

@@ -8,28 +8,21 @@ include 'connection.php';
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $success = FALSE;
 
-    $fetch_accounts = mysqli_query($conn, "SELECT * FROM accounts");
+    $query = mysqli_prepare($conn, "SELECT Password FROM accounts WHERE Username = ?");
+    mysqli_stmt_bind_param($query, "s", $username); // s stands for string
+    mysqli_stmt_execute($query);
+    $result = mysqli_stmt_get_result($query);
+    $fetch_row = mysqli_fetch_assoc($result);
+    echo "<script> console.log('Fetched row: " . $fetch_row . "'); </script>";
+    echo "<script> console.log('Password verification: " . password_verify($password, $fetch_row['Password']) . "'); </script>";
 
-    if (mysqli_num_rows($fetch_accounts) > 0) {
-        while ($fetch_row = mysqli_fetch_assoc($fetch_accounts)) {
-            if ($username == $fetch_row['Username'] and $password == $fetch_row['Password']) {
-                $success = TRUE;
-                break;
-            }
-        }
-    } else {
-        echo "No Records.";
-    }
-
-    if ($success == TRUE) {
+    if ($fetch_row && password_verify($password, $fetch_row['Password'])) {
         echo "<script> alert('Log in successful.'); </script>";
         header('Location: editor.php');
         exit();
-    } elseif (!$username && !$password) {
     } else {
-        echo "<script> alert('Incorrect information.'); </script>";
+        echo "<script> alert('Invalid username or password.'); </script>";
     }
 }
 ?>
@@ -39,7 +32,7 @@ if (isset($_POST['submit'])) {
     <title>Log In</title>
 
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/register-login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -47,8 +40,6 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
-    <script src='../scripts/login.js'></script>
 </head>
 
 <body>
@@ -58,8 +49,8 @@ if (isset($_POST['submit'])) {
     include './components/header.php';
     ?>
 
-    <section class="login-section">
-        <div class="login-titles">
+    <section class="auth-section">
+        <div class="auth-titles">
             <h2>CONTENT MANAGER</h2>
             <h1>LOG IN</h1>
         </div>
@@ -71,8 +62,10 @@ if (isset($_POST['submit'])) {
             <input type="password" class="password" name="password">
 
             <p>Not supposed to be here? <a href="../index.php">Go Back</a></p>
-            <div class="login">
+
+            <div class="auth">
                 <input type="submit" class="submit" name="submit" value="Submit">
+                <p>Register? <a href="register.php">Click Here</a></p>
             </div>
         </form>
     </section>
