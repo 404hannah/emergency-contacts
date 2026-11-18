@@ -109,14 +109,13 @@ section{
 }
 
 .sub-section input{
-    margin-right: 40px;
     margin-bottom: 10px;
 
     font-family: Dosis;
     font-size: medium;
 
     padding: 5px;
-    width: 90%;
+    width: 100%;
 }
 
 .container-manage{
@@ -127,7 +126,27 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    overflow-y: auto;
 }
+
+    .container-manage::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .container-manage::-webkit-scrollbar-track {
+        background-color: #848484;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .container-manage::-webkit-scrollbar-thumb {
+        width: 10px;
+        background-color: white;
+        border-radius: 10px;
+    }
 
 .municipality, .contact-info{
     margin-right: 10px;
@@ -148,16 +167,11 @@ section{
     align-items: center;
 
     width: 60vw;
+    gap: 10px;
 }   
 
 .column p{
     color: white;
-}
-
-.middle-row input{
-    margin-right: 40px;
-
-    width: 90%;
 }
 
 .buttons{
@@ -169,6 +183,7 @@ section{
     margin-top: 30px;
     margin-bottom: 20px;
     width: 60vw;
+    gap: 40px;
 }
 
 .buttons .delete{
@@ -190,7 +205,6 @@ section{
 }
 
 .buttons .save{
-    margin-right: 40px;
     margin-bottom: 0px;
     width: 150px;
 
@@ -209,7 +223,6 @@ section{
 }
 
 .buttons .cancel{
-    margin-right: 40px;
     width: 125px;
 
     background-color: #A72A8C;
@@ -257,23 +270,23 @@ section{
 }
 
 
-.table-container::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
-}
+    .table-container::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+    }
 
-.table-container::-webkit-scrollbar-track{
-    background-color: #848484;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
+    .table-container::-webkit-scrollbar-track{
+        background-color: #848484;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
 
-.table-container::-webkit-scrollbar-thumb{
-    width: 10px;
-    background-color: white;
-    border-radius: 10px;
-}
+    .table-container::-webkit-scrollbar-thumb{
+        width: 10px;
+        background-color: white;
+        border-radius: 10px;
+    }
 
 table{
     width: 99%;
@@ -297,109 +310,88 @@ th, td{
     flex: 1;
 }
 
-
-@media only screen and (min-width: 851px) and (max-width: 1000px){
-    .header-left{
-        width: 60%;
-    }
-
-    .log-out p{
-        font-size: larger;
-    }
-}
-
 @media only screen and (min-width: 601px) and (max-width: 850px){
     .tabs{
-        width: 100%
-    }
-
-    .first-row .column{
-        width: 80%;
-    }
-    
-    .middle-row .column{
         width: 100%;
-    }
-
-    .buttons .save, .buttons .delete, .buttons .cancel{
         font-size: larger;
-        margin-right: 10px;
-    }
-
-    .tabs{
-        font-size: x-large;
         top: -50px;
     }
-}
 
-@media only screen and (min-width: 450px) and (max-width: 600px){
-    .tabs{
-        width: 100%
+    .container-manage{
+        justify-content: start;
     }
 
-    .column p{
-        font-size: medium;
+    .sub-section input{
+        margin: 0px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .first-row .column{
-        width: 80%;
+    .first-row, .middle-row, .last-row, .buttons{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
     
-    .middle-row .column{
+    .column p{
+        font-size: larger;
+    }
+
+    .buttons{
+        justify-content: center;
         width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        gap: 5px;
     }
 
     .buttons .save, .buttons .delete, .buttons .cancel{
-        font-size: small;
-        margin-right: 10px;
-    }
-
-    .tabs{
-        font-size: x-large;
-        top: -50px;
+        font-size: large;
+        margin-right: 0px;
     }
 }
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 600px){
     section{
         margin-top: 25vh;
     }
 
+    .tabs{
+        width: 100%;
+        font-size: medium;
+        top: -50px;
+    }
+
+    .container-manage{
+        justify-content: start;
+    }
+
+    .sub-section input{
+        margin: 0px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .first-row, .middle-row, .last-row, .buttons{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
     .column p{
         font-size: medium;
     }
 
-    .tabs{
-        width: 100%;
-        font-size: larger;
-        top: -50px;
-    }
-
-    .first-row .column{
-        width: 80%;
-    }
-    
-    .middle-row .column{
-        width: 100%;
-    }
-    
     .buttons{
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
         width: 100%;
         margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .subform{
-        margin-top: 50px;
+        margin-bottom: 20px;
+        gap: 5px;
     }
 
     .buttons .save, .buttons .delete, .buttons .cancel{
         font-size: small;
-        margin-bottom: 10px;
         margin-right: 0px;
     }
 }

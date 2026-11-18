@@ -182,7 +182,7 @@ header{
     }
 
     .header-left h1{
-        font-size: 250%;
+        font-size: 200%;
     }
 
     .header-right{
@@ -190,6 +190,11 @@ header{
         height: 8vh;
         top: 5%;
         border-radius: 0px;
+    }
+
+    .log-out {
+        width: 100px;
+        height: 30px;
     }
 
     .log-out p{

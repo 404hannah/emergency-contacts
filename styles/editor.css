@@ -130,8 +130,6 @@ form select {
 }
 
 .middle-row select {
-    margin-right: 40px;
-    width: 80%;
     max-width: 840px;
 }
 
@@ -142,10 +140,10 @@ form select {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 60vw;
+    gap: 40px;
 }
 
-.add, .edit, .delete-btn {
-    margin-right: 40px;
+.add, .edit {
     width: 175px;
     background-color: #A72A8C;
     padding: 8px;
@@ -160,11 +158,11 @@ form select {
     text-align: center;
 }
 
-    .add:hover, .edit:hover, .delete-btn:hover {
+    .add:hover, .edit:hover {
         background-color: #e144bf;
     }
 
-    .add:active, .edit:active, .delete-btn:active {
+    .add:active, .edit:active {
         background-color: #e187cd;
     }
 
@@ -228,7 +226,13 @@ th, td {
 
 @media only screen and (min-width: 601px) and (max-width: 850px) {
     .tabs {
-        width: 100%
+        width: 100%;
+        font-size: larger;
+        top: -50px;
+    }
+
+    form p {
+        font-size: larger;
     }
 
     .first-row .column {
@@ -239,34 +243,52 @@ th, td {
         width: 80%;
     }
 
-    .add, .edit, .delete-btn-btn {
+    .add, .edit {
         font-size: larger;
         margin-right: 10px;
-    }
-
-    .tabs {
-        font-size: x-large;
-        top: -50px;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .tabs {
         width: 100%;
-        font-size: larger;
+        font-size: medium;
         top: -40px;
     }
 
-    .first-row .column {
-        width: 80%;
+    form select {
+        margin-right: 0px;
+        margin-bottom: 0px;
+        width: 100%;
     }
-
-    .middle-row .column {
-        width: 80%;
-    }
-
-    .add, .edit, .delete-btn {
+    
+    form p {
         font-size: medium;
-        margin-right: 10px;
+    }
+
+    .first-row, .middle-row, .buttons{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .add, .edit {
+        font-size: medium;
+        margin-right: 0px;
+    }
+
+    table, th, td {
+        border-style: solid;
+        border-width: 1px;
+        font-size: smaller;
+        padding: 2px;
     }
 }
