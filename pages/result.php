@@ -23,93 +23,71 @@ session_start();
 </head>
 
 <body>
-    <header class="header-left">
-        <a href="../index.php">TARLAC EMERGENCY CONTACTS</a>
-    </header>
-    <header class="header-right">
-        <div class="search-bar">
-            <input type="text" class="search-textbox" placeholder="Search institutions">
-            <?php
-            if (!isset($_SESSION['search'])) {
-                $_SESSION['search'] = $_GET['search'];
-            }
-
-            if (isset($_GET['search'])) {
-                if ($_SESSION['search'] !== $_GET['search']) {
-                    $_SESSION['search'] = $_GET['search'];
-                    $search = $_GET['search'];
-
-                    $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
-
-                    $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
-
-                    $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
-
-                    $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
-
-                    $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
-
-                    if (mysqli_num_rows($fetch_fire) > 0) {
-                        echo "<script> result(); </script>";
-                    } elseif (mysqli_num_rows($fetch_gov) > 0) {
-                        echo "<script> result(); </script>";
-                    } elseif (mysqli_num_rows($fetch_hospitals) > 0) {
-                        echo "<script> result(); </script>";
-                    } elseif (mysqli_num_rows($fetch_ngos) > 0) {
-                        echo "<script> result(); </script>";
-                    } elseif (mysqli_num_rows($fetch_police) > 0) {
-                        echo "<script> result(); </script>";
-                    } else {
-                        echo "<script> noResult(); </script>";
-                    }
-                }
-            }
-            ?>
-            <i class='bx bx-search bx-md' id="search-icon" onclick="search()"></i>
-        </div>
-        <a href="about.php">ABOUT</a>
-    </header>
+    <?php
+    $indexUrl = '../index.php';
+    $aboutUrl = 'about.php';
+    include './components/header.php';
+    ?>
 
     <section>
         <?php
         if (isset($_GET['search'])) {
-            $search = $_GET['search'];
-
+            $search = "%" . $_GET['search'] . "%";
             $counter = 0;
 
-            $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
-            if (mysqli_num_rows($fetch_fire) > 0) {
-                $counter = $counter + mysqli_num_rows($fetch_fire);
+            $query_fire = mysqli_prepare($conn, "SELECT * FROM fire_departments WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_fire, "s", $search);
+            mysqli_stmt_execute($query_fire);
+            $result_fire = mysqli_stmt_get_result($query_fire);
+
+            if (mysqli_num_rows($result_fire) > 0) {
+                $counter = $counter + mysqli_num_rows($result_fire);
             }
 
-            $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
-            if (mysqli_num_rows($fetch_gov) > 0) {
-                $counter = $counter + mysqli_num_rows($fetch_gov);
+            $query_gov = mysqli_prepare($conn, "SELECT * FROM government_orgs WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_gov, "s", $search);
+            mysqli_stmt_execute($query_gov);
+            $result_gov = mysqli_stmt_get_result($query_gov);
+
+            if (mysqli_num_rows($result_gov) > 0) {
+                $counter = $counter + mysqli_num_rows($result_gov);
             }
 
-            $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
-            if (mysqli_num_rows($fetch_hospitals) > 0) {
-                $counter = $counter + mysqli_num_rows($fetch_hospitals);
+            $query_hospitals = mysqli_prepare($conn, "SELECT * FROM hospitals WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_hospitals, "s", $search);
+            mysqli_stmt_execute($query_hospitals);
+            $result_hospitals = mysqli_stmt_get_result($query_hospitals);
+
+            if (mysqli_num_rows($result_hospitals) > 0) {
+                $counter = $counter + mysqli_num_rows($result_hospitals);
             }
 
-            $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
-            if (mysqli_num_rows($fetch_ngos) > 0) {
-                $counter = $counter + mysqli_num_rows($fetch_ngos);
+            $query_ngos = mysqli_prepare($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_ngos, "s", $search);
+            mysqli_stmt_execute($query_ngos);
+            $result_ngos = mysqli_stmt_get_result($query_ngos);
+
+            if (mysqli_num_rows($result_ngos) > 0) {
+                $counter = $counter + mysqli_num_rows($result_ngos);
             }
 
-            $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
-            if (mysqli_num_rows($fetch_police) > 0) {
-                $counter = $counter + mysqli_num_rows($fetch_police);
+            $query_police = mysqli_prepare($conn, "SELECT * FROM police_stations WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_police, "s", $search);
+            mysqli_stmt_execute($query_police);
+            $result_police = mysqli_stmt_get_result($query_police);
+
+            if (mysqli_num_rows($result_police) > 0) {
+                $counter = $counter + mysqli_num_rows($result_police);
             }
         }
         ?>
-        <h2>Search Results for "<?php echo "$search" ?>"</h2>
+        <h2>Search Results for "<?php echo substr($search, 1, (strlen($search) - 2)) ?>"</h2>
         <div class="results">
-            <p>Found <?php echo "$counter" ?> Result/s.</p>
+            <p>Found <?php echo $counter ?> Result/s.</p>
             <div class="main-contents">
                 <?php
-                if (mysqli_num_rows($fetch_fire) > 0) {
-                    while ($fetch_row = mysqli_fetch_assoc($fetch_fire)) { ?>
+                if (mysqli_num_rows($result_fire) > 0) {
+                    while ($fetch_row = mysqli_fetch_assoc($result_fire)) { ?>
                         <div class="result">
                             <div class="text">
                                 <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -128,9 +106,8 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($fetch_gov) > 0) {
-                    $counter = $counter + mysqli_num_rows($fetch_gov);
-                    while ($fetch_row = mysqli_fetch_assoc($fetch_gov)) { ?>
+                if (mysqli_num_rows($result_gov) > 0) {
+                    while ($fetch_row = mysqli_fetch_assoc($result_gov)) { ?>
                         <div class="result">
                             <div class="text">
                                 <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -149,9 +126,8 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($fetch_hospitals) > 0) {
-                    $counter = $counter + mysqli_num_rows($fetch_hospitals);
-                    while ($fetch_row = mysqli_fetch_assoc($fetch_hospitals)) { ?>
+                if (mysqli_num_rows($result_hospitals) > 0) {
+                    while ($fetch_row = mysqli_fetch_assoc($result_hospitals)) { ?>
                         <div class="result">
                             <div class="text">
                                 <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -170,9 +146,8 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($fetch_ngos) > 0) {
-                    $counter = $counter + mysqli_num_rows($fetch_ngos);
-                    while ($fetch_row = mysqli_fetch_assoc($fetch_ngos)) { ?>
+                if (mysqli_num_rows($result_ngos) > 0) {
+                    while ($fetch_row = mysqli_fetch_assoc($result_ngos)) { ?>
                         <div class="result">
                             <div class="text">
                                 <h4><?php echo $fetch_row['Institution'] ?></h4>
@@ -191,9 +166,8 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($fetch_police) > 0) {
-                    $counter = $counter + mysqli_num_rows($fetch_police);
-                    while ($fetch_row = mysqli_fetch_assoc($fetch_police)) { ?>
+                if (mysqli_num_rows($result_police) > 0) {
+                    while ($fetch_row = mysqli_fetch_assoc($result_police)) { ?>
                         <div class="result">
                             <div class="text">
                                 <h4><?php echo $fetch_row['Institution'] ?></h4>

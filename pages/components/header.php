@@ -6,44 +6,48 @@
         <input type="text" class="search-textbox" placeholder="Search institutions">
         <?php
         if (isset($_GET['search'])) {
-            $search = $_GET['search'];
+            $search = "%" . $_GET['search'] . "%";
 
-            $fetch_fire = mysqli_query($conn, "SELECT * FROM fire_departments WHERE Institution LIKE '%$search%'");
+            $query_fire = mysqli_prepare($conn, "SELECT * FROM fire_departments WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_fire, "s", $search);
+            mysqli_stmt_execute($query_fire);
+            $result_fire = mysqli_stmt_get_result($query_fire);
 
-            $fetch_gov = mysqli_query($conn, "SELECT * FROM government_orgs WHERE Institution LIKE '%$search%'");
+            $query_gov = mysqli_prepare($conn, "SELECT * FROM government_orgs WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_gov, "s", $search);
+            mysqli_stmt_execute($query_gov);
+            $result_gov = mysqli_stmt_get_result($query_gov);
 
-            $fetch_hospitals = mysqli_query($conn, "SELECT * FROM hospitals WHERE Institution LIKE '%$search%'");
+            $query_hospitals = mysqli_prepare($conn, "SELECT * FROM hospitals WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_hospitals, "s", $search);
+            mysqli_stmt_execute($query_hospitals);
+            $result_hospitals = mysqli_stmt_get_result($query_hospitals);
 
-            $fetch_ngos = mysqli_query($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE '%$search%'");
+            $query_ngos = mysqli_prepare($conn, "SELECT * FROM non_government_orgs WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_ngos, "s", $search);
+            mysqli_stmt_execute($query_ngos);
+            $result_ngos = mysqli_stmt_get_result($query_ngos);
 
-            $fetch_police = mysqli_query($conn, "SELECT * FROM police_stations WHERE Institution LIKE '%$search%'");
+            $query_police = mysqli_prepare($conn, "SELECT * FROM police_stations WHERE Institution LIKE ?");
+            mysqli_stmt_bind_param($query_police, "s", $search);
+            mysqli_stmt_execute($query_police);
+            $result_police = mysqli_stmt_get_result($query_police);
 
-            if (mysqli_num_rows($fetch_fire) > 0) {
+            if (mysqli_num_rows($result_fire) > 0) {
                 echo "<script> result(); </script>";
-            } elseif (mysqli_num_rows($fetch_gov) > 0) {
+            } elseif (mysqli_num_rows($result_gov) > 0) {
                 echo "<script> result(); </script>";
-            } elseif (mysqli_num_rows($fetch_hospitals) > 0) {
+            } elseif (mysqli_num_rows($result_hospitals) > 0) {
                 echo "<script> result(); </script>";
-            } elseif (mysqli_num_rows($fetch_ngos) > 0) {
+            } elseif (mysqli_num_rows($result_ngos) > 0) {
                 echo "<script> result(); </script>";
-            } elseif (mysqli_num_rows($fetch_police) > 0) {
+            } elseif (mysqli_num_rows($result_police) > 0) {
                 echo "<script> result(); </script>";
             } else {
                 echo "<script> noResult(); </script>";
             }
         }
 
-        $query = "SELECT DISTINCT Municipality FROM hospitals ORDER BY Municipality ASC";
-        $result = mysqli_query($conn, $query);
-        $i = 0;
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $id[$i] = "#" . $row['Municipality'];
-                $i++;
-            }
-        } else {
-            echo '<p>No records found.</p>';
-        }
         ?>
         <i class='bx bx-search bx-md' id="search-icon" onclick="search()"></i>
     </div>

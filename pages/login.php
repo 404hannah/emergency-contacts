@@ -14,8 +14,6 @@ if (isset($_POST['submit'])) {
     mysqli_stmt_execute($query);
     $result = mysqli_stmt_get_result($query);
     $fetch_row = mysqli_fetch_assoc($result);
-    echo "<script> console.log('Fetched row: " . $fetch_row . "'); </script>";
-    echo "<script> console.log('Password verification: " . password_verify($password, $fetch_row['Password']) . "'); </script>";
 
     if ($fetch_row && password_verify($password, $fetch_row['Password'])) {
         echo "<script> alert('Log in successful.'); </script>";

@@ -33,7 +33,6 @@ if (isset($_POST['register'])) {
         $register_query = mysqli_prepare($conn, "INSERT INTO `accounts` (`Username`, `Password`) VALUES (?, ?)");
         mysqli_stmt_bind_param($register_query, "ss", $username, $hash); // s stands for string
         if (mysqli_stmt_execute($register_query) && mysqli_stmt_affected_rows($register_query) === 1) {
-            echo "<script> alert('Registration successful.'); </script>";
             header('Location: login.php');
             exit();
         } else {
