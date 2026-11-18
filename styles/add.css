@@ -284,7 +284,7 @@ table, th, td{
 
     font-family: Dosis;
     color: white;
-    font-size: large;
+    font-size: medium;
     text-align: center;
     padding: 5px;
 }
@@ -349,6 +349,13 @@ th, td{
         font-size: large;
         margin-right: 0px;
     }
+
+    table, th, td {
+        border-style: solid;
+        border-width: 2px;
+        font-size: small;
+        padding: 2px;
+    }
 }
 
 @media only screen and (max-width: 600px){
@@ -396,5 +403,12 @@ th, td{
     .buttons .save, .cancel {
         font-size: medium;
         margin-right: 0px;
+    }
+
+    table, th, td {
+        border-style: solid;
+        border-width: 1px;
+        font-size: smaller;
+        padding: 2px;
     }
 }

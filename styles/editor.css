@@ -215,7 +215,7 @@ table, th, td {
     border-collapse: collapse;
     font-family: Dosis;
     color: white;
-    font-size: large;
+    font-size: medium;
     text-align: center;
     padding: 5px;
 }
@@ -246,6 +246,13 @@ th, td {
     .add, .edit {
         font-size: larger;
         margin-right: 10px;
+    }
+
+    table, th, td {
+        border-style: solid;
+        border-width: 2px;
+        font-size: small;
+        padding: 2px;
     }
 }
 

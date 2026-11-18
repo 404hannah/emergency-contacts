@@ -145,33 +145,36 @@ section h1{
     background-color: orange;
 }
 
-@media only screen and (min-width: 501px) and (max-width: 650px){
-    h2{
-        font-size: 150%;
+@media only screen and (min-width: 601px) and (max-width: 850px){
+    section h1{
+        font-size: xx-large;
     }
 
-
-    h1{
-        font-size: 225%;
+    section h2{
+        font-size: large;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
     .back{
         width: 75%;
-        font-size: 150%;
+        font-size: larger;
     }
 }
 
-@media only screen and (max-width: 500px){
-    h2{
-        font-size: 125%;
+@media only screen and (max-width: 600px){
+    section h1{
+        font-size: x-large;
     }
 
-    h1{
-        font-size: 200%;
+    section h2{
+        font-size: medium;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
     .back{
         width: 75%;
-        font-size: 125%;
+        font-size: large;
     }
 }
