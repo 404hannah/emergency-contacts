@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include './components/connection.php';
 
 ob_clean();
 
@@ -24,4 +24,3 @@ if (isset($_POST['municipality']) && isset($_POST['category'])) {
 }
 
 mysqli_close($conn);
-?>
