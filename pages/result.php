@@ -1,6 +1,5 @@
 <?php
-include './components/connection.php';
-session_start();
+include '../private/components/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +25,14 @@ session_start();
     <?php
     $indexUrl = '../index.php';
     $aboutUrl = 'about.php';
-    include './components/header.php';
+    include '../private/components/header.php';
     ?>
 
     <section>
         <?php
+        $counter = 0;
         if (isset($_GET['search'])) {
             $search = "%" . $_GET['search'] . "%";
-            $counter = 0;
 
             $query_fire = mysqli_prepare($conn, "SELECT * FROM fire_departments WHERE Institution LIKE ?");
             mysqli_stmt_bind_param($query_fire, "s", $search);
@@ -79,6 +78,14 @@ session_start();
             if (mysqli_num_rows($result_police) > 0) {
                 $counter = $counter + mysqli_num_rows($result_police);
             }
+        } else {
+            $search = "";
+            $result_fire = null;
+            $result_gov = null;
+            $result_hospitals = null;
+            $result_ngos = null;
+            $result_police = null;
+            echo "<script> console.log('Variables init.'); </script>";
         }
         ?>
         <h2>Search Results for "<?php echo substr($search, 1, (strlen($search) - 2)) ?>"</h2>
@@ -86,7 +93,7 @@ session_start();
             <p>Found <?php echo $counter ?> Result/s.</p>
             <div class="main-contents">
                 <?php
-                if (mysqli_num_rows($result_fire) > 0) {
+                if ($result_fire && mysqli_num_rows($result_fire) > 0) {
                     while ($fetch_row = mysqli_fetch_assoc($result_fire)) { ?>
                         <div class="result">
                             <div class="text">
@@ -106,7 +113,7 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($result_gov) > 0) {
+                if ($result_gov && mysqli_num_rows($result_gov) > 0) {
                     while ($fetch_row = mysqli_fetch_assoc($result_gov)) { ?>
                         <div class="result">
                             <div class="text">
@@ -126,7 +133,7 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($result_hospitals) > 0) {
+                if ($result_hospitals && mysqli_num_rows($result_hospitals) > 0) {
                     while ($fetch_row = mysqli_fetch_assoc($result_hospitals)) { ?>
                         <div class="result">
                             <div class="text">
@@ -146,7 +153,7 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($result_ngos) > 0) {
+                if ($result_ngos && mysqli_num_rows($result_ngos) > 0) {
                     while ($fetch_row = mysqli_fetch_assoc($result_ngos)) { ?>
                         <div class="result">
                             <div class="text">
@@ -166,7 +173,7 @@ session_start();
                     <?php }
                 }
 
-                if (mysqli_num_rows($result_police) > 0) {
+                if ($result_police && mysqli_num_rows($result_police) > 0) {
                     while ($fetch_row = mysqli_fetch_assoc($result_police)) { ?>
                         <div class="result">
                             <div class="text">

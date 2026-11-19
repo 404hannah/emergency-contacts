@@ -1,12 +1,17 @@
 <?php
-include './components/connection.php';
-include './components/config.php';
+include '../private/components/connection.php';
+include '../private/components/config.php';
+
+session_start();
+if (isset($_SESSION['user'])) {
+    header('Location: editor.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -63,7 +68,7 @@ if (isset($_POST['register'])) {
     <?php
     $indexUrl = '../index.php';
     $aboutUrl = 'about.php';
-    include './components/header.php';
+    include '../private/components/header.php';
     ?>
 
     <section class="auth-section">

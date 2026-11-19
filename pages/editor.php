@@ -1,6 +1,6 @@
 <?php
-include './components/connection.php';
-require_once './components/auth.php';
+include '../private/components/connection.php';
+require_once '../private/components/auth.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ require_once './components/auth.php';
 
 <body>
     <?php
-    include './components/header-editor.php';
+    include '../private/components/header-editor.php';
     ?>
 
     <section>

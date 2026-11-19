@@ -1,5 +1,5 @@
 <?php
-include './pages/components/connection.php';
+include './private/components/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +28,11 @@ include './pages/components/connection.php';
     <?php
     $indexUrl = 'index.php';
     $aboutUrl = './pages/about.php';
-    include './pages/components/header.php';
+    include './private/components/header.php';
     ?>
 
     <?php
-    include './pages/components/menu.php';
+    include './private/components/menu.php';
     ?>
 
     <section class="main">

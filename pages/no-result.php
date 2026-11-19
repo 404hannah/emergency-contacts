@@ -1,6 +1,5 @@
 <?php
-include './components/connection.php';
-session_start();
+include '../private/components/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +25,15 @@ session_start();
     <?php
     $indexUrl = '../index.php';
     $aboutUrl = 'about.php';
-    include './components/header.php';
+    include '../private/components/header.php';
     ?>
 
     <section>
         <?php
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
+        } else {
+            $search = "";
         }
         ?>
         <h2>Search Results for "<?php echo "$search" ?>"</h2>

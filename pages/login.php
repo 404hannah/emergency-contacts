@@ -1,5 +1,11 @@
 <?php
-include './components/connection.php';
+include '../private/components/connection.php';
+
+session_start();
+if (isset($_SESSION['user'])) {
+    header('Location: editor.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +56,7 @@ if (isset($_POST['submit'])) {
     <?php
     $indexUrl = '../index.php';
     $aboutUrl = 'about.php';
-    include './components/header.php';
+    include '../private/components/header.php';
     ?>
 
     <section class="auth-section">

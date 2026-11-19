@@ -3,7 +3,7 @@
     <h1>CM</h1>
 </header>
 <header class="header-right">
-    <a class="log-out" href="logout.php">
+    <a class="log-out" href="../services/logout.php">
         <p>LOG OUT</p>
     </a>
 </header>

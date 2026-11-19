@@ -1,5 +1,5 @@
 <?php
-include './components/connection.php';
+include '../private/components/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ include './components/connection.php';
     <?php
     $indexUrl = '../index.php';
     $aboutUrl = 'about.php';
-    include './components/header.php';
+    include '../private/components/header.php';
     ?>
 
     <section>

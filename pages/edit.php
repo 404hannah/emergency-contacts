@@ -1,6 +1,6 @@
 <?php
-include './components/connection.php';
-require_once './components/auth.php';
+include '../private/components/connection.php';
+require_once '../private/components/auth.php';
 ?>
 
 <!DOCTYPE html>
@@ -77,6 +77,7 @@ if (isset($_POST['save'])) {
 // Delete the data
 if (isset($_POST['delete'])) {
     $categoryInput = $_POST['category'];
+    $delete = null;
 
     switch ($categoryInput) {
         case "Fire Department":
@@ -125,7 +126,7 @@ if (isset($_POST['delete'])) {
 
 <body>
     <?php
-    include './components/header-editor.php';
+    include '../private/components/header-editor.php';
     ?>
 
     <section>
