@@ -39,7 +39,7 @@ if (isset($_POST['register'])) {
             echo "<script> alert('Registration failed.'); </script>";
         }
     } else {
-        echo "<script> alert('Invalid credentials.'); </script>";
+        echo "<script> alert('Invalid code.'); </script>";
     }
 }
 ?>

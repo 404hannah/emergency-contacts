@@ -1,5 +1,6 @@
 <?php
 include './components/connection.php';
+require_once './components/auth.php';
 ?>
 
 <!DOCTYPE html>

@@ -5,6 +5,10 @@ include './components/connection.php';
 <!DOCTYPE html>
 <html lang="en">
 <?php
+if (isset($_GET['msg']) && $_GET['msg'] === "login_required") {
+    echo "<script>alert('Log in to access the webpage.');</script>";
+}
+
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -16,7 +20,9 @@ if (isset($_POST['submit'])) {
     $fetch_row = mysqli_fetch_assoc($result);
 
     if ($fetch_row && password_verify($password, $fetch_row['Password'])) {
-        echo "<script> alert('Log in successful.'); </script>";
+        session_start();
+        session_regenerate_id(true);
+        $_SESSION['user'] = $username;
         header('Location: editor.php');
         exit();
     } else {

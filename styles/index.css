@@ -261,7 +261,7 @@ html {
     position: absolute;
     overflow-y: auto;
 
-    width: 100vw;
+    width: 100%;
 }
 
 .main::-webkit-scrollbar{
