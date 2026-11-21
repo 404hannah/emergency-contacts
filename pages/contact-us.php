@@ -33,18 +33,17 @@ include '../private/components/connection.php';
             <p>Thank you for reaching out! Please provide details about the issue you're experiencing so we can assist you promptly.</p>
         </div>
 
-        <form action="mailto:tarlacemergencycontacts@gmail.com" method="post" enctype="text/plain">
-            <p class="email-text">Email Address:</p>
-            <input type="text" class="email">
+        <form id="contactForm">
             <p>Subject:</p>
-            <input type="text" class="subject" name="subject">
+            <input type="text" class="subject" id="subject" name="subject" required>
             <p>Description of the Problem:</p>
-            <textarea class="description" name="body" rows="6" cols="80"></textarea>
+            <textarea class="description" id="body" name="body" rows="6" cols="80" required></textarea>
             <div><input type="submit" class="submit" value="Submit"></div>
         </form>
     </section>
 
     <script src='../scripts/search.js'></script>
+    <script src='../scripts/contact-us.js'></script>
 </body>
 
 </html>
